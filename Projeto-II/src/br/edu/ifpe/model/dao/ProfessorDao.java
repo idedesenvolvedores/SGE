@@ -149,7 +149,7 @@ public class ProfessorDao {
 				professor.setRegTrabalho(rs.getString("reg_Trabalho"));
 				professor.setClasse(rs.getString("classe"));
 				professor.setDiretoria(rs.getString("diretoria"));
-				
+				professor.setArea(rs.getString("area"));
 				return professor;
 
 				
