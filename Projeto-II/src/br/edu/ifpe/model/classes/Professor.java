@@ -24,6 +24,8 @@ private String classe;
 
 private String diretoria;
 
+
+
 public int getId() {
 	return id;
 }
@@ -111,6 +113,7 @@ public String getNome() {
 public void setNome(String nome) {
 	this.nome = nome;
 }
+
 
 
 

@@ -7,7 +7,6 @@
             <h1>IFPE - SGE v1.0</h1>
             <p>
             <br><h6>Desenvolvido por <spam>IDE desenvolvedores</spam></h6>
-            </p>
           </div>
           <div class="col-sm-6">
             <p class="text-info text-right">

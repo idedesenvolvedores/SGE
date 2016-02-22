@@ -19,35 +19,29 @@
               <tbody>
                 <tr>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Registro de entrega</spam></a>
+                    <a href="RegistroDeEntrga" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Registro de entrega</spam></a>
                   </td>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Cadastro de professor</spam></a>
+                    <a href="IncluirProfessor" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Cadastro de professor</spam></a>
                   </td>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Editar Cadastro</spam></a>
+                    <a href="exibirAlterarProfessor" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Editar Cadastro professor</spam></a>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Listar entrega</spam></a>
+                    <a href="listaRegistro" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Listar entrega</spam></a>
                   </td>
                   <td>
                     <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Listar professor</spam></a>
                   </td>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Editar perfil</spam></a>
+                    <a href="EditarPerfil" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Editar perfil</spam></a>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Cadastrar usuário</spam></a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>nnonononon</spam></a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>nnonononon</spam></a>
+                    <a href="CadastroUsuario" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Cadastrar usuário</spam></a>
                   </td>
                 </tr>
               </tbody>

@@ -1,80 +1,77 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!-- 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body> -->
-<c:import url="cabeca.jsp" />
-
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12"></div>
+<!-- topo -->
+<div class="section">
+	<c:import url="../menu/topo.jsp" />
+</div>
+      <div class="col-md-12">
+        <!-- menu lateral -->
+        <div class="col-md-4">
+        	<c:import url="../menu/menuAdmin.jsp" />
         </div>
-      </div>
-    </div>
-    <div class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="jumbotron">
-              <div class="section">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-5"></div>
-                    <div class="col-md-6">
-                      <h2 class="text-center">Registro de Entrega</h2>
-                      <form class="form-horizontal" role="form">
-                        <div class="form-group">
+        <!-- tela -->
+	       <div class="col-md-8">
+	      <div class="section">
+	      	<div class="col-md-7">
+	      	<div style="text-align: center; color: red;"> ${mensagem} </div>
+				<h2 class="text-center">Registro de Entrega</h2>
+			    	<form action="salvarRegistro" class="form-horizontal" role="form" method="post">
+			        	<div class="form-group">
+			        		<div>
+			                	<input type="hidden" class="form-control">
+			                </div>			                          
+			                <div class="col-sm-2">
+			                	<label for="inputText" class="control-label">Nome</label>
+			             	</div>
+			                <div class="col-sm-10">
+			                	<input type="text" class="form-control" id="nome" placeholder="Nome" name="nome">
+			                </div>
+			             </div>
+			             <div class="form-group">
+	                          <div class="col-sm-2">
+	                            <label for="inputText" class="control-label">Siape</label>
+	                          </div>
+	                          <div class="col-sm-10">
+	                            <input type="text" class="form-control" id="siape" placeholder="Siape" name="siape">
+	                          </div>
+	                     </div>
+	                        
+	                        
+                         <div class="form-group">
                           <div class="col-sm-2">
-                            <label for="inputNome3" class="control-label">Nome</label>
+                            <label for="sel1" class="control-label">Semestre</label>
                           </div>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="nome" placeholder="Nome">
+                            <select type="text" class="form-control" id="sel1" placeholder="Semestre" name="semestre">
+                          		<option> primeiro </option >
+                          		<option> segundo </option >
+                          	</select>
                           </div>
-                        </div>
-                        <div class="form-group">
-                          <div class="col-sm-2">
-                            <label for="inputSiape" class="control-label">Siape</label>
-                          </div>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Siape">
-                          </div>
-                        </div>
-                        <div class="form-group">
+                         </div>
+	                        
+                      	<div class="form-group">
                           <div class="col-sm-4">
-                            <label for="inputPassword3" class="control-label">Data de entrega</label>
+                            <label for="inputText" class="control-label">Data de entrega</label>
                           </div>
                           <div class="col-sm-8">
-                            <input type="text" class="form-control" id="inputPassword3" placeholder="Data de entrega">
+                            <input type="text" class="form-control" id="data" placeholder="Data de entrega" name="dataEntrega">
                           </div>
                         </div>
-                        <div class="form-group">
-                          <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-danger">cancelar</button>&nbsp;&nbsp;&nbsp;
-                            <button type="submit" class="btn btn-success">salvar</button>
-                          </div>
-                        </div>
-                        <div class="form-group"></div>
-                      </form>
-                    </div>
-                    <div class="col-md-1"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-<!-- 
-</body>
-</html>
--->
+	                        
+			       <div class="form-group">
+			          <div class="col-sm-offset-2 col-sm-10">
+			            <button type="reset" class="btn btn-danger">cancelar</button>&nbsp;&nbsp;&nbsp;
+			          <button type="submit" class="btn btn-success">salvar</button>
+			       </div>
+			     </div>			             
+			   </form>
+			  </div>
+			</div>
+		</div>
+	</div>
+	
+    <div class="section" style="padding: 0; bottom:0; margin:0;	position:absolute; 	width:100%;">
+		<c:import url="../menu/rodape.jsp" />
+	</div>       	
+   

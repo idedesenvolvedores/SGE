@@ -14,6 +14,7 @@
 	       <div class="col-md-8">
 	      <div class="section">
 	      	<div class="col-md-7">
+	      	<div style="text-align: center; color: red;"> ${mensagem} </div>
 				<h2 class="text-center">Registro de Entrega</h2>
 			    	<form action="salvarRegistro" class="form-horizontal" role="form" method="post">
 			        	<div class="form-group">
@@ -69,6 +70,7 @@
 			</div>
 		</div>
 	</div>
+	
     <div class="section" style="padding: 0; bottom:0; margin:0;	position:absolute; 	width:100%;">
 		<c:import url="../menu/rodape.jsp" />
 	</div>       	

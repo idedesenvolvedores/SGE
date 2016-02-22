@@ -11,7 +11,6 @@ import java.util.List;
 import br.edu.ifpe.model.classes.Registro;
 import br.edu.ifpe.util.ConnectionFactory;
 
-
 public class RegistroDao {
 
 	private Connection connection;
@@ -28,7 +27,7 @@ public class RegistroDao {
 	public void salvar(Registro registro) {
 
 		try {
-			String sql = "INSERT INTO ENTREGA (NOME, SIAPE, SEMESTRE, DATAE) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO ENTREGA  (nome, siape, semestre, entrega) VALUES (?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, registro.getNome());
 			stmt.setString(2, registro.getSiape());
@@ -50,7 +49,7 @@ public class RegistroDao {
 		try {
 
 			List<Registro> listaRegistro = new ArrayList<Registro>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM ENTREGA ORDER BY ID");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM entrega ORDER BY ID");
 
 			ResultSet rs = stmt.executeQuery();
 
@@ -76,7 +75,7 @@ public class RegistroDao {
 		registro.setNome(rs.getString("nome"));
 		registro.setSiape(rs.getString("siape"));
 		registro.setSemestre(rs.getString("semestre"));
-		registro.setDataEntrega(rs.getDate("datae"));
+		registro.setDataEntrega(rs.getDate("entrega"));
 
 		return registro;
 	}
@@ -84,7 +83,7 @@ public class RegistroDao {
 	public Registro buscarPorId(int id) {
 
 		try {
-			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ENTREGA WHERE id = ?");
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM ENTREGA  WHERE id = ?");
 			stmt.setInt(1, id);
 			ResultSet rs = stmt.executeQuery();
 
@@ -101,24 +100,43 @@ public class RegistroDao {
 			throw new RuntimeException(e);
 		}
 	}
-		   public void alterar(Registro registro) {
 
-				String sql = "UPDATE entrega SET nome = ? , siape = ? , semestre = ? , entrega  = ?  WHERE id = ?";
+	public void remover(Registro registro) {
 
-				try {
+		try {
+			PreparedStatement stmt = connection.prepareStatement("DELETE FROM ENTREGA  WHERE id = ?");
+			stmt.setLong(1, registro.getId());
+			stmt.execute();
+			stmt.close();
 
-				    PreparedStatement stmt = connection.prepareStatement(sql);
-				    stmt.setString(1, registro.getNome());
-				    stmt.setString(2, registro.getSiape());
-				    stmt.setString(3, registro.getSemestre());
-					stmt.setDate(4, new java.sql.Date(registro.getDataEntrega().getTime()));
-				    
-				    stmt.setInt(5, registro.getId());
-				    stmt.execute();
-				    stmt.close();
-				    connection.close();
-				} catch (SQLException e) {
-				    throw new RuntimeException(e);
-				}
-			    }
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
+	public void alterar(Registro registro) {
+
+		String sql = "UPDATE ENTREGA SET nome = ? , siape = ? , semestre = ? , entrega  = ?  WHERE id = ?";
+
+		try {
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, registro.getNome());
+			stmt.setString(2, registro.getSiape());
+			stmt.setString(3, registro.getSemestre());
+			
+				stmt.setDate(4, new java.sql.Date(registro.getDataEntrega().getTime()));
+		
+
+				stmt.setInt(5, registro.getId());
+				stmt.execute();
+				stmt.close();
+				connection.close();
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

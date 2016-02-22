@@ -40,23 +40,23 @@
               <form class="form-horizontal" role="form" action="processaLogin">
                 <div class="form-group has-success">
                   <div class="col-sm-2">
-                    <label for="inputText" class="control-label">Login</label>
+                    <label for="login" class="control-label">Siape</label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control input-lg" id="inputText" placeholder="login">
+                    <input type="text" class="form-control input-lg" id="inputText" placeholder="siape">
                   </div>
                 </div>
                 <div class="form-group has-success">
                   <div class="col-sm-2">
-                    <label for="inputPassword3" class="control-label">Senha</label>
+                    <label for="senha" class="control-label">Senha</label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="password" class="form-control input-lg" id="inputPassword3" placeholder="Password">
+                    <input type="senha" class="form-control input-lg" id="inputPassword3" placeholder="senha">
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-sm btn-success">Entrar</button>
+                  <div class="col-sm-offset-2 col-lg-10">
+                    <button type="submit" class="btn btn-lg btn-success">Entrar</button>
                   </div>
                 </div>
               </form>

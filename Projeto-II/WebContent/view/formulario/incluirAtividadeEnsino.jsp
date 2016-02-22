@@ -47,4 +47,4 @@
       </div>
     </div>
  
-<c:import url="../menu/menu.jsp" />
+<c:import url="../menu/menuProfessor.jsp" />

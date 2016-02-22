@@ -27,7 +27,7 @@ public class EntregaController {
 
 			RegistroDao dao = new RegistroDao();
 			dao.salvar(registro);
-			model.addAttribute("mensagem", "Registro adicionado!");
+			model.addAttribute("mensagem", "Registro de  "+registro.getNome()+" foi  adicionado!");
 			return "pages/RegistroDeEntrega";
 
 		}
@@ -43,26 +43,35 @@ public class EntregaController {
 
 
 	    @RequestMapping("/exibirAlterarRegistro")
-	    public String exibirAlterarRegistro(Model model, Registro  registro ) {
+	    public String exibirAlterarRegistro(Model model, Registro registro) {
 
-		RegistroDao dao = new RegistroDao ();
-		registro = dao.buscarPorId(registro .getId());
-		model.addAttribute("registro ", registro );
-
+		RegistroDao dao = new RegistroDao();
+		Registro registroCompleto = dao.buscarPorId(registro.getId());
+		model.addAttribute("registro", registroCompleto);
+		
 		return "pages/alterarRegistro";
 	    }
 	    
 	    @RequestMapping("alterarRegistro")
-	    public String alterarProduto(Registro registro , Model model) {
+	    public String alterarRegistro(Registro registro , Model model) {
 
 	    RegistroDao dao = new RegistroDao();
-		dao.alterar(registro );
+		dao.alterar(registro);
 		model.addAttribute("registro", registro );
-		model.addAttribute("mensagem", "Registro Alterado com Sucesso");
+		model.addAttribute("mensagem", " O Registro de "+registro.getNome()+" foi Alterado com Sucesso");
 		
-		return "pages/alterarProduto";
+		return "forward:listaRegistro";
 	    }
+	    @RequestMapping("removerRegistro")
+	    public String removerProduto(Registro registro, Model model) {
+
+	    RegistroDao dao = new RegistroDao ();
+		dao.remover(registro);
+		model.addAttribute("mensagem", "Registro  Removido com Sucesso");
+
+		return "forward:listaRegistro";
+	    }
+	}
 
 		
-		
-}
+

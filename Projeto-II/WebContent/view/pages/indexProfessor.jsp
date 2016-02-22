@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Página Inicial do Professor</title>
 </head>
 <body>
 	<div class="section">
@@ -18,28 +18,28 @@
               <tbody>
                 <tr>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Editar perfil</spam></a>
+                    <a href="exibirIncluirCabecalho" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Editar perfil</spam></a>
                   </td>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Plano de trabalho</spam></a>
+                    <a href="alterarSenha" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Alterar Senha</spam></a>
                   </td>
                   <td></td>
                 </tr>
                 <tr>
                   <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Atividade ensino</spam></a>
+                    <a href="exibirIncluirPlanoTrabalho" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Plano de Trabalho</spam></a>
+                  </td>
+                  <td>
+                    <a href="exibirIncluirAtividadeEnsino" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Atividade de Ensino (Aulas)</spam></a>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="exibirIncluirAtividadePedagogica" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Atividades pedagogicas</spam></a>
                   </td>
                   <td>
                     <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Imprimir formulário</spam></a>
-                  </td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>Atividade pedagogica</spam></a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50;"><spam>nnonononon</spam></a>
                   </td>
                   <td></td>
                 </tr>

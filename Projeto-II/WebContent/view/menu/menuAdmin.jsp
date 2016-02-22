@@ -11,16 +11,16 @@
           <a href="IncluirProfessor" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Cadastro de professor </a>
         </li>
         <li>
-          <a href="index.html" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg"></i> Editar cadastro de professor </a>
+          <a href="exibirAlterarProfessor" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg"></i> Editar cadastro de professor </a>
         </li>
         <li>
           <a href="listaRegistro" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Listagem de entregas </a>
         </li>
         <li>
-          <a href="index.html" style="color: #FFFFFF"><i class="fa fa-folder-open fa-lg"></i> Editar perfil </a>
+          <a href="EditarPerfil" style="color: #FFFFFF"><i class="fa fa-folder-open fa-lg"></i> Editar perfil </a>
         </li>
         <li>
-          <a href="index.html" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
+          <a href="CadastroUsuario" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
         </li>
       </ul>
     </div>
@@ -34,16 +34,16 @@
 			          <a href="IncluirProfessor" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Cadastro de professor </a>
 			        </li>
 			        <li>
-			          <a href="index.html" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg"></i> Editar cadastro de professor </a>
+			          <a href="exibirAlterarProfessor" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg"></i> Editar cadastro de professor </a>
 			        </li>
 			        <li>
 			          <a href="listaRegistro" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Listagem de entregas </a>
 			        </li>
 			        <li>
-			          <a href="index.html" style="color: #FFFFFF"><i class="fa fa-folder-open fa-lg"></i> Editar perfil </a>
+			          <a href="EditarPerfil" style="color: #FFFFFF"><i class="fa fa-folder-open fa-lg"></i> Editar perfil </a>
 			        </li>
 			        <li>
-			          <a href="index.html" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
+			          <a href="CadastroUsuario" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
 			        </li>
                  </ul>
             </div>
