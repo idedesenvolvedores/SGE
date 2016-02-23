@@ -27,7 +27,7 @@ public class RegistroDao {
 	public void salvar(Registro registro) {
 
 		try {
-			String sql = "INSERT INTO ENTREGA  (nome, siape, semestre, entrega) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO ENTREGA  (NOME, SIAPE, SEMESTRE, DATAE) VALUES (?,?,?,?)";
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, registro.getNome());
 			stmt.setString(2, registro.getSiape());
@@ -49,7 +49,7 @@ public class RegistroDao {
 		try {
 
 			List<Registro> listaRegistro = new ArrayList<Registro>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM entrega ORDER BY ID");
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM ENTREGA  ORDER BY ID");
 
 			ResultSet rs = stmt.executeQuery();
 
@@ -75,7 +75,7 @@ public class RegistroDao {
 		registro.setNome(rs.getString("nome"));
 		registro.setSiape(rs.getString("siape"));
 		registro.setSemestre(rs.getString("semestre"));
-		registro.setDataEntrega(rs.getDate("entrega"));
+		registro.setDataEntrega(rs.getDate("datae"));
 
 		return registro;
 	}
@@ -118,7 +118,7 @@ public class RegistroDao {
 
 	public void alterar(Registro registro) {
 
-		String sql = "UPDATE ENTREGA SET nome = ? , siape = ? , semestre = ? , entrega  = ?  WHERE id = ?";
+		String sql = "UPDATE ENTREGA SET nome = ? , siape = ? , semestre = ? , datae  = ?  WHERE id = ?";
 
 		try {
 

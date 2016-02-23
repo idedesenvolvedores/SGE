@@ -35,7 +35,9 @@ public class ProfessorController {
     	ProfessorDao dao = new ProfessorDao();
     List<Professor> listaProfessor = dao.listar();
     model.addAttribute("listaProfessor", listaProfessor);
-    return "pages/listarProfessor";
+ 
+    
+      return "pages/listarProfessor";
     }
 
     @RequestMapping("removerProfessor")
@@ -56,8 +58,8 @@ public class ProfessorController {
 	ProfessorDao dao = new ProfessorDao();
 	professor = dao.buscarPorId(professor.getId());
 	model.addAttribute("professor", professor);
-
-	return "pages/editarprofessor";
+	 return "pages/editarprofessor";
+	
     }
 
 
@@ -68,6 +70,7 @@ public class ProfessorController {
 	dao.alterar(professor);
 	model.addAttribute("professor", professor);
 	model.addAttribute("mensagem", "Professor Alterado com Sucesso");
+	
 	return "pages/listarProfessor";
     }
 
