@@ -23,21 +23,21 @@ public class PessoaDao {
 	}
     }
 
-    public void salvar(Pessoa professor) {
+    public void salvar(Pessoa pessoa) {
 
 	try {
-	    String sql = "INSERT INTO PROFESSOR (NOME,SIAPE,EMAIL,SENHA,TELEFONE,CAMPUS,REG_TRABALHO,AREA,CLASSE,DIRETORIA) VALUES (?,?,?,?,?,?,?,?,?,?)";
+	    String sql = "INSERT INTO PESSOA (NOME,SIAPE,EMAIL,SENHA,TELEFONE,CAMPUS,REG_TRABALHO,AREA,CLASSE,DIRETORIA) VALUES (?,?,?,?,?,?,?,?,?,?)";
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, professor.getNome());
-	    stmt.setString(2, professor.getSiape());
-	    stmt.setString(3, professor.getEmail());
-	    stmt.setString(4, professor.getSenha());
-	    stmt.setString(5, professor.getTelefone());
-	    stmt.setString(6, professor.getCampus());
-	    stmt.setString(7, professor.getRegTrabalho());
-	    stmt.setString(8, professor.getArea());
-	    stmt.setString(9, professor.getClasse());
-	    stmt.setString(10, professor.getDiretoria());
+	    stmt.setString(1, pessoa.getNome());
+	    stmt.setString(2, pessoa.getSiape());
+	    stmt.setString(3, pessoa.getEmail());
+	    stmt.setString(4, pessoa.getSenha());
+	    stmt.setString(5, pessoa.getTelefone());
+	    stmt.setString(6, pessoa.getCampus());
+	    stmt.setString(7, pessoa.getRegTrabalho());
+	    stmt.setString(8, pessoa.getArea());
+	    stmt.setString(9, pessoa.getClasse());
+	    stmt.setString(10, pessoa.getDiretoria());
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -51,16 +51,16 @@ public class PessoaDao {
 	
 	
 		try {
-			List<Pessoa> listaProfessor = new ArrayList<Pessoa>();
-			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PROFESSOR ORDER BY NOME");
+			List<Pessoa> listaPessoa = new ArrayList<Pessoa>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PESSOA ORDER BY NOME");
 			 ResultSet rs = stmt.executeQuery();
 			 while (rs.next()) {
-					listaProfessor.add(montarObjeto(rs));
+					listaPessoa.add(montarObjeto(rs));
 				    }
 			 rs.close();
 			    stmt.close();
 			    connection.close();
-			    return listaProfessor;
+			    return listaPessoa;
 		} catch (SQLException e) {
 			 throw new RuntimeException(e);
 		}		}
@@ -74,44 +74,44 @@ public class PessoaDao {
 			 public Pessoa buscarPorId(int id) {
 
 					try {
-					    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PROFESSOR WHERE id = ?");
+					    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE id = ?");
 					    stmt.setInt(1, id);
 					    ResultSet rs = stmt.executeQuery();
 
-					    Pessoa professor = null;
+					    Pessoa pessoa = null;
 					    if (rs.next()) {
-						professor = montarObjeto(rs);
+						pessoa = montarObjeto(rs);
 					    }
 
 					    rs.close();
 					    stmt.close();
 					    connection.close();
-					    return professor;
+					    return pessoa;
 					} catch (SQLException e) {
 					    throw new RuntimeException(e);
 					}
 				    }
 			
 			
-			 public void alterar(Pessoa professor) {
+			 public void alterar(Pessoa pessoa) {
 
-					String sql = "UPDATE PROFESSOR SET NOME = ? , SIAPE = ? , EMAIL = ? , SENHA  = ? , TELEFONE = ? , CAMPUS = ? , REG_TRABALHO = ? , AREA = ? , CLASSE = ? , DIRETORIA = ? WHERE id = ?";
+					String sql = "UPDATE PESSOA SET NOME = ? , SIAPE = ? , EMAIL = ? , SENHA  = ? , TELEFONE = ? , CAMPUS = ? , REG_TRABALHO = ? , AREA = ? , CLASSE = ? , DIRETORIA = ? WHERE id = ?";
 
 					try {
 
 					    PreparedStatement stmt = connection.prepareStatement(sql);
-					    stmt.setString(1, professor.getNome());
-					    stmt.setString(2, professor.getSiape());
-					    stmt.setString(3, professor.getEmail());
-					    stmt.setString(4, professor.getSenha());
-					    stmt.setString(5, professor.getTelefone());
-					    stmt.setString(6, professor.getCampus());
-					    stmt.setString(7, professor.getRegTrabalho());
-					    stmt.setString(8, professor.getArea());
-					    stmt.setString(9, professor.getClasse());
-					    stmt.setString(10, professor.getDiretoria());
+					    stmt.setString(1, pessoa.getNome());
+					    stmt.setString(2, pessoa.getSiape());
+					    stmt.setString(3, pessoa.getEmail());
+					    stmt.setString(4, pessoa.getSenha());
+					    stmt.setString(5, pessoa.getTelefone());
+					    stmt.setString(6, pessoa.getCampus());
+					    stmt.setString(7, pessoa.getRegTrabalho());
+					    stmt.setString(8, pessoa.getArea());
+					    stmt.setString(9, pessoa.getClasse());
+					    stmt.setString(10, pessoa.getDiretoria());
 					  
-					    stmt.setInt(11, professor.getId());
+					    stmt.setInt(11, pessoa.getId());
 					    stmt.execute();
 					    stmt.close();
 					    connection.close();
@@ -124,11 +124,11 @@ public class PessoaDao {
 			
 			
 			
-			public void remover(Pessoa professor) {
+			public void remover(Pessoa pessoa) {
 
 				try {
-				    PreparedStatement stmt = connection.prepareStatement("DELETE FROM PROFESSOR WHERE id = ?");
-				    stmt.setLong(1, professor.getId());
+				    PreparedStatement stmt = connection.prepareStatement("DELETE FROM PESSOA WHERE id = ?");
+				    stmt.setLong(1, pessoa.getId());
 				    stmt.execute();
 				    stmt.close();
 				    connection.close();
@@ -138,19 +138,19 @@ public class PessoaDao {
 
 		}
 			private Pessoa montarObjeto(ResultSet rs) throws SQLException {
-				Pessoa professor = new Pessoa();
-				professor.setId(rs.getInt("id"));
-				professor.setNome(rs.getString("nome"));
-				professor.setEmail(rs.getString("email"));
-				professor.setSiape(rs.getString("siape"));
-				professor.setSenha(rs.getString("senha"));
-				professor.setTelefone(rs.getString("telefone"));
-				professor.setCampus(rs.getString("campus"));
-				professor.setRegTrabalho(rs.getString("reg_Trabalho"));
-				professor.setClasse(rs.getString("classe"));
-				professor.setDiretoria(rs.getString("diretoria"));
-				professor.setArea(rs.getString("area"));
-				return professor;
+				Pessoa pessoa = new Pessoa();
+				pessoa.setId(rs.getInt("id"));
+				pessoa.setNome(rs.getString("nome"));
+				pessoa.setEmail(rs.getString("email"));
+				pessoa.setSiape(rs.getString("siape"));
+				pessoa.setSenha(rs.getString("senha"));
+				pessoa.setTelefone(rs.getString("telefone"));
+				pessoa.setCampus(rs.getString("campus"));
+				pessoa.setRegTrabalho(rs.getString("reg_Trabalho"));
+				pessoa.setClasse(rs.getString("classe"));
+				pessoa.setDiretoria(rs.getString("diretoria"));
+				pessoa.setArea(rs.getString("area"));
+				return pessoa;
 
 				
 		}

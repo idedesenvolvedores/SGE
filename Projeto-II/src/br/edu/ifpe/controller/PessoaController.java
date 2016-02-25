@@ -14,64 +14,64 @@ import br.edu.ifpe.model.dao.PessoaDao;
 @Controller
 public class PessoaController {
 
-    @RequestMapping("/IncluirProfessor")
-    public String exibirIncluirProfessor() {
+    @RequestMapping("/IncluirPessoa")
+    public String exibirIncluirPessoa() {
 
 	return "pages/CadastroDePessoa";
     }
 
-    @RequestMapping("salvarProfessor")
-    public String salvarProfessor(Pessoa professor) {
+    @RequestMapping("salvarPessoa")
+    public String salvarPessoa(Pessoa pessoa) {
     
 
 	PessoaDao dao = new PessoaDao();
-	dao.salvar(professor);
-	return "pages/CadastroDeProfessor";
+	dao.salvar(pessoa);
+	return "pages/CadastroDePessoa";
     }
 
-    @RequestMapping("gerenciarProfessor")
-    public String listarProfessor(Model model) {
+    @RequestMapping("gerenciarPessoa")
+    public String listarPessoa(Model model) {
     
     	PessoaDao dao = new PessoaDao();
-    List<Pessoa> listaProfessor = dao.listar();
-    model.addAttribute("listaProfessor", listaProfessor);
+    List<Pessoa> listaPessoa = dao.listar();
+    model.addAttribute("listaPessoa", listaPessoa);
  
     
-      return "pages/listarProfessor";
+      return "pages/listarPessoa";
     }
 
-    @RequestMapping("removerProfessor")
-    public String removerProfessor(Pessoa professor, Model model) {
+    @RequestMapping("removerPessoa")
+    public String removerPessoa(Pessoa pessoa, Model model) {
 
 	PessoaDao dao = new PessoaDao();
-	dao.remover(professor);
+	dao.remover(pessoa);
 	model.addAttribute("mensagem", "Produto Removido com Sucesso");
 
-	return "pages/listarProfessor";
+	return "pages/listarPessoa";
     }
     
     
     
-    @RequestMapping("/exibirAlterarProfessor")
-    public String exibirAlterarProfessor(Model model, Pessoa professor) {
+    @RequestMapping("/exibirAlterarPessoa")
+    public String exibirAlterarPessoa(Model model, Pessoa pessoa) {
 
 	PessoaDao dao = new PessoaDao();
-	professor = dao.buscarPorId(professor.getId());
-	model.addAttribute("professor", professor);
-	 return "pages/editarprofessor";
+	pessoa = dao.buscarPorId(pessoa.getId());
+	model.addAttribute("pessoa", pessoa);
+	 return "pages/editarpessoa";
 	
     }
 
 
-    @RequestMapping("alterarProfessor")
-    public String alterarProfessor(Pessoa professor, Model model) {
+    @RequestMapping("alterarPessoa")
+    public String alterarPessoa(Pessoa pessoa, Model model) {
 
 	PessoaDao dao = new PessoaDao();
-	dao.alterar(professor);
-	model.addAttribute("professor", professor);
-	model.addAttribute("mensagem", "Professor Alterado com Sucesso");
+	dao.alterar(pessoa);
+	model.addAttribute("pessoa", pessoa);
+	model.addAttribute("mensagem", "Pessoa Alterado com Sucesso");
 	
-	return "pages/listarProfessor";
+	return "pages/listarPessoa";
     }
 
 }

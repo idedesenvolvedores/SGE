@@ -11,6 +11,7 @@ import br.edu.ifpe.model.classes.AtividadePedagogica;
 import br.edu.ifpe.model.classes.Cabecalho;
 import br.edu.ifpe.model.classes.PlanoTrabalho;
 import br.edu.ifpe.model.dao.FormularioDao;
+import br.edu.ifpe.model.dao.UsuarioDao;
 
 @Controller
 public class FormularioController {
@@ -26,10 +27,12 @@ public class FormularioController {
     }
 
     @RequestMapping("salvarCabecalho")
-    public String incluirCabecalho(Cabecalho cabecalho) {
+    public String incluirCabecalho(Cabecalho cabecalho, Usuario usuario) {
 
 	FormularioDao dao = new FormularioDao();
+	UsuarioDao dao2 = new UsuarioDao();
 	dao.salvarCabecalho(cabecalho);
+	dao2.salvarUsuario(usuario);
 	return "forward:listarCabecalho";
     }
     
