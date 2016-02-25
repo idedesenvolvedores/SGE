@@ -7,14 +7,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.ifpe.model.classes.Professor;
+import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.util.ConnectionFactory;
 
-public class ProfessorDao {
+public class PessoaDao {
 	
 	private Connection connection;
 
-    public ProfessorDao() {
+    public PessoaDao() {
 
 	try {
 	    this.connection = new ConnectionFactory().getConnection();
@@ -23,7 +23,7 @@ public class ProfessorDao {
 	}
     }
 
-    public void salvar(Professor professor) {
+    public void salvar(Pessoa professor) {
 
 	try {
 	    String sql = "INSERT INTO PROFESSOR (NOME,SIAPE,EMAIL,SENHA,TELEFONE,CAMPUS,REG_TRABALHO,AREA,CLASSE,DIRETORIA) VALUES (?,?,?,?,?,?,?,?,?,?)";
@@ -46,12 +46,12 @@ public class ProfessorDao {
 	}
     }
 
-	public List<Professor> listar() {
+	public List<Pessoa> listar() {
 		// TODO Auto-generated method stub
 	
 	
 		try {
-			List<Professor> listaProfessor = new ArrayList<Professor>();
+			List<Pessoa> listaProfessor = new ArrayList<Pessoa>();
 			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PROFESSOR ORDER BY NOME");
 			 ResultSet rs = stmt.executeQuery();
 			 while (rs.next()) {
@@ -71,14 +71,14 @@ public class ProfessorDao {
 	
 	
 	
-			 public Professor buscarPorId(int id) {
+			 public Pessoa buscarPorId(int id) {
 
 					try {
 					    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PROFESSOR WHERE id = ?");
 					    stmt.setInt(1, id);
 					    ResultSet rs = stmt.executeQuery();
 
-					    Professor professor = null;
+					    Pessoa professor = null;
 					    if (rs.next()) {
 						professor = montarObjeto(rs);
 					    }
@@ -93,7 +93,7 @@ public class ProfessorDao {
 				    }
 			
 			
-			 public void alterar(Professor professor) {
+			 public void alterar(Pessoa professor) {
 
 					String sql = "UPDATE PROFESSOR SET NOME = ? , SIAPE = ? , EMAIL = ? , SENHA  = ? , TELEFONE = ? , CAMPUS = ? , REG_TRABALHO = ? , AREA = ? , CLASSE = ? , DIRETORIA = ? WHERE id = ?";
 
@@ -124,7 +124,7 @@ public class ProfessorDao {
 			
 			
 			
-			public void remover(Professor professor) {
+			public void remover(Pessoa professor) {
 
 				try {
 				    PreparedStatement stmt = connection.prepareStatement("DELETE FROM PROFESSOR WHERE id = ?");
@@ -137,8 +137,8 @@ public class ProfessorDao {
 				}
 
 		}
-			private Professor montarObjeto(ResultSet rs) throws SQLException {
-				Professor professor = new Professor();
+			private Pessoa montarObjeto(ResultSet rs) throws SQLException {
+				Pessoa professor = new Pessoa();
 				professor.setId(rs.getInt("id"));
 				professor.setNome(rs.getString("nome"));
 				professor.setEmail(rs.getString("email"));

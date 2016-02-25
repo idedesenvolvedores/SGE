@@ -7,24 +7,24 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import br.edu.ifpe.model.classes.Professor;
-import br.edu.ifpe.model.dao.ProfessorDao;
+import br.edu.ifpe.model.classes.Pessoa;
+import br.edu.ifpe.model.dao.PessoaDao;
 
 
 @Controller
-public class ProfessorController {
+public class PessoaController {
 
     @RequestMapping("/IncluirProfessor")
     public String exibirIncluirProfessor() {
 
-	return "pages/CadastroDeProfessor";
+	return "pages/CadastroDePessoa";
     }
 
     @RequestMapping("salvarProfessor")
-    public String salvarProfessor(Professor professor) {
+    public String salvarProfessor(Pessoa professor) {
     
 
-	ProfessorDao dao = new ProfessorDao();
+	PessoaDao dao = new PessoaDao();
 	dao.salvar(professor);
 	return "pages/CadastroDeProfessor";
     }
@@ -32,8 +32,8 @@ public class ProfessorController {
     @RequestMapping("gerenciarProfessor")
     public String listarProfessor(Model model) {
     
-    	ProfessorDao dao = new ProfessorDao();
-    List<Professor> listaProfessor = dao.listar();
+    	PessoaDao dao = new PessoaDao();
+    List<Pessoa> listaProfessor = dao.listar();
     model.addAttribute("listaProfessor", listaProfessor);
  
     
@@ -41,9 +41,9 @@ public class ProfessorController {
     }
 
     @RequestMapping("removerProfessor")
-    public String removerProfessor(Professor professor, Model model) {
+    public String removerProfessor(Pessoa professor, Model model) {
 
-	ProfessorDao dao = new ProfessorDao();
+	PessoaDao dao = new PessoaDao();
 	dao.remover(professor);
 	model.addAttribute("mensagem", "Produto Removido com Sucesso");
 
@@ -53,9 +53,9 @@ public class ProfessorController {
     
     
     @RequestMapping("/exibirAlterarProfessor")
-    public String exibirAlterarProfessor(Model model, Professor professor) {
+    public String exibirAlterarProfessor(Model model, Pessoa professor) {
 
-	ProfessorDao dao = new ProfessorDao();
+	PessoaDao dao = new PessoaDao();
 	professor = dao.buscarPorId(professor.getId());
 	model.addAttribute("professor", professor);
 	 return "pages/editarprofessor";
@@ -64,9 +64,9 @@ public class ProfessorController {
 
 
     @RequestMapping("alterarProfessor")
-    public String alterarProfessor(Professor professor, Model model) {
+    public String alterarProfessor(Pessoa professor, Model model) {
 
-	ProfessorDao dao = new ProfessorDao();
+	PessoaDao dao = new PessoaDao();
 	dao.alterar(professor);
 	model.addAttribute("professor", professor);
 	model.addAttribute("mensagem", "Professor Alterado com Sucesso");

@@ -1,6 +1,6 @@
 package br.edu.ifpe.model.classes;
 
-public class Professor {
+public class Pessoa {
 
  private int id; 
 

@@ -6,15 +6,18 @@
 	<c:import url="../menu/topo.jsp" />
 </div>
       <div class="col-md-12">
+      
         <!-- menu lateral -->
         <div class="col-md-4">
         	<c:import url="../menu/menuAdmin.jsp" />
-	        </div>
+	    </div>
+	    
 	        <!-- tela -->
 	        <div class="col-md-8">
 	       	<div class="section">
 	      	 <div class="col-md-7">
-	          <h2 class="text-center">Cadastro de Professor</h2>
+	      	 <br><br><br>
+	          <h2 class="text-center">Cadastro de Usuário</h2>
 	           <form class="form-horizontal" role="form" action="salvarProfessor" method="post">
 	            <div class="form-group">
 	              <div class="col-sm-2">
@@ -55,6 +58,17 @@
 	              <div class="col-sm-10">
 	               <input type="password" class="form-control" id="inputPassword3" placeholder="Confimar senha">
 	              </div>
+	            </div>
+	             <div class="form-group">
+	              <div class="col-sm-2">
+					<label for="sel1">Tipo de Usuário:</label>
+	              </div>
+	              <div class="col-sm-10">
+					 <select class="form-control" id="sel1"  placeholder="tipo usuario" name="pessoa">
+					    <option>Professor</option>
+					    <option>Administrador</option>					    
+					  </select>	
+			</div>
 	            </div>
 	            <div class="form-group">
 	              <div class="col-sm-offset-2 col-sm-10">
