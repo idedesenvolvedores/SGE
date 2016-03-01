@@ -4,7 +4,7 @@ public class Usuario {
 
 	private int id;
 	private String senha;
-	private Cabecalho siapefk;
+	private Pessoa siapefk;
 	private TipoUsuario idTipoUsuario;
 	
 	public int getId() {
@@ -19,10 +19,10 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public Cabecalho getSiapefk() {
+	public Pessoa getSiapefk() {
 		return siapefk;
 	}
-	public void setSiape(Cabecalho siapefk) {
+	public void setSiape(Pessoa siapefk) {
 		this.siapefk = siapefk;
 	}
 	public TipoUsuario getIdTipoUsuario() {

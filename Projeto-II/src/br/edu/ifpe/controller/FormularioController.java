@@ -8,8 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.ifpe.model.classes.AtividadeEnsino;
 import br.edu.ifpe.model.classes.AtividadePedagogica;
-import br.edu.ifpe.model.classes.Cabecalho;
+import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.PlanoTrabalho;
+import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.model.dao.FormularioDao;
 import br.edu.ifpe.model.dao.UsuarioDao;
 
@@ -18,22 +19,22 @@ public class FormularioController {
 
 //----------- Incluir ------------//	
 
-	//----------- Incluir Cabecalho ------------//
+	//----------- Incluir Pessoa ------------//
 	
-    @RequestMapping("/exibirIncluirCabecalho")
-    public String exibirIncluirCabecalho() {
+    @RequestMapping("/exibirIncluirPessoa")
+    public String exibirIncluirPessoa() {
 
-	return "formulario/incluirCabecalho";
+	return "formulario/incluirPessoa";
     }
 
-    @RequestMapping("salvarCabecalho")
-    public String incluirCabecalho(Cabecalho cabecalho, Usuario usuario) {
+    @RequestMapping("salvarPessoa")
+    public String incluirPessoa(Pessoa pessoa, Usuario usuario) {
 
 	FormularioDao dao = new FormularioDao();
 	UsuarioDao dao2 = new UsuarioDao();
-	dao.salvarCabecalho(cabecalho);
-	dao2.salvarUsuario(usuario);
-	return "forward:listarCabecalho";
+	dao.salvarPessoa(pessoa);
+	dao2.salvar(usuario);
+	return "forward:listarPessoa";
     }
     
 	//----------- Incluir Atividade de Ensino ------------//
@@ -118,15 +119,15 @@ public class FormularioController {
 	return "formulario/pesquisarAtividadeEnsino";
     }
 
-    //--------- Listar Cabecalho -----------//    
+    //--------- Listar Pessoa -----------//    
     
-    @RequestMapping("listarCabecalho")
-    public String listarCabecalho(Model model) {
+    @RequestMapping("listarPessoa")
+    public String listarPessoa(Model model) {
 
 	FormularioDao dao = new FormularioDao();
-	List<Cabecalho> listaCabecalho = dao.listarCabecalho();
-	model.addAttribute("listaCabecalho", listaCabecalho);
-	return "formulario/pesquisarCabecalho";
+	List<Pessoa> listaPessoa = dao.listarPessoa();
+	model.addAttribute("listaPessoa", listaPessoa);
+	return "formulario/pesquisarPessoa";
     }
     
 //---------- Remover -----------------//    
@@ -168,12 +169,12 @@ public class FormularioController {
     
     //--------- Alterar Atividade Ensino -----------//
     
-    @RequestMapping("/exibirAlterarCabecalho")
-    public String exibirAlterarCabecalho(Model model, Cabecalho cabecalho) {
+    @RequestMapping("/exibirAlterarPessoa")
+    public String exibirAlterarCabecalho(Model model, Pessoa pessoa) {
 
 	FormularioDao dao = new FormularioDao();
-	cabecalho = dao.buscarPorIdCabecalho(cabecalho.getId());
-	model.addAttribute("Cabecalho", cabecalho);
+	pessoa = dao.buscarPorIdPessoa(pessoa.getSiape());
+	model.addAttribute("Cabecalho", pessoa);
 
 	return "formulario/alterarAtividadeEnsino";
     }

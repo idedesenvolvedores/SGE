@@ -132,7 +132,7 @@
 		<div class="row">
             <legend>DADOS CADASTRAIS</legend>
         </div>
-       <form action="salvarCabecalho" method="post">
+       <form action="salvarPessoa" method="post">
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -156,7 +156,7 @@
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">PROFESSOR(A)</label>
                 <input class="form-control" id="exampleInputEmail1"
-                placeholder="Professor(a)" type="text" name="professor">
+                placeholder="Professor(a)" type="text" name="nome">
               </div>
             </div>
             <div class="col-md-3">

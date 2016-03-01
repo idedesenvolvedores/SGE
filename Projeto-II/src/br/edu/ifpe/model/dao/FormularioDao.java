@@ -9,7 +9,7 @@ import java.util.List;
 
 import br.edu.ifpe.model.classes.AtividadeEnsino;
 import br.edu.ifpe.model.classes.AtividadePedagogica;
-import br.edu.ifpe.model.classes.Cabecalho;
+import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.PlanoTrabalho;
 import br.edu.ifpe.util.ConnectionFactory;
 
@@ -26,25 +26,25 @@ public class FormularioDao {
 	}
     }
 
-  //------------Salvar cabecalho---------------------------//
+  //------------Salvar Pessoa---------------------------//
     
-    public void salvarCabecalho(Cabecalho cabecalho) {
+    public void salvarPessoa(Pessoa pessoa) {
 
 	try {
-	    String sql = "INSERT INTO PROFESSOR (NOME, SIAPE, EMAIL, TELEFONE, "
+	    String sql = "INSERT INTO PESSOA (SIAPE, NOME, EMAIL, TELEFONE, "
 	    		+ "CAMPUS, REG_TRABALHO, AREA, CLASSE, DIRETORIA) "
 	    		+ "VALUES (?,?,?,?,?,?,?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, cabecalho.getProfessor());
-	    stmt.setString(2, cabecalho.getSiape());
-	    stmt.setString(3, cabecalho.getEmail());
-	    stmt.setString(4, cabecalho.getTelefone());
-	    stmt.setString(5, cabecalho.getCampus());
-	    stmt.setString(6, cabecalho.getRegime());
-	    stmt.setString(7, cabecalho.getArea());
-	    stmt.setString(8, cabecalho.getClasse());
-	    stmt.setString(9, cabecalho.getDiretoria());
+	    stmt.setInt(1, pessoa.getSiape());
+	    stmt.setString(2, pessoa.getNome());
+	    stmt.setString(3, pessoa.getEmail());
+	    stmt.setString(4, pessoa.getTelefone());
+	    stmt.setString(5, pessoa.getCampus());
+	    stmt.setString(6, pessoa.getRegime());
+	    stmt.setString(7, pessoa.getArea());
+	    stmt.setString(8, pessoa.getClasse());
+	    stmt.setString(9, pessoa.getDiretoria());
 
 	    stmt.execute();
 	    stmt.close();
@@ -94,7 +94,7 @@ public class FormularioDao {
 	}
     }
 
-  //-----------------Salvar Atividade Pedag贸gica --------------------
+  //-----------------Salvar Atividade Pedag骻ica --------------------
     
     public void salvarAtividadePedagogica(AtividadePedagogica atividade) {
 		try {
@@ -143,7 +143,7 @@ public class FormularioDao {
 	}
     }
 
-    // ----------- Listar Atividade Pedag贸gica ------------//
+    // ----------- Listar Atividade Pedag骻ica ------------//
     
     public List<AtividadePedagogica> listarAtividadePedagogica() {
 
@@ -195,26 +195,26 @@ public class FormularioDao {
 	}
     }
 
-    // ----------- Listar Cabecalho ------------//
+    // ----------- Listar Pessoa ------------//
     
-    public List<Cabecalho> listarCabecalho() {
+    public List<Pessoa> listarPessoa() {
 
 	try {
 
-	    List<Cabecalho> listaCabecalho= new ArrayList<Cabecalho>();
-	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PROFESSOR ORDER BY ID");
+	    List<Pessoa> listaPessoa= new ArrayList<Pessoa>();
+	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PESSOA ORDER BY ID");
 
 	    ResultSet rs = stmt.executeQuery();
 
 	    while (rs.next()) {
-		listaCabecalho.add(montarObjetoCabecalho(rs));
+		listaPessoa.add(montarObjetoPessoa(rs));
 	    }
 
 	    rs.close();
 	    stmt.close();
 	    connection.close();
 
-	    return listaCabecalho;
+	    return listaPessoa;
 
 	} catch (SQLException e) {
 	    throw new RuntimeException(e);
@@ -239,7 +239,7 @@ public class FormularioDao {
 	}
     }
 
-    //------ Remover Atividade Pegag贸gica --------//
+    //------ Remover Atividade Pedag骻ica --------//
     
     public void removerAtividadePedagogica(AtividadePedagogica atividadePedagogica) {
 
@@ -293,24 +293,24 @@ public class FormularioDao {
  	}
      }
 
-     //------- Alterar Cabecalho ----------//
+     //------- Alterar Pessoa ----------//
      
-     public void alterarCabecalho(Cabecalho cabecalho) {
+     public void alterarPessoa(Pessoa pessoa) {
 
- 	String sql = "UPDATE PROFESSOR SET NOME = ? , SIAPE = ? , EMAIL = ? , TELEFONE = ? , CAMPUS = ?  , REG_TRABALHO = ?  , AREA = ?  , CLASSE = ?  , DIRETORIA = ? WHERE id = ?";
+ 	String sql = "UPDATE PESSOA SET SIAPE = ? , NOME = ? , EMAIL = ? , TELEFONE = ? , CAMPUS = ?  , REG_TRABALHO = ?  , AREA = ?  , CLASSE = ?  , DIRETORIA = ? WHERE id = ?";
 
  	try {
 
  	    PreparedStatement stmt = connection.prepareStatement(sql);
- 	    stmt.setString(1, cabecalho.getProfessor());
- 	    stmt.setString(2, cabecalho.getSiape());
- 	    stmt.setString(3, cabecalho.getEmail());
- 	    stmt.setString(4, cabecalho.getTelefone());
- 	    stmt.setString(5, cabecalho.getCampus());
- 	    stmt.setString(6, cabecalho.getRegime());
- 	    stmt.setString(7, cabecalho.getArea());
- 	    stmt.setString(8, cabecalho.getClasse());
- 	    stmt.setString(9, cabecalho.getDiretoria());
+ 	    stmt.setInt(1, pessoa.getSiape());
+ 	    stmt.setString(2, pessoa.getNome());
+ 	    stmt.setString(3, pessoa.getEmail());
+ 	    stmt.setString(4, pessoa.getTelefone());
+ 	    stmt.setString(5, pessoa.getCampus());
+ 	    stmt.setString(6, pessoa.getRegime());
+ 	    stmt.setString(7, pessoa.getArea());
+ 	    stmt.setString(8, pessoa.getClasse());
+ 	    stmt.setString(9, pessoa.getDiretoria());
  	    
  	    stmt.execute();
  	    stmt.close();
@@ -344,24 +344,24 @@ public class FormularioDao {
      
 // ------------- Buscar por id -------------------//
      
-     //--------- Buscar por id Cabecalho --------------//
+     //--------- Buscar por id Pessoa --------------//
      
-     public Cabecalho buscarPorIdCabecalho(int id) {
+     public Pessoa buscarPorIdPessoa(int id) {
 
     		try {
-    		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PROFESSOR WHERE id = ?");
+    		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE id = ?");
     		    stmt.setInt(1, id);
     		    ResultSet rs = stmt.executeQuery();
 
-    		    Cabecalho cabecalho = null;
+    		    Pessoa pessoa = null;
     		    if (rs.next()) {
-    		    	cabecalho = montarObjetoCabecalho(rs);
+    		    	pessoa = montarObjetoPessoa(rs);
     		    }
 
     		    rs.close();
     		    stmt.close();
     		    connection.close();
-    		    return cabecalho;
+    		    return pessoa;
     		} catch (SQLException e) {
     		    throw new RuntimeException(e);
     		}
@@ -391,7 +391,7 @@ public class FormularioDao {
     }
      
 
-     //--------- Buscar por id Atividade Pedag贸gica --------------//
+     //--------- Buscar por id Atividade Pedag骻ica --------------//
      
      public AtividadePedagogica buscarPorIdAtividadePedagogica(int id) {
 
@@ -440,23 +440,22 @@ public class FormularioDao {
      
 // ------------- Montando Objetos--------------------- //
     
-    // ----------- Cabecalho ------------//
+    // ----------- Pessoa ------------//
  
-    private Cabecalho montarObjetoCabecalho(ResultSet rs) throws SQLException {
+    private Pessoa montarObjetoPessoa(ResultSet rs) throws SQLException {
 
-    Cabecalho cabecalho = new Cabecalho();
-    cabecalho.setId(rs.getInt("id"));
-    cabecalho.setCampus(rs.getString("campus"));
-    cabecalho.setDiretoria(rs.getString("diretoria"));
-    cabecalho.setProfessor(rs.getString("professor"));
-    cabecalho.setSiape(rs.getString("siape"));
-    cabecalho.setEmail(rs.getString("email"));
-    cabecalho.setTelefone(rs.getString("telefone"));
-    cabecalho.setArea(rs.getString("area"));
-    cabecalho.setClasse(rs.getString("classe"));
-    cabecalho.setRegime(rs.getString("regime"));
+    Pessoa pessoa = new Pessoa();
+    pessoa.setSiape(rs.getInt("siape"));
+    pessoa.setCampus(rs.getString("campus"));
+    pessoa.setDiretoria(rs.getString("diretoria"));
+    pessoa.setNome(rs.getString("nome"));
+    pessoa.setEmail(rs.getString("email"));
+    pessoa.setTelefone(rs.getString("telefone"));
+    pessoa.setArea(rs.getString("area"));
+    pessoa.setClasse(rs.getString("classe"));
+    pessoa.setRegime(rs.getString("regime"));
     
-	return cabecalho;
+	return pessoa;
     }
     
     // ----------- Plano de Trabalho ------------//
