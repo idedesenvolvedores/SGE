@@ -63,17 +63,16 @@ public class UsuarioController {
 	Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
 	model.addAttribute("usuario", usuarioPreenchido);
 
-	return "usuario/alterarUsuario";
+	return "formulario/alterarSenha";
     }
 
     @RequestMapping("alterarUsuario")
-    public String alterarUsuario(Usuario usuario, Model model) {
+    public String alterarUsuario(Usuario usuario) {
 
 	UsuarioDao dao = new UsuarioDao();
 	dao.alterar(usuario);
-	model.addAttribute("msg", "A Senha foi alterada com sucesso !");
 
-	return "forward:listarUsuario";
+	return "formulario/alterarSenha";
     }
 
     @RequestMapping("efetuarLogin")
