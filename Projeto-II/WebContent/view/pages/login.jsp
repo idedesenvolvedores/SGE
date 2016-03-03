@@ -37,13 +37,13 @@
           <div class="col-md-2"></div>
           <div class="col-md-8">
             <div class="jumbotron">
-              <form class="form-horizontal" role="form" action="processaLogin">
+              <form class="form-horizontal" role="form" action="efetuarLogin">
                 <div class="form-group has-success">
                   <div class="col-sm-2">
                     <label for="login" class="control-label">Siape</label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control input-lg" id="inputText" placeholder="siape">
+                    <input type="text" name="siape" class="form-control input-lg" id="inputText" placeholder="siape">
                   </div>
                 </div>
                 <div class="form-group has-success">
@@ -51,7 +51,7 @@
                     <label for="senha" class="control-label">Senha</label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="senha" class="form-control input-lg" id="inputPassword3" placeholder="senha">
+                    <input type="password" name="senha" class="form-control input-lg" id="inputPassword3" placeholder="senha">
                   </div>
                 </div>
                 <div class="form-group">

@@ -4,9 +4,8 @@ public class Usuario {
 
 	private int id;
 	private String senha;
-	private Pessoa siapefk;
-	private TipoUsuario idTipoUsuario;
-	
+	private Pessoa pessoa;
+	private TipoUsuario tipoUsuario;
 	public int getId() {
 		return id;
 	}
@@ -19,18 +18,19 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public Pessoa getSiapefk() {
-		return siapefk;
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
-	public void setSiape(Pessoa siapefk) {
-		this.siapefk = siapefk;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
-	public TipoUsuario getIdTipoUsuario() {
-		return idTipoUsuario;
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
 	}
-	public void setIdTipoUsuario(TipoUsuario idTipoUsuario) {
-		this.idTipoUsuario = idTipoUsuario;
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
 	}
 	
+
 	
 }

@@ -11,6 +11,7 @@ import br.edu.ifpe.model.classes.AtividadeEnsino;
 import br.edu.ifpe.model.classes.AtividadePedagogica;
 import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.PlanoTrabalho;
+import br.edu.ifpe.model.classes.TipoUsuario;
 import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
 
@@ -34,8 +35,8 @@ public class UsuarioDao {
 		    String sql = "INSERT INTO USUARIO (SENHA, SIAPEFK, ID_TIPO_USUARIO) VALUES (SGE123,?,?)";
 		    PreparedStatement stmt = connection.prepareStatement(sql);
 		    stmt.setString(1, usuario.getSenha());
-		    stmt.setInt(2, usuario.getSiapefk().getSiape());
-		    stmt.setInt(3, usuario.getIdTipoUsuario().getId());
+		    stmt.setString(2, usuario.getPessoa().getSiape());
+		    stmt.setInt(3, usuario.getTipoUsuario().getId());
 		    
 		    
 		    stmt.execute();
@@ -113,8 +114,8 @@ public class UsuarioDao {
 
 		    PreparedStatement stmt = connection.prepareStatement(sql);
 		    stmt.setString(1, usuario.getSenha());
-		    stmt.setInt(2, usuario.getSiapefk().getSiape());
-		    stmt.setInt(3, usuario.getIdTipoUsuario().getId());
+		    stmt.setString(2, usuario.getPessoa().getSiape());
+		    stmt.setInt(3, usuario.getTipoUsuario().getId());
 		    stmt.execute();
 		    stmt.close();
 		    connection.close();
@@ -129,10 +130,9 @@ public class UsuarioDao {
 		try {
 
 		    Usuario usuarioConsultado = null;
-		    PreparedStatement stmt = this.connection.prepareStatement("select * from USUARIO where SIAPEFK = ? and SENHA = ? and ID_TIPO_USUARIO = ?");
-		    stmt.setInt(1, usuario.getSiapefk().getSiape());
+		    PreparedStatement stmt = this.connection.prepareStatement("select * from USUARIO where SIAPEFK = ? and SENHA = ? ");
+		    stmt.setString(1, usuario.getPessoa().getSiape());
 		    stmt.setString(2, usuario.getSenha());
-		    stmt.setInt(3, usuario.getIdTipoUsuario().getId());
 		    ResultSet rs = stmt.executeQuery();
 
 		    if (rs.next()) {
@@ -153,6 +153,9 @@ public class UsuarioDao {
 		Usuario usuario = new Usuario();
 		usuario.setId(rs.getInt("id"));
 		usuario.setSenha(rs.getString("senha"));
+		TipoUsuarioDao tipoDao = new TipoUsuarioDao();
+		TipoUsuario tipousuario = tipoDao.buscarPorId(rs.getInt("id_tipo_usuario"));
+		usuario.setTipoUsuario(tipousuario);
 
 		return usuario;
 	    }

@@ -1,19 +1,18 @@
 package br.edu.ifpe.controller;
 
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.ifpe.model.classes.Pessoa;
-import br.edu.ifpe.model.classes.TipoUsuario;
 import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.model.dao.FormularioDao;
-import br.edu.ifpe.model.dao.TipoUsuarioDao;
 import br.edu.ifpe.model.dao.UsuarioDao;
+import br.edu.ifpe.util.Mensagens;
 
+@Controller
 public class UsuarioController {
 	
     @RequestMapping("/exibirIncluirUsuario")
@@ -74,6 +73,18 @@ public class UsuarioController {
 
 	return "formulario/alterarSenha";
     }
+    
+    @RequestMapping("exibirIndexAdm")
+    public String exibirTelaAdmin( ) {
+
+	return "pages/indexAdmin";
+    }
+    
+    @RequestMapping("exibirIndexProfessor")
+    public String exibirTelaProfessor( ) {
+
+	return "pages/indexProfessor";
+    }
 
     @RequestMapping("efetuarLogin")
     public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
@@ -82,20 +93,16 @@ public class UsuarioController {
 	Usuario usuarioLogado = dao.buscarUsuario(usuario);
 	
 
-	TipoUsuarioDao dao2 = new TipoUsuarioDao(); 
-	TipoUsuario tipo = dao2.buscarPorId(usuarioLogado.getIdTipoUsuario().getId());
-	String resul = tipo.getDescricao();
+	
 	
 	if (usuarioLogado != null) {
 	    
-		if (resul.equals("Professor")) {
+		if (usuarioLogado.getTipoUsuario().equals(Mensagens.professor)) {
 			
 			session.setAttribute("usuarioLogado", usuarioLogado);
 		    return "forward:exibirIndexProfessor";
 			
-		}
-		
-		if (resul.equals("Administrador")) {
+		}else {
 			
 			session.setAttribute("usuarioLogado", usuarioLogado);
 		    return "forward:exibirIndexAdm";
@@ -104,7 +111,7 @@ public class UsuarioController {
 		
 	}
 
-	model.addAttribute("msg", "N�o foi encontrado um usu�rio com o login e senha informados.");
+	model.addAttribute("msg", Mensagens.mensagemUsuarioNaoLogado);
 	return "index";
     }
 

@@ -3,7 +3,7 @@ package br.edu.ifpe.model.classes;
 public class Pessoa {
 
 	//private int id;
-	private int siape;
+	private String siape;
 	private String campus;
 	private String diretoria;
 	private String nome;
@@ -21,15 +21,16 @@ public class Pessoa {
 		this.id = id;
 	}*/
 	
-	public int getSiape() {
-		return siape;
-	}
-	public void setSiape(int siape) {
-		this.siape = siape;
-	}
+	
 	
 	public String getCampus() {
 		return campus;
+	}
+	public String getSiape() {
+		return siape;
+	}
+	public void setSiape(String siape) {
+		this.siape = siape;
 	}
 	public void setCampus(String campus) {
 		this.campus = campus;

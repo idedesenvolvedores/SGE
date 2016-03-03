@@ -36,7 +36,7 @@ public class FormularioDao {
 	    		+ "VALUES (?,?,?,?,?,?,?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setInt(1, pessoa.getSiape());
+	    stmt.setString(1, pessoa.getSiape());
 	    stmt.setString(2, pessoa.getNome());
 	    stmt.setString(3, pessoa.getEmail());
 	    stmt.setString(4, pessoa.getTelefone());
@@ -94,7 +94,7 @@ public class FormularioDao {
 	}
     }
 
-  //-----------------Salvar Atividade Pedagógica --------------------
+  //-----------------Salvar Atividade Pedagï¿½gica --------------------
     
     public void salvarAtividadePedagogica(AtividadePedagogica atividade) {
 		try {
@@ -143,7 +143,7 @@ public class FormularioDao {
 	}
     }
 
-    // ----------- Listar Atividade Pedagógica ------------//
+    // ----------- Listar Atividade Pedagï¿½gica ------------//
     
     public List<AtividadePedagogica> listarAtividadePedagogica() {
 
@@ -239,7 +239,7 @@ public class FormularioDao {
 	}
     }
 
-    //------ Remover Atividade Pedagógica --------//
+    //------ Remover Atividade Pedagï¿½gica --------//
     
     public void removerAtividadePedagogica(AtividadePedagogica atividadePedagogica) {
 
@@ -302,7 +302,7 @@ public class FormularioDao {
  	try {
 
  	    PreparedStatement stmt = connection.prepareStatement(sql);
- 	    stmt.setInt(1, pessoa.getSiape());
+ 	    stmt.setString(1, pessoa.getSiape());
  	    stmt.setString(2, pessoa.getNome());
  	    stmt.setString(3, pessoa.getEmail());
  	    stmt.setString(4, pessoa.getTelefone());
@@ -346,11 +346,11 @@ public class FormularioDao {
      
      //--------- Buscar por id Pessoa --------------//
      
-     public Pessoa buscarPorIdPessoa(int id) {
+     public Pessoa buscarPorIdPessoa(String siape) {
 
     		try {
     		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE id = ?");
-    		    stmt.setInt(1, id);
+    		    stmt.setString(1, siape);
     		    ResultSet rs = stmt.executeQuery();
 
     		    Pessoa pessoa = null;
@@ -391,7 +391,7 @@ public class FormularioDao {
     }
      
 
-     //--------- Buscar por id Atividade Pedagógica --------------//
+     //--------- Buscar por id Atividade Pedagï¿½gica --------------//
      
      public AtividadePedagogica buscarPorIdAtividadePedagogica(int id) {
 
@@ -445,7 +445,7 @@ public class FormularioDao {
     private Pessoa montarObjetoPessoa(ResultSet rs) throws SQLException {
 
     Pessoa pessoa = new Pessoa();
-    pessoa.setSiape(rs.getInt("siape"));
+    pessoa.setSiape(rs.getString("siape"));
     pessoa.setCampus(rs.getString("campus"));
     pessoa.setDiretoria(rs.getString("diretoria"));
     pessoa.setNome(rs.getString("nome"));
