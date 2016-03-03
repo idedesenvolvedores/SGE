@@ -19,23 +19,7 @@ public class FormularioController {
 
 //----------- Incluir ------------//	
 
-	//----------- Incluir Pessoa ------------//
 	
-    @RequestMapping("/exibirIncluirPessoa")
-    public String exibirIncluirPessoa() {
-
-	return "formulario/incluirPessoa";
-    }
-
-    @RequestMapping("salvarPessoa")
-    public String incluirPessoa(Pessoa pessoa, Usuario usuario) {
-
-	FormularioDao dao = new FormularioDao();
-	UsuarioDao dao2 = new UsuarioDao();
-	dao.salvarPessoa(pessoa);
-	dao2.salvar(usuario);
-	return "forward:listarPessoa";
-    }
     
 	//----------- Incluir Atividade de Ensino ------------//
     
@@ -119,17 +103,7 @@ public class FormularioController {
 	return "formulario/pesquisarAtividadeEnsino";
     }
 
-    //--------- Listar Pessoa -----------//    
-    
-    @RequestMapping("listarPessoa")
-    public String listarPessoa(Model model) {
-
-	FormularioDao dao = new FormularioDao();
-	List<Pessoa> listaPessoa = dao.listarPessoa();
-	model.addAttribute("listaPessoa", listaPessoa);
-	return "formulario/pesquisarPessoa";
-    }
-    
+   
 //---------- Remover -----------------//    
     
     //--------- Remover Plano de Trabalho -----------//
@@ -167,17 +141,7 @@ public class FormularioController {
 
 //---------- Alterar ---------------//
     
-    //--------- Alterar Atividade Ensino -----------//
-    
-    @RequestMapping("/exibirAlterarPessoa")
-    public String exibirAlterarCabecalho(Model model, Pessoa pessoa) {
 
-	FormularioDao dao = new FormularioDao();
-	pessoa = dao.buscarPorIdPessoa(pessoa.getSiape());
-	model.addAttribute("Cabecalho", pessoa);
-
-	return "formulario/alterarAtividadeEnsino";
-    }
     
     //--------- Alterar Atividade Ensino -----------//
     

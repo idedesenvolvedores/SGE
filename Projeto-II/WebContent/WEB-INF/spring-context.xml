@@ -11,6 +11,7 @@
 							http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 		<context:component-scan base-package="br.edu.ifpe.controller" />  <!-- Mude o pacote para usar -->
+		<mvc:annotation-driven conversion-service="conversionService" />
 		
 		<mvc:annotation-driven />
 
@@ -21,6 +22,16 @@
 			<property name="suffix" value=".jsp" />
 		</bean>
 	
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="br.edu.ifpe.controller.PessoaConverter" />
+				<bean class="br.edu.ifpe.controller.TipoUsuarioConverter" />
+				
+			</list>
+		</property>
+	</bean>
+
 
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<property name="maxUploadSize" value="100000" />

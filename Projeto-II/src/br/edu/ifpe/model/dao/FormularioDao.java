@@ -349,7 +349,7 @@ public class FormularioDao {
      public Pessoa buscarPorIdPessoa(String siape) {
 
     		try {
-    		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE id = ?");
+    		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE siape = ?");
     		    stmt.setString(1, siape);
     		    ResultSet rs = stmt.executeQuery();
 
@@ -453,7 +453,7 @@ public class FormularioDao {
     pessoa.setTelefone(rs.getString("telefone"));
     pessoa.setArea(rs.getString("area"));
     pessoa.setClasse(rs.getString("classe"));
-    pessoa.setRegime(rs.getString("regime"));
+    pessoa.setRegime(rs.getString("reg_trabalho"));
     
 	return pessoa;
     }

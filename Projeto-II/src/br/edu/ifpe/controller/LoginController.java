@@ -13,7 +13,7 @@ import br.edu.ifpe.model.dao.UsuarioDao;
 import br.edu.ifpe.util.Mensagens;
 
 @Controller
-public class UsuarioController {
+public class LoginController {
 	
     @RequestMapping("/exibirIncluirUsuario")
     public String exibirIncluirUsuario() {
@@ -87,10 +87,13 @@ public class UsuarioController {
     }
 
     @RequestMapping("efetuarLogin")
-    public String efetuarLogin(Usuario usuario, HttpSession session, Model model) {
-
+    public String efetuarLogin(String siape, String senha, HttpSession session, Model model) {
+    Usuario usuarioLogado = new Usuario();
 	UsuarioDao dao = new UsuarioDao();
-	Usuario usuarioLogado = dao.buscarUsuario(usuario);
+	FormularioDao daoForm = new FormularioDao();
+	usuarioLogado.setSenha(senha);
+	usuarioLogado.setPessoa(daoForm.buscarPorIdPessoa(siape));
+	usuarioLogado = dao.buscarUsuario(usuarioLogado);
 	
 
 	

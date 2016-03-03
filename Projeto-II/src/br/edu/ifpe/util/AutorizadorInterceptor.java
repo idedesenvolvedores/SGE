@@ -8,7 +8,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 public class AutorizadorInterceptor extends HandlerInterceptorAdapter{
 
 	
-	//Esse Arquivo È do Professor. Ainda ser· editado.
+	//Esse Arquivo √© do Professor. Ainda ser√° editado.
 	
 	/*
 	
