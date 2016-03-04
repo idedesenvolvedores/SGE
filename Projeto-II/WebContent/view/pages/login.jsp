@@ -38,24 +38,34 @@
           <div class="col-md-8">
             <div class="jumbotron">
               <form class="form-horizontal" role="form" action="efetuarLogin">
+                <div class="container">
+                  <div class="col-sm-2">
+                    <img src="./view/imagens/logo-if.png" class="img-responsive">
+                  </div>
+                </div>
+                <br>
                 <div class="form-group has-success">
                   <div class="col-sm-2">
-                    <label for="login" class="control-label">Siape</label>
+                    <label for="login" class="control-label">
+                      <h3>Siape</h3>
+                    </label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="text" name="siape" class="form-control input-lg" id="inputText" placeholder="siape">
+                    <input type="text" class="form-control input-lg" id="inputText" placeholder="siape">
                   </div>
                 </div>
                 <div class="form-group has-success">
                   <div class="col-sm-2">
-                    <label for="senha" class="control-label">Senha</label>
+                    <label for="senha" class="control-label">
+                      <h3>Senha</h3>
+                    </label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="password" name="senha" class="form-control input-lg" id="inputPassword3" placeholder="senha">
+                    <input type="text" class="form-control input-lg" id="inputPassword3" placeholder="senha">
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-offset-2 col-lg-10">
+                  <div class="col-sm-offset-2 col-sm-10">
                     <button type="submit" class="btn btn-lg btn-success">Entrar</button>
                   </div>
                 </div>
