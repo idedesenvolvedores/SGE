@@ -1,10 +1,10 @@
 package br.edu.ifpe.controller;
 
-
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.Usuario;
@@ -14,121 +14,115 @@ import br.edu.ifpe.util.Mensagens;
 
 @Controller
 public class LoginController {
-	
-    @RequestMapping("/exibirIncluirUsuario")
-    public String exibirIncluirUsuario() {
 
-	return "usuario/incluirUsuario";
-    }
+	@RequestMapping("/exibirIncluirUsuario")
+	public String exibirIncluirUsuario() {
 
-    @RequestMapping("incluirUsuario")
-    public String incluirUsuario(Usuario usuario, Model model, Pessoa nome) {
-
-	UsuarioDao dao = new UsuarioDao();
-	FormularioDao dao2 = new FormularioDao();
-	dao.salvar(usuario);
-	dao2.salvarPessoa(nome);
-	model.addAttribute("msg", "O usu�rio " + nome.getNome() + " foi inserido com Sucesso !");
-
-	return "forward:listarUsuario";
-    }
-
-    /*
-    
-    @RequestMapping("/listarUsuario")
-    public String listarUsuario(Model model) {
-
-	UsuarioDao dao = new UsuarioDao();
-	List<Usuario> listaUsuario = dao.listar();
-	model.addAttribute("listaUsuario", listaUsuario);
-
-	return "usuario/pesquisarUsuario";
-    }
-
-    @RequestMapping("removerUsuario")
-    public String removerUsuario(Usuario usuario, Model model) {
-
-	UsuarioDao dao = new UsuarioDao();
-	dao.remover(usuario);
-	model.addAttribute("msg", "Usuário Removido com Sucesso !");
-
-	return "forward:listarUsuario";
-    }
-*/
-    @RequestMapping("exibirAlterarUsuario")
-    public String exibirAlterarUsuario(Usuario usuario, Model model) {
-
-	UsuarioDao dao = new UsuarioDao();
-	Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
-	model.addAttribute("usuario", usuarioPreenchido);
-
-	return "formulario/alterarSenha";
-    }
-
-    @RequestMapping("alterarUsuario")
-    public String alterarUsuario(Usuario usuario) {
-
-	UsuarioDao dao = new UsuarioDao();
-	dao.alterar(usuario);
-
-	return "formulario/alterarSenha";
-    }
-    
-    @RequestMapping("exibirIndexAdm")
-    public String exibirTelaAdmin( ) {
-
-	return "pages/indexAdmin";
-    }
-    
-    @RequestMapping("exibirIndexProfessor")
-    public String exibirTelaProfessor( ) {
-
-	return "pages/indexProfessor";
-    }
-
-    @RequestMapping("efetuarLogin")
-    public String efetuarLogin(String siape, String senha, HttpSession session, Model model) {
-    Usuario usuarioLogado = new Usuario();
-	UsuarioDao dao = new UsuarioDao();
-	FormularioDao daoForm = new FormularioDao();
-	usuarioLogado.setSenha(senha);
-	usuarioLogado.setPessoa(daoForm.buscarPorIdPessoa(siape));
-	usuarioLogado = dao.buscarUsuario(usuarioLogado);
-	
-
-	
-	
-	if (usuarioLogado != null) {
-	    
-		if (usuarioLogado.getTipoUsuario().equals(Mensagens.professor)) {
-			
-			session.setAttribute("usuarioLogado", usuarioLogado);
-		    return "forward:exibirIndexProfessor";
-			
-		}else {
-			
-			session.setAttribute("usuarioLogado", usuarioLogado);
-		    return "forward:exibirIndexAdm";
-			
-		}
-		
+		return "usuario/incluirUsuario";
 	}
 
-	model.addAttribute("msg", Mensagens.mensagemUsuarioNaoLogado);
-	return "index";
-    }
+	@RequestMapping("incluirUsuario")
+	public String incluirUsuario(Usuario usuario, Model model, Pessoa nome) {
 
-    @RequestMapping("logout")
-    public String logout(HttpSession session) {
+		UsuarioDao dao = new UsuarioDao();
+		FormularioDao dao2 = new FormularioDao();
+		dao.salvar(usuario);
+		dao2.salvarPessoa(nome);
+		model.addAttribute("msg", "O usu�rio " + nome.getNome() + " foi inserido com Sucesso !");
 
-	session.invalidate();
-	return "index";
-    }
+		return "forward:listarUsuario";
+	}
 
-    @RequestMapping("/exibirHome")
-    public String exibirHome(Usuario usuario, HttpSession session, Model model) {
+	/*
+	 * 
+	 * @RequestMapping("/listarUsuario") public String listarUsuario(Model
+	 * model) {
+	 * 
+	 * UsuarioDao dao = new UsuarioDao(); List<Usuario> listaUsuario =
+	 * dao.listar(); model.addAttribute("listaUsuario", listaUsuario);
+	 * 
+	 * return "usuario/pesquisarUsuario"; }
+	 * 
+	 * @RequestMapping("removerUsuario") public String removerUsuario(Usuario
+	 * usuario, Model model) {
+	 * 
+	 * UsuarioDao dao = new UsuarioDao(); dao.remover(usuario);
+	 * model.addAttribute("msg", "Usuário Removido com Sucesso !");
+	 * 
+	 * return "forward:listarUsuario"; }
+	 */
+	@RequestMapping("exibirAlterarUsuario")
+	public String exibirAlterarUsuario(Usuario usuario, Model model) {
 
-	return "principal/home";
-    }
-	
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
+		model.addAttribute("usuario", usuarioPreenchido);
+
+		return "formulario/alterarSenha";
+	}
+
+	@RequestMapping("alterarUsuario")
+	public String alterarUsuario(Usuario usuario) {
+
+		UsuarioDao dao = new UsuarioDao();
+		dao.alterar(usuario);
+
+		return "formulario/alterarSenha";
+	}
+
+	@RequestMapping("exibirIndexAdm")
+	public String exibirTelaAdmin() {
+
+		return "pages/indexAdmin";
+	}
+
+	@RequestMapping("exibirIndexProfessor")
+	public String exibirTelaProfessor() {
+
+		return "pages/indexProfessor";
+	}
+
+	@RequestMapping("efetuarLogin")
+	public String efetuarLogin(@RequestParam String siape, @RequestParam String senha, HttpSession session, Model model) {
+		
+		Usuario usuarioLogado = new Usuario();
+		UsuarioDao dao = new UsuarioDao();
+		FormularioDao daoForm = new FormularioDao();
+		usuarioLogado.setSenha(senha);
+		usuarioLogado.setPessoa(daoForm.buscarPorIdPessoa(siape));
+		usuarioLogado = dao.buscarUsuario(usuarioLogado);
+
+		if (usuarioLogado != null) {
+
+			if (usuarioLogado.getTipoUsuario().equals(Mensagens.professor)) {
+
+				session.setAttribute("usuarioLogado", usuarioLogado);
+				return "forward:exibirIndexProfessor";
+
+			} else {
+
+				session.setAttribute("usuarioLogado", usuarioLogado);
+				return "forward:exibirIndexAdm";
+
+			}
+
+		}
+
+		model.addAttribute("msg", Mensagens.mensagemUsuarioNaoLogado);
+		return "index";
+	}
+
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+
+		session.invalidate();
+		return "index";
+	}
+
+	@RequestMapping("/exibirHome")
+	public String exibirHome(Usuario usuario, HttpSession session, Model model) {
+
+		return "principal/home";
+	}
+
 }

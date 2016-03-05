@@ -51,7 +51,7 @@
                     </label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control input-lg" id="inputText" placeholder="siape">
+                    <input type="text" class="form-control input-lg" id="inputText" name="siape" placeholder="siape">
                   </div>
                 </div>
                 <div class="form-group has-success">
@@ -61,7 +61,7 @@
                     </label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control input-lg" id="inputPassword3" placeholder="senha">
+                    <input type="text" class="form-control input-lg" id="inputPassword3" name="senha" placeholder="senha">
                   </div>
                 </div>
                 <div class="form-group">
