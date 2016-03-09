@@ -5,7 +5,7 @@
     <div class="collapse navbar-collapse navbar-colapse">
       <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
         <li>
-          <a href="RegistroDeEntrga" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Registro de entrega</a>
+          <a href="RegistroDeEntrega" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Registro de entrega</a>
         </li>
         <li>
           <a href="IncluirProfessor" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Cadastro de professor </a>
@@ -28,7 +28,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
                     <li>
-			          <a href="RegistroDeEntrga" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Registro de entrega</a>
+			          <a href="RegistroDeEntrega" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Registro de entrega</a>
 			        </li>
 			        <li>
 			          <a href="IncluirProfessor" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Cadastro de professor </a>

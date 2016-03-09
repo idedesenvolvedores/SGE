@@ -15,7 +15,7 @@ import br.edu.ifpe.model.dao.RegistroDao;
 public class EntregaController {
 
 		
-		@RequestMapping("/RegistroDeEntrega")
+		@RequestMapping("RegistroDeEntrega")
 		public String incluirRegistro(Registro registro) {
 
 			return "pages/RegistroDeEntrega";

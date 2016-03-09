@@ -102,7 +102,7 @@ public class LoginController {
 			} else {
 
 				session.setAttribute("usuarioLogado", usuarioLogado);
-				return "forward:exibirIndexAdm";
+				return "pages/indexAdmin";
 
 			}
 
