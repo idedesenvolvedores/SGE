@@ -40,7 +40,7 @@
               <form class="form-horizontal" role="form" action="efetuarLogin" method="post">
                 <div class="container">
                   <div class="col-sm-2">
-                    <img src="./view/imagens/logo-if.png" class="img-responsive">
+                    <img src="./view/imagens/logoif.png" class="img-responsive">
                   </div>
                 </div>
                 <br>

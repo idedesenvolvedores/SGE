@@ -53,7 +53,7 @@
               </li>
               <li class="divider"></li>
               <li>
-                <a href="#" style="background-color: #359135; color: #FFFFFF"><i class="fa fa-fw fa-lg fa-power-off"></i> sair </a>
+                <a href="logout" style="background-color: #359135; color: #FFFFFF"><i class="fa fa-fw fa-lg fa-power-off"></i> sair </a>
               </li>
             </ul>
           </li>

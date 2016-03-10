@@ -33,6 +33,12 @@ public class LoginController {
 		return "forward:listarUsuario";
 	}
 
+	
+	
+
+	
+	
+	
 	/*
 	 * 
 	 * @RequestMapping("/listarUsuario") public String listarUsuario(Model
@@ -116,13 +122,13 @@ public class LoginController {
 	public String logout(HttpSession session) {
 
 		session.invalidate();
-		return "index";
+		return "forward:exibirIncluirUsuario";
 	}
 
 	@RequestMapping("/exibirHome")
 	public String exibirHome(Usuario usuario, HttpSession session, Model model) {
 
 		return "principal/home";
-	}
+	}	
 
 }
