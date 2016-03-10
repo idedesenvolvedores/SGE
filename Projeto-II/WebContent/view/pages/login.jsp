@@ -37,7 +37,7 @@
           <div class="col-md-2"></div>
           <div class="col-md-8">
             <div class="jumbotron">
-              <form class="form-horizontal" role="form" action="efetuarLogin">
+              <form class="form-horizontal" role="form" action="efetuarLogin" method="post">
                 <div class="container">
                   <div class="col-sm-2">
                     <img src="./view/imagens/logo-if.png" class="img-responsive">

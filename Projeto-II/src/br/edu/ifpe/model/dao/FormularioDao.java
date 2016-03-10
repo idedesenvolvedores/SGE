@@ -464,9 +464,9 @@ public class FormularioDao {
 
     PlanoTrabalho planoTrabalho = new PlanoTrabalho();
     planoTrabalho.setId(rs.getInt("id"));
-    planoTrabalho.setAtividadeApoio(rs.getString("atividadeApoiocampus"));
-    planoTrabalho.setAtividadePesquisa(rs.getString("atividadePesquisa"));
-    planoTrabalho.setAtividadeExtensao(rs.getString("atividadeExtensao"));
+    planoTrabalho.setAtividadeApoio(rs.getString("ATIVIDADE_APOIO"));
+    planoTrabalho.setAtividadePesquisa(rs.getString("ATIVIDADE_PESQUISA"));
+    planoTrabalho.setAtividadeExtensao(rs.getString("ATIVIDADE_EXTENSAO"));
     
 	return planoTrabalho;
     }
