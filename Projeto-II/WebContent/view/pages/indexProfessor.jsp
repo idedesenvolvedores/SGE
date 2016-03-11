@@ -19,40 +19,28 @@
 		    <div class="section">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <table class="table">
-              <thead>
-                <tr></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <a href="exibirIncluirCabecalho" class="btn btn-block btn-lg btn-success" style="padding:50; font-size:250%"><spam>Editar perfil</spam></a>
-                  </td>
-                  <td>
-                    <a href="alterarSenha" class="btn btn-block btn-lg btn-success" style="padding:50; font-size:250%">
-                      <spam>Alterar Senha</spam></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="exibirIncluirPlanoTrabalho" class="btn btn-block btn-lg btn-success" style="padding:50; font-size:250%"><spam>Plano de Trabalho</spam></a>
-                  </td>
-                  <td>
-                    <a href="exibirIncluirAtividadeEnsino" class="btn btn-block btn-lg btn-success" style="padding:50; font-size:250%"><spam>Atividade de Ensino(Aulas)</spam></a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <a href="exibirIncluirAtividadePedagogica" class="btn btn-block btn-lg btn-success" style="padding:50; font-size:250%"><spam>Atividades pedagogicas</spam></a>
-                  </td>
-                  <td>
-                    <a href="#" class="btn btn-block btn-lg btn-success" style="padding:50; font-size:250%">
-                      <spam>Imprimir formulário</spam></a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+             <!-- tela -->
+	       <div class="col-md-8">
+	       <div class="section">
+	      	<div class="col-md-10">
+	      	<br>
+	      	<br>
+	      	<br>
+	      	<br>
+	      	<br>
+     		<h2 class="text-center">Seja Bem vindo(a)</h2>
+          	<h2  class="text-center">Esse é o sistema de gerenciamento de entrega - SGE
+           	<br>acesse o menu ao lado para ir a pagina que desejar</h2>
+            <br>
+	      	<br>
+	      	<br>
+	      	<br>
+	      	<br>
+           	<h6   class="text-center">este sistema foi desenvolvido pela primeira turma</h6>
+           	<h6   class="text-center">de informática para internet do capus IFPE Jaboatão dos Guararapes Noite </h6>
+            
+	      	</div>
+	   	</div>            
           </div>
         </div>
       </div>

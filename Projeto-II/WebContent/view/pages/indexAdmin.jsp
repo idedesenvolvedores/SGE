@@ -33,9 +33,5 @@
 	      	</div>
 	   	</div>
 	   </div>
-	  </div>
-	
-    <div class="section" style="padding: 0; bottom:0; margin:0;	position:absolute; 	width:100%;">
-		<c:import url="../menu/rodape.jsp" />
-	</div>       	
+	  </div>  	
    

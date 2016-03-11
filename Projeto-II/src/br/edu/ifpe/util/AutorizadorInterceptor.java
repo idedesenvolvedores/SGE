@@ -13,7 +13,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 
 		String uri = request.getRequestURI();
 		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("img") || uri.contains("js")
-				|| uri.endsWith("Projeto-II/") || uri.endsWith("efetuarLogin")) {
+				|| uri.endsWith("Projeto-II/view/index") || uri.endsWith("efetuarLogin")) {
 
 			return true;
 		}
@@ -23,7 +23,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			return true;
 		}
 
-		response.sendRedirect("/Projeto-II");
+		response.sendRedirect("view/index");
 		return false;
 	}
 

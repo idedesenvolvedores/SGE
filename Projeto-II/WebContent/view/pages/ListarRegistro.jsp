@@ -46,7 +46,7 @@
 									</div>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<div class="col-md-4">
-										<a class="btn btn-warning"
+										<a class="btn btn-danger"
 										
 											href="removerRegistro?id=${registro.id}">Remover</a>
 									</div>
@@ -67,9 +67,4 @@
 
 		</div>
 	</div>
-</div>
-
-<div class="section"
-	style="padding: 0; bottom: 0; margin: 0; position: absolute; width: 100%;">
-	<c:import url="../menu/rodape.jsp" />
 </div>

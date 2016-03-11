@@ -19,7 +19,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="alert alert-warning">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true" href="logout">×</button>
               <i class="fa fa-exclamation"></i>
               <strong>Página não encontrada</strong>
               <hr class="message-inner-separator">

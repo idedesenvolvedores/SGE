@@ -53,44 +53,30 @@
                 </thead>
               
              <c:forEach var="professor" items="${listaProfessor}">
-                  <tr>
-<td> ${professor.nome} </td>
-<td> ${professor.siape} </td>
-<td> ${professor.email} </td>
-<td> ${professor.telefone} </td>
-<td> ${professor.id} </td>
-<td>
-	    		<a href="exibirAlterarProfessor?id=${professor.id}">Editar</a>
-	    		<a href="removerProfessor?id=${professor.id}">Remover</a>
-	    	</td>
-
-</tr>
-</c:forEach>
+                 <tr>
+					<td> ${professor.nome} </td>
+					<td> ${professor.siape} </td>
+					<td> ${professor.email} </td>
+					<td> ${professor.telefone} </td>
+					<td> ${professor.id} </td>
+					<td>
+	    				<a href="exibirAlterarProfessor?id=${professor.id}">Editar</a>
+			    		<a href="removerProfessor?id=${professor.id}">Remover</a>
+			    	</td>
+				</tr>
+			</c:forEach>
 
                
               </table>
           
            <div class="col-md-2">
               <a class="btn btn-success">Voltar</a>
-           
-           
-           
-            </div>
-           
-            
-           
-         
+           </div>
           </div>
         </div>
       </div>
     </div>
-
-    
     </div>
-
-<div class="section" style="padding: 0; bottom:0; margin:0;	position:absolute; 	width:100%;">
-		<c:import url="../menu/rodape.jsp" />
-	</div>
   
 
 
