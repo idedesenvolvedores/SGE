@@ -8,9 +8,6 @@
           <a href="RegistroDeEntrega" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Registro de entrega</a>
         </li>
         <li>
-          <a href="IncluirProfessor" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Cadastro de professor </a>
-        </li>
-        <li>
           <a href="exibirAlterarProfessor" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg"></i> Editar cadastro de professor </a>
         </li>
         <li>
@@ -27,11 +24,8 @@
     <!-- para nevagação em disposiivos móveis-->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
-                    <li>
+                   <li>
 			          <a href="RegistroDeEntrega" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Registro de entrega</a>
-			        </li>
-			        <li>
-			          <a href="IncluirProfessor" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Cadastro de professor </a>
 			        </li>
 			        <li>
 			          <a href="exibirAlterarProfessor" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg"></i> Editar cadastro de professor </a>

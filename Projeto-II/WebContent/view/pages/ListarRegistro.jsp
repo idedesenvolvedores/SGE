@@ -59,7 +59,7 @@
 					</tbody>
 				</table>
 				<div class="col-md">
-					<a class="btn btn-success" href="RegistroDeEntrga">Voltar</a>
+					<a class="btn btn-success" href="RegistroDeEntrega">Voltar</a>
 				</div>
 			</div>
 
