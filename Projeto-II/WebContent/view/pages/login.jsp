@@ -61,7 +61,7 @@
                     </label>
                   </div>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control input-lg" id="inputPassword3" name="senha" placeholder="senha" required="required">
+                    <input type="password" class="form-control input-lg" id="inputPassword3" name="senha" placeholder="senha" required="required">
                   </div>
                 </div>
                 <div class="form-group">
