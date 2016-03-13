@@ -31,20 +31,15 @@ public class FormularioDao {
     public void salvarPessoa(Pessoa pessoa) {
 
 	try {
-	    String sql = "INSERT INTO PESSOA (SIAPE, NOME, EMAIL, TELEFONE, "
-	    		+ "CAMPUS, REG_TRABALHO, AREA, CLASSE, DIRETORIA) "
-	    		+ "VALUES (?,?,?,?,?,?,?,?,?)";
+	    String sql = "INSERT INTO PESSOA (TELEFONE, "+ "CAMPUS, REG_TRABALHO, AREA, CLASSE, DIRETORIA) "+ "VALUES (?,?,?,?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, pessoa.getSiape());
-	    stmt.setString(2, pessoa.getNome());
-	    stmt.setString(3, pessoa.getEmail());
-	    stmt.setString(4, pessoa.getTelefone());
-	    stmt.setString(5, pessoa.getCampus());
-	    stmt.setString(6, pessoa.getRegime());
-	    stmt.setString(7, pessoa.getArea());
-	    stmt.setString(8, pessoa.getClasse());
-	    stmt.setString(9, pessoa.getDiretoria());
+	    stmt.setString(1, pessoa.getTelefone());
+	    stmt.setString(2, pessoa.getCampus());
+	    stmt.setString(3, pessoa.getRegime());
+	    stmt.setString(4, pessoa.getArea());
+	    stmt.setString(5, pessoa.getClasse());
+	    stmt.setString(6, pessoa.getDiretoria());
 
 	    stmt.execute();
 	    stmt.close();
@@ -302,9 +297,7 @@ public class FormularioDao {
  	try {
 
  	    PreparedStatement stmt = connection.prepareStatement(sql);
- 	    stmt.setString(1, pessoa.getSiape());
- 	    stmt.setString(2, pessoa.getNome());
- 	    stmt.setString(3, pessoa.getEmail());
+ 	    
  	    stmt.setString(4, pessoa.getTelefone());
  	    stmt.setString(5, pessoa.getCampus());
  	    stmt.setString(6, pessoa.getRegime());
@@ -445,11 +438,8 @@ public class FormularioDao {
     private Pessoa montarObjetoPessoa(ResultSet rs) throws SQLException {
 
     Pessoa pessoa = new Pessoa();
-    pessoa.setSiape(rs.getString("siape"));
     pessoa.setCampus(rs.getString("campus"));
     pessoa.setDiretoria(rs.getString("diretoria"));
-    pessoa.setNome(rs.getString("nome"));
-    pessoa.setEmail(rs.getString("email"));
     pessoa.setTelefone(rs.getString("telefone"));
     pessoa.setArea(rs.getString("area"));
     pessoa.setClasse(rs.getString("classe"));

@@ -6,7 +6,7 @@
      <div class="container">
       <div class="col-md-12" style="padding-left: 20%">
         <div class="row">
-            <legend>ATIVIDADES DE ENSINO (AULAS)</legend>
+            <P>ATIVIDADES DE ENSINO (AULAS)</P>
         </div>
         <br>
         

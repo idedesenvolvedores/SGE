@@ -19,11 +19,11 @@
 		<property name="prefix" value="/view/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
+	<!-- --> 
 	<mvc:interceptors>
 		<bean class="br.edu.ifpe.util.AutorizadorInterceptor" />
 	</mvc:interceptors>
-	
+	 
 	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
 		<property name="converters">
 			<list>

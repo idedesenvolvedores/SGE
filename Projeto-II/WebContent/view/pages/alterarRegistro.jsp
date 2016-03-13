@@ -60,7 +60,7 @@
                </div>
                <div class="form-group">
                  <div class="col-sm-offset-2 col-sm-10">
-                   <button type="reset" class="btn btn-danger">cancelar</button>&nbsp;&nbsp;&nbsp;
+                   <a class="btn btn-warning" href="listaRegistro">Voltar</a>&nbsp;&nbsp;&nbsp;
                    <button type="submit" class="btn btn-success">Alterar</button>
                  </div>
                </div>

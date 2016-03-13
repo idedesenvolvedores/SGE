@@ -7,7 +7,7 @@
     <div class="container">
       <div class="col-md-12" style="padding-left: 20%">
         <div class="row">
-            <legend>DADOS CADASTRAIS</legend>
+            <h3>DADOS CADASTRAIS</h3>
         </div>
         <br>
         <form action="alterarPessoa" method="post">

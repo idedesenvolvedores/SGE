@@ -28,7 +28,7 @@ public class EntregaController {
 			RegistroDao dao = new RegistroDao();
 			dao.salvar(registro);
 			model.addAttribute("mensagem", "Registro de  "+registro.getNome()+" foi  adicionado!");
-			return "pages/RegistroDeEntrega";
+			return "forward: listaRegistro";
 
 		}
 		

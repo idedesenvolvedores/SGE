@@ -17,7 +17,7 @@
           <a href="EditarPerfil" style="color: #FFFFFF"><i class="fa fa-folder-open fa-lg"></i> Editar perfil </a>
         </li>
         <li>
-          <a href="CadastroUsuario" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
+          <a href="exibirIncluirUsuario" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
         </li>
       </ul>
     </div>
@@ -37,7 +37,7 @@
 			          <a href="EditarPerfil" style="color: #FFFFFF"><i class="fa fa-folder-open fa-lg"></i> Editar perfil </a>
 			        </li>
 			        <li>
-			          <a href="CadastroUsuario" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
+			          <a href="exibirIncluirUsuario" style="color: #FFFFFF"><i class="fa fa-lg fa-user"></i> Cadastrar usuário </a>
 			        </li>
                  </ul>
             </div>

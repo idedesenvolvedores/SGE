@@ -44,19 +44,19 @@ public class PessoaController {
     }
     
     //--------- Alterar Pessoa -----------//
-    
+    /*
     @RequestMapping("/exibirAlterarPessoa")
     public String exibirAlterarPessoa(Model model, Pessoa pessoa) {
 
 	FormularioDao dao = new FormularioDao();
-	pessoa = dao.buscarPorIdPessoa(pessoa.getSiape());
+	pessoa = dao.buscarPorIdPessoa(pessoa.());
 	model.addAttribute("Pessoa", pessoa);
 
 	return "formulario/alterarPessoa";
     }
     
     //--------- Remover Pessoa -----------//
-    /*
+    
     @RequestMapping("removerPessoa")
     public String removerPessoa(Pessoa pessoa, Model model) {
 

@@ -6,11 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import br.edu.ifpe.model.classes.AtividadeEnsino;
-import br.edu.ifpe.model.classes.AtividadePedagogica;
-import br.edu.ifpe.model.classes.Pessoa;
-import br.edu.ifpe.model.classes.PlanoTrabalho;
 import br.edu.ifpe.model.classes.TipoUsuario;
 import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
@@ -32,12 +27,13 @@ public class UsuarioDao {
 
 		try {
 
-		    String sql = "INSERT INTO USUARIO (SENHA, SIAPEFK, ID_TIPO_USUARIO) VALUES (SGE123,?,?)";
+		    String sql = "INSERT INTO USUARIO (SIAPE, NOME, EMAIL, SENHA, ID_TIPO_USUARIO) VALUES (?, ?, ?, ?, ?)";
 		    PreparedStatement stmt = connection.prepareStatement(sql);
-		    stmt.setString(1, usuario.getSenha());
-		    stmt.setString(2, usuario.getPessoa().getSiape());
-		    stmt.setInt(3, usuario.getTipoUsuario().getId());
-		    
+		    stmt.setString(1, usuario.getSiape());
+	 	    stmt.setString(2, usuario.getNome());
+	 	    stmt.setString(3, usuario.getEmail());
+		    stmt.setString(4, usuario.getSenha());
+		    stmt.setInt(5, usuario.getTipoUsuario().getId());		    
 		    
 		    stmt.execute();
 		    stmt.close();
@@ -45,14 +41,13 @@ public class UsuarioDao {
 
 		} catch (SQLException e) {
 		    throw new RuntimeException(e);
-		}
+			}
 	    }
-/*
 	    public List<Usuario> listar() {
 
 		try {
 		    List<Usuario> listaUsuario = new ArrayList<Usuario>();
-		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM usuario ORDER BY nome");
+		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM USUARIO ORDER BY nome");
 
 		    ResultSet rs = stmt.executeQuery();
 
@@ -68,22 +63,22 @@ public class UsuarioDao {
 
 		} catch (SQLException e) {
 		    throw new RuntimeException(e);
-		}
+			}
 	    }
 
 	    public void remover(Usuario usuario) {
 
 		try {
-		    PreparedStatement stmt = connection.prepareStatement("DELETE FROM usuario WHERE id = ?");
+		    PreparedStatement stmt = connection.prepareStatement("DELETE FROM USUARIO WHERE id = ?");
 		    stmt.setLong(1, usuario.getId());
 		    stmt.execute();
 		    stmt.close();
 		    connection.close();
 		} catch (SQLException e) {
 		    throw new RuntimeException(e);
+		    }
 		}
-	    }
-*/
+	    
 	    public Usuario buscarPorId(int id) {
 
 		try {
@@ -108,13 +103,13 @@ public class UsuarioDao {
 
 	    public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE usuario SET SENHA = ? , SIAPEFK = ? , ID_TIPO_USUARIO = ?  WHERE id = ?";
+		String sql = "UPDATE usuario SET SENHA = ? , SIAPE = ? , ID_TIPO_USUARIO = ?  WHERE id = ?";
 
 		try {
 
 		    PreparedStatement stmt = connection.prepareStatement(sql);
 		    stmt.setString(1, usuario.getSenha());
-		    stmt.setString(2, usuario.getPessoa().getSiape());
+		    stmt.setString(2, usuario.getSiape());
 		    stmt.setInt(3, usuario.getTipoUsuario().getId());
 		    stmt.execute();
 		    stmt.close();
@@ -130,8 +125,8 @@ public class UsuarioDao {
 		try {
 
 		    Usuario usuarioConsultado = null;
-		    PreparedStatement stmt = this.connection.prepareStatement("select * from USUARIO where SIAPEFK = ? and SENHA = ? ");
-		    stmt.setString(1, usuario.getPessoa().getSiape());
+		    PreparedStatement stmt = this.connection.prepareStatement("select * from USUARIO where SIAPE = ? and SENHA = ? ");
+		    stmt.setString(1, usuario.getSiape());
 		    stmt.setString(2, usuario.getSenha());
 		    ResultSet rs = stmt.executeQuery();
 
@@ -152,6 +147,9 @@ public class UsuarioDao {
 
 		Usuario usuario = new Usuario();
 		usuario.setId(rs.getInt("id"));
+		usuario.setNome(rs.getString("nome"));
+		usuario.setSiape(rs.getString("siape"));
+		usuario.setEmail(rs.getString("email"));
 		usuario.setSenha(rs.getString("senha"));
 		TipoUsuarioDao tipoDao = new TipoUsuarioDao();
 		TipoUsuario tipousuario = tipoDao.buscarPorId(rs.getInt("id_tipo_usuario"));

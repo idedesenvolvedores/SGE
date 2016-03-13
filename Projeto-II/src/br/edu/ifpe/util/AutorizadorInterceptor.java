@@ -1,8 +1,7 @@
 package br.edu.ifpe.util;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletRequest; 
 import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
@@ -12,8 +11,12 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 
 		String uri = request.getRequestURI();
-		if (uri.contains("bootstrap") || uri.contains("css") || uri.contains("img") || uri.contains("js")
-				|| uri.endsWith("Projeto-II/view/index") || uri.endsWith("efetuarLogin")) {
+		if (uri.contains("bootstrap")
+				|| uri.contains("css")
+				|| uri.contains("png")
+				|| uri.contains("js")
+				|| uri.endsWith("index")
+				|| uri.endsWith("efetuarLogin")) {
 
 			return true;
 		}
@@ -23,7 +26,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			return true;
 		}
 
-		response.sendRedirect("view/index");
+		response.sendRedirect("Projeto-II/");
 		return false;
 	}
 
