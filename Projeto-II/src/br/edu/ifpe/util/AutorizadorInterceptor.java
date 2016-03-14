@@ -15,8 +15,11 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				|| uri.contains("css")
 				|| uri.contains("png")
 				|| uri.contains("js")
+				|| uri.contains("404")
+				|| uri.contains("login")
 				|| uri.endsWith("index")
 				|| uri.endsWith("efetuarLogin")
+			    || uri.endsWith("Projeto-II/")
 				) {
 
 			return true;
@@ -27,7 +30,7 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 			return true;
 		}
 
-		response.sendRedirect("Projeto-II/");
+		response.sendRedirect("/Projeto-II");
 		return false;
 	}
 

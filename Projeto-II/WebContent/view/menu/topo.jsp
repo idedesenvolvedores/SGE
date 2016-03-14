@@ -59,9 +59,7 @@
 					style="background-color: #359135; color: #FFFFFF">
 					<li><a href="exibirAlterarUsuario?id=${usuarioLogado.id}" style="background-color: #359135; color: #FFFFFF"><i class="fa fa-fw fa-gear fa-lg"></i> conta </a></li>
 					<li class="divider"></li>
-					<li><a href="logout"
-						style="background-color: #359135; color: #FFFFFF"><i
-							class="fa fa-fw fa-lg fa-power-off"></i> sair </a></li>
+					<li><a href="logout"style="background-color: #359135; color: #FFFFFF"><i class="fa fa-fw fa-lg fa-power-off"></i> sair </a></li>
 				</ul></li>
 		</ul>
 		</nav>

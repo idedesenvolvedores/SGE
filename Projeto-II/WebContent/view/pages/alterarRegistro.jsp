@@ -54,9 +54,7 @@
                  <div class="col-sm-4">
                    <label for="inputPassword3" class="control-label">Data de entrega</label>
                  </div>
-                 <div class="col-sm-8">
-                   <input type="text" class="form-control"  name="dataEntrega" value="${registro.dataEntrega}"  placeholder="mm/dd/aaaa" >
-                 </div>
+                
                </div>
                <div class="form-group">
                  <div class="col-sm-offset-2 col-sm-10">

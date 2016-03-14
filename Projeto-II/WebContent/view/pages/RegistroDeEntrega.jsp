@@ -50,14 +50,7 @@
                           </div>
                          </div>
 	                        
-                      	<div class="form-group">
-                          <div class="col-sm-4">
-                            <label for="inputText" class="control-label">Data de entrega</label>
-                          </div>
-                          <div class="col-sm-8">
-                            <input type="text" class="form-control" id="data" placeholder="Data de entrega" name="dataEntrega">
-                          </div>
-                        </div>
+                      	
 	                        
 			       <div class="form-group">
 			          <div class="col-sm-offset-2 col-sm-10">

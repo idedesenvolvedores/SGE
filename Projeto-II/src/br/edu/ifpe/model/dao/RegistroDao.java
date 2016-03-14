@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import br.edu.ifpe.model.classes.Registro;
@@ -32,7 +32,7 @@ public class RegistroDao {
 			stmt.setString(1, registro.getNome());
 			stmt.setString(2, registro.getSiape());
 			stmt.setString(3, registro.getSemestre());
-			stmt.setDate(4, new java.sql.Date(((Date) registro.getDataEntrega()).getTime()));
+			stmt.setDate(4, new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 
 			stmt.execute();
 			stmt.close();
@@ -126,8 +126,7 @@ public class RegistroDao {
 			stmt.setString(1, registro.getNome());
 			stmt.setString(2, registro.getSiape());
 			stmt.setString(3, registro.getSemestre());
-			
-				stmt.setDate(4, new java.sql.Date(registro.getDataEntrega().getTime()));
+			stmt.setDate(4, new java.sql.Date(Calendar.getInstance().getTime().getTime()));
 		
 
 				stmt.setInt(5, registro.getId());
