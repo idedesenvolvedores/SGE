@@ -7,7 +7,7 @@
      <div class="collapse navbar-collapse navbar-colapse">
       <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
         <li>
-         <a href="exibirIncluirCabecalho" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
+         <a href="exibirIncluirPessoa" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
         </li>
         <li>
 		<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
@@ -22,7 +22,7 @@
 			<a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
         </li>
         <li>
-			<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
+			<a href="exibirAlterarUsuario" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
         </li>
       </ul>
     </div>
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
                     <li>
-						<a href="exibirIncluirCabecalho" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
+						<a href="exibirIncluirPessoa" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
 			        </li>
 			        <li>
 						<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
@@ -47,7 +47,7 @@
 			          <a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
 			        </li>
 			        <li>
-						<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
+						<a href="exibirAlterarUsuario" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
 			        </li>
                  </ul>
             </div>

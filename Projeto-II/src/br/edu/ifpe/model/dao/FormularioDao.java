@@ -11,6 +11,7 @@ import br.edu.ifpe.model.classes.AtividadeEnsino;
 import br.edu.ifpe.model.classes.AtividadePedagogica;
 import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.PlanoTrabalho;
+import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
 
 public class FormularioDao {
@@ -339,11 +340,11 @@ public class FormularioDao {
      
      //--------- Buscar por id Pessoa --------------//
      
-     public Pessoa buscarPorIdPessoa(String siape) {
+     public Pessoa buscarPorIdPessoa(int id) {
 
     		try {
-    		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE siape = ?");
-    		    stmt.setString(1, siape);
+    		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE ID = ?");
+    		    stmt.setInt(1, id);
     		    ResultSet rs = stmt.executeQuery();
 
     		    Pessoa pessoa = null;
@@ -484,8 +485,5 @@ public class FormularioDao {
     atividadeEnsino.setCargaHoraria(rs.getInt("cargaHoraria"));
     
 	return atividadeEnsino;
-    }
-
-    
-    
+    }    
 }

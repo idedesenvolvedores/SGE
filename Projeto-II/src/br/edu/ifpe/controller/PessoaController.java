@@ -44,17 +44,17 @@ public class PessoaController {
     }
     
     //--------- Alterar Pessoa -----------//
-    /*
+
     @RequestMapping("/exibirAlterarPessoa")
     public String exibirAlterarPessoa(Model model, Pessoa pessoa) {
 
 	FormularioDao dao = new FormularioDao();
-	pessoa = dao.buscarPorIdPessoa(pessoa.());
+	pessoa = dao.buscarPorIdPessoa(pessoa.getId());
 	model.addAttribute("Pessoa", pessoa);
 
 	return "formulario/alterarPessoa";
     }
-    
+    /*
     //--------- Remover Pessoa -----------//
     
     @RequestMapping("removerPessoa")

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,8 +21,7 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
-<title>Página não encontrada</title>
+<title>Erro de Sistema</title>
 </head>
 <body>
 	<div class="section">
@@ -33,29 +33,25 @@
     </div>
     <div class="section">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="alert alert-warning">
-              <button type="button" class="close" data-dismiss="alert" aria-hidden="true" href="exibirLogin">×</button>
-              <i class="fa fa-exclamation"></i>
-              <strong>Página não encontrada</strong>
-              <hr class="message-inner-separator">
-              <p>Desculpe a pagina que você procura não existe ou não foi encontrada.</p>
-            </div>
-          </div>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true" href="exibirLogin">×</button>
+          <i class="fa fa-exclamation-triangle"></i>
+          <strong>Ops algo saiu errado...</strong>
+          <strong>o sistema apresentou erro</strong>
+          <hr class="message-inner-separator">
+          <p>Perdoe o inconviniente, entre em contato com o administrador.</p>
+          <h5 class="text-danger">idedesenvolvedores@gmail.com</h5>
         </div>
       </div>
     </div>
-    <div class="col-sm-6 col-md-6">
     <div class="section">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <a class="btn btn-success" href="exibirLogin">voltar ao inicio</a>
+            <a class="btn btn-success" href="exibirHome">voltar ao inicio</a>
           </div>
         </div>
       </div>
-    </div>
     </div>
 </body>
 </html>

@@ -16,7 +16,8 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				|| uri.contains("png")
 				|| uri.contains("js")
 				|| uri.endsWith("index")
-				|| uri.endsWith("efetuarLogin")) {
+				|| uri.endsWith("efetuarLogin")
+				) {
 
 			return true;
 		}
