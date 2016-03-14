@@ -40,7 +40,7 @@ public class PessoaController {
 	FormularioDao dao = new FormularioDao();
 	List<Pessoa> listaPessoa = dao.listarPessoa();
 	model.addAttribute("listaPessoa", listaPessoa);
-	return "formulario/pesquisarPessoa";
+	return "pages/listarProfessor";
     }
     
     //--------- Alterar Pessoa -----------//

@@ -197,7 +197,7 @@ public class FormularioDao {
 	try {
 
 	    List<Pessoa> listaPessoa= new ArrayList<Pessoa>();
-	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PESSOA ORDER BY ID");
+	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM USUARIO WHERE ID_TIPO_USUARIO LIKE 2 ORDER BY ID");
 
 	    ResultSet rs = stmt.executeQuery();
 

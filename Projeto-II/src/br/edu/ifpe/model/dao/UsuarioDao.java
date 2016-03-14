@@ -43,11 +43,11 @@ public class UsuarioDao {
 		    throw new RuntimeException(e);
 			}
 	    }
-	    public List<Usuario> listar() {
+	    public List<Usuario> listarUser() {
 
 		try {
 		    List<Usuario> listaUsuario = new ArrayList<Usuario>();
-		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM USUARIO ORDER BY nome");
+		    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM USUARIO WHERE ID_TIPO_USUARIO = 1  ORDER BY NOME");
 
 		    ResultSet rs = stmt.executeQuery();
 
@@ -66,6 +66,29 @@ public class UsuarioDao {
 			}
 	    }
 
+	    public List<Usuario> listarProf() {
+
+			try {
+			    List<Usuario> listaUsuario = new ArrayList<Usuario>();
+			    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM USUARIO WHERE ID_TIPO_USUARIO = 2  ORDER BY NOME");
+
+			    ResultSet rs = stmt.executeQuery();
+
+			    while (rs.next()) {
+				listaUsuario.add(montarObjeto(rs));
+			    }
+
+			    rs.close();
+			    stmt.close();
+			    connection.close();
+
+			    return listaUsuario;
+
+			} catch (SQLException e) {
+			    throw new RuntimeException(e);
+				}
+		    }
+	    
 	    public void remover(Usuario usuario) {
 
 		try {
@@ -103,21 +126,22 @@ public class UsuarioDao {
 
 	    public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE usuario SET SENHA = ? , SIAPE = ? , ID_TIPO_USUARIO = ?  WHERE id = ?";
+		String sql = "UPDATE USUARIO SET SENHA = ?, NOME = ?, EMAIL = ? WHERE id = ?";
 
 		try {
 
 		    PreparedStatement stmt = connection.prepareStatement(sql);
 		    stmt.setString(1, usuario.getSenha());
-		    stmt.setString(2, usuario.getSiape());
-		    stmt.setInt(3, usuario.getTipoUsuario().getId());
+		    stmt.setString(2, usuario.getNome());
+		    stmt.setString(3, usuario.getEmail());
+		    stmt.setInt(4, usuario.getId());		    
 		    stmt.execute();
 		    stmt.close();
 		    connection.close();
 
 		} catch (SQLException e) {
 		    throw new RuntimeException(e);
-		}
+			}
 	    }
 
 	    public Usuario buscarUsuario(Usuario usuario) {
