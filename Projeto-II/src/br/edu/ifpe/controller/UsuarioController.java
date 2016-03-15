@@ -26,7 +26,7 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		dao.salvar(usuario);
 		model.addAttribute("msg", "O usu�rio " + usuario.getNome() + " foi inserido com Sucesso !");
-		return "forward:listarUsuario";
+		return "pages/indexAdmin";
 	 }
 
 	  @RequestMapping("/listarUsuario")
