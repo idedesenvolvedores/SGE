@@ -15,78 +15,11 @@ import br.edu.ifpe.util.Mensagens;
 @Controller
 public class LoginController {
 
-	@RequestMapping("/exibirIncluirUsuario")
-	public String exibirIncluirUsuario() {
-
-		return "usuario/incluirUsuario";
-	}
-
-	@RequestMapping("incluirUsuario")
-	public String incluirUsuario(Usuario usuario, Model model, Pessoa nome) {
-
-		UsuarioDao dao = new UsuarioDao();
-		
-		dao.salvar(usuario);
-		model.addAttribute("msg", "O usu�rio " + usuario.getNome() + " foi inserido com Sucesso !");
-
-		return "forward:listarUsuario";
-	}
-
-	/*
-	 * 
-	 * @RequestMapping("/listarUsuario") public String listarUsuario(Model
-	 * model) {
-	 * 
-	 * UsuarioDao dao = new UsuarioDao(); List<Usuario> listaUsuario =
-	 * dao.listar(); model.addAttribute("listaUsuario", listaUsuario);
-	 * 
-	 * return "usuario/pesquisarUsuario"; }
-	 * 
-	 * @RequestMapping("removerUsuario") public String removerUsuario(Usuario
-	 * usuario, Model model) {
-	 * 
-	 * UsuarioDao dao = new UsuarioDao(); dao.remover(usuario);
-	 * model.addAttribute("msg", "Usuário Removido com Sucesso !");
-	 * 
-	 * return "forward:listarUsuario"; }
-	 */
-	@RequestMapping("exibirAlterarUsuario")
-	public String exibirAlterarUsuario(Usuario usuario, Model model) {
-
-		UsuarioDao dao = new UsuarioDao();
-		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
-		model.addAttribute("usuario", usuarioPreenchido);
-
-		return "formulario/alterarSenha";
-	}
-
-	@RequestMapping("alterarUsuario")
-	public String alterarUsuario(Usuario usuario) {
-
-		UsuarioDao dao = new UsuarioDao();
-		dao.alterar(usuario);
-
-		return "formulario/alterarSenha";
-	}
-
-	@RequestMapping("exibirIndexAdm")
-	public String exibirTelaAdmin() {
-
-		return "pages/indexAdmin";
-	}
-
-	@RequestMapping("exibirIndexProfessor")
-	public String exibirTelaProfessor() {
-
-		return "pages/indexProfessor";
-	}
-
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(@RequestParam String siape, @RequestParam String senha, HttpSession session, Model model) {
 		
 		Usuario usuarioLogado = new Usuario();
 		UsuarioDao dao = new UsuarioDao();
-		FormularioDao daoForm = new FormularioDao();
 		usuarioLogado.setSenha(senha);
 		usuarioLogado.setSiape(siape);
 		usuarioLogado = dao.buscarUsuario(usuarioLogado);
