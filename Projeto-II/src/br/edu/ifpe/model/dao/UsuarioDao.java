@@ -126,7 +126,7 @@ public class UsuarioDao {
 
 	    public void alterar(Usuario usuario) {
 
-		String sql = "UPDATE USUARIO SET SENHA = ?, NOME = ?, EMAIL = ? WHERE id = ?";
+		String sql = "UPDATE USUARIO SET senha = ?, nome = ?, email = ? WHERE id = ?";
 
 		try {
 

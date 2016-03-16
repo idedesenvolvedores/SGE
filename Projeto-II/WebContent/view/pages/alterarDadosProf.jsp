@@ -20,6 +20,8 @@
 	          <h2 class="text-center">Atualizar dados</h2>
 	           <form class="form-horizontal" role="form" action="alterarProfessor" method="post">
 	            <div class="form-group">
+	            <input type="hidden" name="id" value="${usuarioPreenchido.id}">
+	            <input type="hidden" name="senha" value="${usuarioPreenchido.senha}">
 	              <div class="col-sm-2">
 	                <label for="inputNome3" class="control-label">Nome</label>
 	              </div>

@@ -1,15 +1,13 @@
 package br.edu.ifpe.controller;
 
-import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
-import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.model.dao.UsuarioDao;
-import br.edu.ifpe.util.Mensagens;
 
 @Controller
 public class UsuarioController {
@@ -100,7 +98,7 @@ public class UsuarioController {
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.alterar(usuario);
-		model.addAttribute("usuario", usuario);
+		model.addAttribute("usuario",usuario);
 		return "pages/indexAdmin";
 	}
 	
@@ -110,7 +108,7 @@ public class UsuarioController {
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
 		model.addAttribute("usuarioPreenchido", usuarioPreenchido);
-		return "pages/alterarSenha";
+		return "pages/alterarDadosUsuario";
 	}
 
 	@RequestMapping("alterarUsuario")

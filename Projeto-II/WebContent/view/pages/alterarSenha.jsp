@@ -19,6 +19,8 @@
 	      	 <br><br><br>
 	          <h2 class="text-center">Atualizar dados</h2>
 	           <form class="form-horizontal" role="form" action="alterarDados" method="post">
+	           <input type="hidden" name="id" value="${usuarioPreenchido.id}">
+	            
 	            <div class="form-group">
 	              <div class="col-sm-2">
 	                <label for="inputNome3" class="control-label">Nome</label>
