@@ -10,7 +10,7 @@
          <a href="exibirIncluirPessoa" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
         </li>
         <li>
-		<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
+		<a href="exibirAlterarUsuario" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
         </li>
         <li>
 		<a href="exibirIncluirPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
@@ -22,7 +22,7 @@
 			<a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
         </li>
         <li>
-			<a href="exibirAlterarUsuario" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
+			<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
         </li>
       </ul>
     </div>
@@ -35,7 +35,7 @@
 						<a href="exibirIncluirPessoa" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
 			        </li>
 			        <li>
-						<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
+						<a href="exibirAlterarUsuario" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
 			        </li>
 			        <li>
 			          <a href="exibirIncluirPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
@@ -47,7 +47,7 @@
 			          <a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
 			        </li>
 			        <li>
-						<a href="exibirAlterarUsuario" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
+						<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
 			        </li>
                  </ul>
             </div>
