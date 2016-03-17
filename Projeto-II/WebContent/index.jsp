@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<c:import url="view/pages/login.jsp" />
+	<c:import url="iniciarLogin" />
 
 </body>
 </html>

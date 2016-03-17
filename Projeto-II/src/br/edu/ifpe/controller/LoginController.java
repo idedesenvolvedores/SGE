@@ -16,7 +16,7 @@ import br.edu.ifpe.util.Mensagens;
 public class LoginController {
 
 	@RequestMapping("efetuarLogin")
-	public String efetuarLogin(@RequestParam String siape, @RequestParam String senha, HttpSession session, Model model) {
+	public String efetuarLogin(String siape, String senha, HttpSession session, Model model) {
 		
 		Usuario usuarioLogado = new Usuario();
 		UsuarioDao dao = new UsuarioDao();
@@ -41,6 +41,7 @@ public class LoginController {
 		}
 
 		model.addAttribute("msg", Mensagens.mensagemUsuarioNaoLogado);
+		model.addAttribute("msgvisualizar", "");
 		return "pages/login";
 	}
 
@@ -48,13 +49,14 @@ public class LoginController {
 	public String logout(HttpSession session) {
 		
 		session.invalidate();
-		return "pages/login";
+		return "forward:iniciarLogin";
 	}
 
-	@RequestMapping("/exibirHome")
-	public String exibirHome(Usuario usuario, HttpSession session, Model model) {
+	@RequestMapping("/iniciarLogin")
+	public String exibirHome(Model model) {
 
-		return "principal/home";
+		model.addAttribute("msgvisualizar", "none");
+		return "pages/login";
 	}
 
 }

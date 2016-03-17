@@ -84,6 +84,24 @@ public class UsuarioController {
 		return "logout";
 	}
 
+	@RequestMapping("exibirAlteraDadosProf")
+	public String exibirAlteraDadosProf(Model model,  Usuario usuario) {
+
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
+		model.addAttribute("usuarioPreenchido", usuarioPreenchido);
+		return "pages/alterarSenha";
+	}
+	
+	@RequestMapping("alterarDadosProf")
+	public String alterarDadosProf(Model model,Usuario usuario) {
+
+		UsuarioDao dao = new UsuarioDao();
+		dao.alterar(usuario);
+		model.addAttribute("usuario", usuario);
+		return "logout";
+	}
+	
 	@RequestMapping("exibirAlterarProfessor")
 	public String exibirAlterarProfessor(Model model,  Usuario usuario) {
 
