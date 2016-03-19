@@ -49,11 +49,7 @@
                </div>
                
                
-               
-               <div class="form-group">
-                 <div class="col-sm-4">
-                   <label for="inputPassword3" class="control-label">Data de entrega</label>
-                 </div>
+              
                 
                </div>
                <div class="form-group">

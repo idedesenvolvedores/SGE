@@ -14,9 +14,11 @@ import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.model.dao.FormularioDao;
 import br.edu.ifpe.model.dao.UsuarioDao;
 
-@Controller
+//@Controller
 public class FormularioController {
 
+	
+	/*
 //----------- Incluir ------------//	
 
 	
@@ -190,5 +192,5 @@ public class FormularioController {
 	
 	return "formulario/alterarPlanoTrabalho";
     }
-    
+    */
 }

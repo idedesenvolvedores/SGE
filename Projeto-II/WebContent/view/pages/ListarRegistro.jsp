@@ -6,6 +6,8 @@
 <div class="section">
 	<c:import url="../menu/topo.jsp" />
 </div>
+
+
 <div class="col-md-12">
 	<!-- menu lateral -->
 	<div class="col-md-4">
