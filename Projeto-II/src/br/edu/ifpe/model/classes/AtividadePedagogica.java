@@ -5,7 +5,7 @@ public class AtividadePedagogica {
 	private int id;
 	private String atividade;
 	private String portaria;
-	
+	private PlanoTrabalho id_tipo_planoTrabalho;
 	
 	public int getId() {
 		return id;
@@ -26,6 +26,13 @@ public class AtividadePedagogica {
 		this.portaria = portaria;
 	}
 
+	public PlanoTrabalho getId_tipo_planoTrabalho() {
+		return id_tipo_planoTrabalho;
+	}
+
+	public void setId_tipo_planoTrabalho(PlanoTrabalho id_tipo_planoTrabalho) {
+		this.id_tipo_planoTrabalho = id_tipo_planoTrabalho;
+	}
 	
 	
 }

@@ -6,7 +6,7 @@ public class AtividadeEnsino {
 	private String disciplina;
 	private String curso;
 	private int cargaHoraria;
-
+	private PlanoTrabalho id_tipo_planoTrabalho;
 	
 	public int getId() {
 		return id;
@@ -32,5 +32,14 @@ public class AtividadeEnsino {
 	public void setCargaHoraria(int cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
 	}
+
+	public PlanoTrabalho getId_tipo_planoTrabalho() {
+		return id_tipo_planoTrabalho;
+	}
+
+	public void setId_tipo_planoTrabalho(PlanoTrabalho id_tipo_planoTrabalho) {
+		this.id_tipo_planoTrabalho = id_tipo_planoTrabalho;
+	}
+
 	
 }

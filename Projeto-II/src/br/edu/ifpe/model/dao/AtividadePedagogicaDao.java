@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifpe.model.classes.AtividadePedagogica;
+import br.edu.ifpe.model.classes.PlanoTrabalho;
 import br.edu.ifpe.util.ConnectionFactory;
 
 public class AtividadePedagogicaDao {
@@ -28,12 +29,13 @@ public class AtividadePedagogicaDao {
     public void salvarAtividadePedagogica(AtividadePedagogica atividadePedagogica) {
 
 	try {
-	    String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA)" + "VALUES (?,?)";
+	    String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA, ID_PLANO_TRABALHO)" + "VALUES (?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, atividadePedagogica.getAtividade());
 	    stmt.setString(2, atividadePedagogica.getPortaria());
-
+	    stmt.setInt(3, atividadePedagogica.getId_tipo_planoTrabalho().getId());
+	    
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -83,7 +85,7 @@ public class AtividadePedagogicaDao {
 	}
     }
 
-     //------- Alterar----------//
+     /*------- Alterar----------//
      
      public void alterarAtividadePedagogica(AtividadePedagogica atividadePedagogica) {
 
@@ -101,7 +103,7 @@ public class AtividadePedagogicaDao {
  	} catch (SQLException e) {
  	    throw new RuntimeException(e);
  	}
-     }
+     }*/
 
      //--------- Buscar por id--------------//
      
@@ -133,6 +135,8 @@ public class AtividadePedagogicaDao {
     atividadePedagogica.setId(rs.getInt("id"));
     atividadePedagogica.setAtividade(rs.getString("ATIVIDADE"));
     atividadePedagogica.setPortaria(rs.getString("PORTARIA"));
+	PlanoTrabalhoDao tipoPlanoDao = new PlanoTrabalhoDao();
+
     
 	return atividadePedagogica;
     }
