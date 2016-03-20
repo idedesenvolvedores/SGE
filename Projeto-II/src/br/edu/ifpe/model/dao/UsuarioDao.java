@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
 import br.edu.ifpe.model.classes.TipoUsuario;
 import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
@@ -32,7 +35,8 @@ public class UsuarioDao {
 		    stmt.setString(1, usuario.getSiape());
 	 	    stmt.setString(2, usuario.getNome());
 	 	    stmt.setString(3, usuario.getEmail());
-		    stmt.setString(4, usuario.getSenha());
+	 		stmt.setString(4, DigestUtils.md5Hex(usuario.getSenha()));
+	 	    // stmt.setString(4, usuario.getSenha());
 		    stmt.setInt(5, usuario.getTipoUsuario().getId());		    
 		    
 		    stmt.execute();
@@ -131,7 +135,8 @@ public class UsuarioDao {
 		try {
 
 		    PreparedStatement stmt = connection.prepareStatement(sql);
-		    stmt.setString(1, usuario.getSenha());
+		    stmt.setString(1, DigestUtils.md5Hex(usuario.getSenha()));
+		    //stmt.setString(1, usuario.getSenha());
 		    stmt.setString(2, usuario.getNome());
 		    stmt.setString(3, usuario.getEmail());
 		    stmt.setInt(4, usuario.getId());		    
@@ -151,7 +156,8 @@ public class UsuarioDao {
 		    Usuario usuarioConsultado = null;
 		    PreparedStatement stmt = this.connection.prepareStatement("select * from USUARIO where SIAPE = ? and SENHA = ? ");
 		    stmt.setString(1, usuario.getSiape());
-		    stmt.setString(2, usuario.getSenha());
+		    stmt.setString(2,DigestUtils.md5Hex(usuario.getSenha()));
+		    //stmt.setString(2, usuario.getSenha());
 		    ResultSet rs = stmt.executeQuery();
 
 		    if (rs.next()) {
