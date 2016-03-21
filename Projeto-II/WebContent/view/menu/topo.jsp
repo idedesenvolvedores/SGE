@@ -44,7 +44,7 @@
 				<span class="sr-only">Navegação</span> <span class="icon-bar"></span>
 				<span class="icon-bar"></span> <span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="exibirHome" style="color: #FFFFFF">IFPE
+			<a class="navbar-brand" style="color: #FFFFFF">IFPE
 				- S.G.E V1.0</a>
 		</div>
 		<!-- Top Menu Items -->
@@ -57,7 +57,7 @@
 				<b class="caret"></b></a>
 				<ul class="dropdown-menu"
 					style="background-color: #359135; color: #FFFFFF">
-					<li><a href="exibirAlteraDados?id=${usuarioLogado.id}" style="background-color: #359135; color: #FFFFFF"><i class="fa fa-fw fa-gear fa-lg"></i> conta </a></li>
+					<li><a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="background-color: #359135; color: #FFFFFF"><i class="fa fa-fw fa-gear fa-lg"></i> conta </a></li>
 					<li class="divider"></li>
 					<li><a href="logout"style="background-color: #359135; color: #FFFFFF"><i class="fa fa-fw fa-lg fa-power-off"></i> sair </a></li>
 				</ul></li>

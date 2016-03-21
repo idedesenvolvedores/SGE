@@ -20,7 +20,7 @@
 	          <h2 class="text-center">Atualizar dados</h2>
 	           <form class="form-horizontal" role="form" action="alterarUsuario" method="post">
 	           <input type="hidden" name="id" value="${usuarioPreenchido.id}">
-	            
+	            <input type="hidden" name="senha" value="${usuarioPreenchido.senha}">
 	            <div class="form-group">
 	              <div class="col-sm-2">
 	                <label for="inputNome3" class="control-label">Nome</label>
@@ -37,14 +37,6 @@
 	                <input type="text" class="form-control" id="inputEmail" name="email" value="${usuarioPreenchido.email}" placeholder="Email">
 	              </div>
 	            </div> 
-	            <div class="form-group">
-	              <div class="col-sm-2">
-	                <label for="inputSenha" class="control-label">Senha</label>
-	              </div>
-	              <div class="col-sm-10">
-	                <input type="password" class="form-control" id="inputPassword3" name="senha" value="${usuarioPreenchido.senha}" placeholder="Senha">
-	              </div>
-	            </div>
 	            </div>
 	            <div class="form-group">
 	              <div class="col-sm-offset-2 col-sm-10">

@@ -65,7 +65,7 @@
 	            </div>
 	            <div class="form-group">
 	              <div class="col-sm-offset-2 col-sm-10">
-	                <a class="btn btn-warning" href="indexAdmin">Voltar</a>
+	                <a class="btn btn-warning" href="exibirIndexAdm">Voltar</a>
 	                &nbsp;&nbsp;&nbsp;
 	                <button type="submit" class="btn btn-success">cadastrar</button>
 	              </div>

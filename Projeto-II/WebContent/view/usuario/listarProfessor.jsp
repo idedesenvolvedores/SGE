@@ -11,6 +11,7 @@
         <div class="col-md-4">
         	<c:import url="../menu/menuAdmin.jsp" />
         </div>
+        
         <!-- tela -->
 	       <div class="col-md-8">
 	      <div class="section">

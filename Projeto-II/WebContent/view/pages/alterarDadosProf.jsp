@@ -9,7 +9,7 @@
       
         <!-- menu lateral -->
         <div class="col-md-4">
-        	<c:import url="../menu/menuProfessor.jsp" />
+        	<c:import url="../menu/menuAdmin.jsp" />
 	    </div>
 	    
 	        <!-- tela -->
