@@ -13,13 +13,13 @@
 		<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
         </li>
         <li>
-		<a href="exibirIncluirPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
+		<a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
         </li>
         <li>
-		<a href="exibirIncluirAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
+		<a href="listarAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
         </li>
         <li>
-			<a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
+			<a href="listarAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
         </li>
         <li>
 			<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
@@ -38,13 +38,13 @@
 						<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
 			        </li>
 			        <li>
-			          <a href="exibirIncluirPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
+			          <a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
 			        </li>
 			        <li>
-						<a href="exibirIncluirAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
+						<a href="listarAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
 			        </li>
 			        <li>
-			          <a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
+			          <a href="listarAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
 			        </li>
 			        <li>
 						<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>

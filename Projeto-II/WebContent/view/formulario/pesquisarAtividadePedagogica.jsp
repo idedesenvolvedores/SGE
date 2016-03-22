@@ -3,31 +3,63 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
-	<div style="text-align: center; color: red;"> ${mensagem} </div>
-
-	<hr>
-	<h3>Atividade Pedagógica</h3>
-	<hr>
+ <div class="section">
+	<c:import url="../menu/topo.jsp" />
+</div>
+<div class="col-md-12">
+	<!-- menu lateral -->
+	<div class="col-md-3">
+        	
+		<c:import url="../menu/menuProfessor.jsp" />
 	
-	<table border='1' style='width: 100%;'>
-		<tr style='background-color: #E6E6E6; font-weight: bold;'>
-			<td> ID </td>
-			<td> ATIVIDADE </td>
-			<td> PORTARIA </td>
-			<td> AÇÕES </td>
-		</tr>
+	</div>
+        
+    <!-- tela -->
+	<div class="col-md-8">
+		<div class="section">
+			<div class="col-md-12">
+			<br>
+            <legend>ATIVIDADES ADMINISTRATIVO-PEDAGÓGICAS</legend>
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <a href="exibirIncluirAtividadePedagogica" class="btn btn-info btn-sm">
+          		<span class="glyphicon glyphicon-plus"></span> Adicionar
+        	</a>
+              </div>
+            </div>
+		
 
-	<c:forEach var="listaAtividadePedagogica" items="${listaAtividadePedagogica}">
-		<tr>
-	    	<td> ${listaAtividadePedagogica.id} </td>
-	    	<td> ${listaAtividadePedagogica.atividade} </td>
-	    	<td> ${listaAtividadePedagogica.portaria} </td>
-	    	<td>
-	    		<a href="removerAtividadePedagogica?id=${listaAtividadeEnsino.id}">Remover</a>
-	    	</td>
-	    </tr>
-	</c:forEach>
-	</table>
+		<br>
+				<div style="text-align: center; color: red;"> ${mensagem} </div>
+		<br>
 
-
-<c:import url="../menu/menuProfessor.jsp" />
+            <!-- Table -->
+            <table class="table table-hover" style="">
+              <thead>
+                <tr style="background-color:#D8D8D8">
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center;">ID</th>
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">ATIVIDADE</th>
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">PORTARIA</th>
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">ALTERAR / REMOVER</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <c:forEach var="listaAtividadePedagogica" items="${listaAtividadePedagogica}">
+                <tr>
+                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;">${listaAtividadePedagogica.id}</td>
+                  <td align="justify" style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;">${listaAtividadePedagogica.atividade}</td>
+                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="justify">${listaAtividadePedagogica.portaria}</td>
+                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="center">
+                    <a href="removerAtividadePedagogica?id=${listaAtividadePedagogica.id}" class="btn btn-info btn-xs">
+          <span class="glyphicon glyphicon-remove"></span> Remover
+        </a>
+                  </td>
+                </tr>
+                </c:forEach>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
