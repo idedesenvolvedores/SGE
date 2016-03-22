@@ -24,7 +24,7 @@
 	                <label for="inputNome3" class="control-label">Nome</label>
 	              </div>
 	              <div class="col-sm-10">
-	                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+	                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required="required">
 	              </div>
 	            </div>
 	            <div class="form-group">
@@ -32,7 +32,7 @@
 	                <label for="inputSiape" class="control-label">Siape</label>
 	              </div>
 	              <div class="col-sm-10">
-	                <input type="text" class="form-control" id="input" name="siape" placeholder="Siape">
+	                <input type="text" class="form-control" id="input" name="siape" placeholder="Siape" required="required">
 	              </div>
 	            </div>
 	            <div class="form-group">
@@ -40,15 +40,15 @@
 	                <label for="inputEmail" class="control-label">Email</label>
 	              </div>
 	              <div class="col-sm-10">
-	                <input type="text" class="form-control" id="inputEmail" name="email" placeholder="Email">
+	                <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" required="required">
 	              </div>
 	            </div> 
 	            <div class="form-group">
 	              <div class="col-sm-2">
-	                <label for="inputSenha" class="control-label">Senha</label>
+					<!--  <label for="inputSenha" class="control-label">Senha</label> -->
 	              </div>
 	              <div class="col-sm-10">
-	                <input type="password" class="form-control" id="inputPassword3" name="senha" placeholder="Senha">
+	                <input type="hidden" class="form-control" id="inputPassword3" name="senha" placeholder="Senha">
 	              </div>
 	            </div>
 	             

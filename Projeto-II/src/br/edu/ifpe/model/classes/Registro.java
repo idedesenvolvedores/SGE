@@ -2,15 +2,22 @@ package br.edu.ifpe.model.classes;
 
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class Registro {
 	
 	
 	private  int id;
+	
 	private String nome;
+	
 	private String siape;
+	
 	private String semestre;
+	
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataEntrega;
 	

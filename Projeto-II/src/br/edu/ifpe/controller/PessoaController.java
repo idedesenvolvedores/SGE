@@ -14,59 +14,61 @@ import br.edu.ifpe.model.dao.UsuarioDao;
 @Controller
 public class PessoaController {
 
-	
-//----------- Incluir Pessoa ------------//
-	
-    @RequestMapping("/exibirIncluirPessoa")
-    public String exibirIncluirPessoa() {
 
-	return "formulario/incluirPessoa";
-    }
+	//----------- Incluir Pessoa ------------//
 
-    @RequestMapping("salvarPessoa")
-    public String incluirPessoa(Pessoa pessoa, Usuario usuario) {
+	@RequestMapping("/exibirIncluirPessoa")
+	public String exibirIncluirPessoa(Model model,  Usuario usuario) {
 
-	PessoaDao dao = new PessoaDao();
-	UsuarioDao dao2 = new UsuarioDao();
-	dao.salvarPessoa(pessoa);
-	dao2.salvar(usuario);
-	return "forward:listarPessoa";
-    }
-    
- //--------- Listar Pessoa -----------//    
-    
-    @RequestMapping("listarPessoa")
-    public String listarPessoa(Model model) {
+		UsuarioDao dao = new UsuarioDao();
+		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
+		model.addAttribute("usuarioPreenchido", usuarioPreenchido);
+		return "formulario/incluirPessoa";
+	}
 
-    PessoaDao dao = new PessoaDao();
-	List<Pessoa> listaPessoa = dao.listarPessoa();
-	model.addAttribute("listaPessoa", listaPessoa);
-	return "pages/listarProfessor";
-    }
-    
-    //--------- Alterar Pessoa -----------//
+	@RequestMapping("salvarPessoa")
+	public String incluirPessoa(Pessoa pessoa, Usuario usuario) {
 
-    @RequestMapping("/exibirAlterarPessoa")
-    public String exibirAlterarPessoa(Model model, Pessoa pessoa) {
+		PessoaDao dao = new PessoaDao();
+		dao.salvarPessoa(pessoa);
+		return "forward:listarPessoa";
+	}
 
-    PessoaDao dao = new PessoaDao();
-	pessoa = dao.buscarPorIdPessoa(pessoa.getId());
-	model.addAttribute("Pessoa", pessoa);
+	//--------- Listar Pessoa -----------//    
 
-	return "formulario/alterarPessoa";
-    }
-    
-<<<<<<< HEAD
-    @RequestMapping("imprimirFormulario")
-    public String imprimirFormulario() {
+	@RequestMapping("listarPessoa")
+	public String listarPessoa(Model model) {
 
-	return "formulario/formulario";
-    }
-    /*
+		PessoaDao dao = new PessoaDao();
+		
+		List<Pessoa> listaPessoa = dao.listarPessoa();
+		model.addAttribute("listaPessoa", listaPessoa);
+		return "pages/listarProfessor";
+	}
+
+	//--------- Alterar Pessoa -----------//
+
+	@RequestMapping("/exibirAlterarPessoa")
+	public String exibirAlterarPessoa(Model model, Pessoa pessoa) {
+
+		PessoaDao dao = new PessoaDao();
+		pessoa = dao.buscarPorIdPessoa(pessoa.getId());
+		model.addAttribute("Pessoa", pessoa);
+
+		return "formulario/alterarPessoa";
+	}
+
+
+	@RequestMapping("imprimirFormulario")
+	public String imprimirFormulario() {
+
+		return "formulario/formulario";
+	}
+	/*
 =======
 >>>>>>> 0828236511e0547f844aee73262134776b364363
     //--------- Remover Pessoa -----------//
-    
+
     @RequestMapping("removerPessoa")
     public String removerPessoa(Pessoa pessoa, Model model) {
 
@@ -75,5 +77,5 @@ public class PessoaController {
 	model.addAttribute("mensagem", "Usuario removido com Sucesso");
 
 	return "forward:listarAtividadeEnsino";
-    } 
+    } */
 }

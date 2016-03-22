@@ -3,9 +3,13 @@ package br.edu.ifpe.model.classes;
 public class Usuario {
 
 	private int id;
+	
 	private String siape;
+	
 	private String nome;
+	
 	private String email;
+	
 	private String senha;
 	private TipoUsuario tipoUsuario;
 	

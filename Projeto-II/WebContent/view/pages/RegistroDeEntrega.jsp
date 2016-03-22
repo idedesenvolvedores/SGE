@@ -17,6 +17,7 @@
 	      	<div style="text-align: center; color: red;"> ${mensagem} </div>
 				<h2 class="text-center">Registro de Entrega</h2>
 			    	<form action="salvarRegistro" class="form-horizontal" role="form" method="post">
+			        
 			        	<div class="form-group">
 			        		<div>
 			                	<input type="hidden" class="form-control">

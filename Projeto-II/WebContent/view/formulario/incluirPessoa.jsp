@@ -136,9 +136,9 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
+              	<input class="form-control" id="inputText" type="hidden" name="usuarioId" value="${usuarioLogado.siape}"">
                 <label class="control-label" for="exampleInputEmail1">CAMPUS</label>
-                <input class="form-control" id="exampleInputEmail1" placeholder="Campus"
-                type="text" name="campus">
+                <input class="form-control" id="exampleInputEmail1" placeholder="Campus" type="text" name="campus">
               </div>
             </div>
             <div class="col-md-6">
@@ -155,15 +155,14 @@
             <div class="col-md-9">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">PROFESSOR(A)</label>
-                <input class="form-control" id="exampleInputEmail1"
-                placeholder="Professor(a)" type="text" name="nome">
+                <input class="form-control" id="exampleInputEmail1" placeholder="Professor(a)" type="text"  value="${usuarioLogado.nome}">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">MATRÍCULA SIAPE Nº</label>
                 <input class="form-control" id="exampleInputEmail1"
-                placeholder="Matrícula Siape" type="text" name="siape">
+                placeholder="Matrícula Siape" type="text" value="${usuarioLogado.siape}">
               </div>
             </div>
           </div>
@@ -172,15 +171,13 @@
             <div class="col-md-9">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">EMAIL</label>
-                <input class="form-control" id="exampleInputEmail1" placeholder="Email"
-                type="email" name="email">
+                <input class="form-control" id="exampleInputEmail1" placeholder="Email" type="email"  value="${usuarioLogado.email}">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">TELEFONE</label>
-                <input class="form-control" id="exampleInputEmail1" placeholder="Telefone"
-                type="text" name="telefone">
+                <input class="form-control" id="exampleInputEmail1" placeholder="Telefone" type="text" name="telefone">
               </div>
             </div>
           </div>
@@ -189,15 +186,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">ÁREA DE CONHECIMENTO</label>
-                <input class="form-control" id="exampleInputEmail1"
-                placeholder="Área de Conhecimento" type="text" name="area">
+                <input class="form-control" id="exampleInputEmail1"  placeholder="Área de Conhecimento" type="text" name="area">
               </div>
             </div>
             <div class="col-md-3">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">CLASSE (ART. 1°)</label>
-                <input class="form-control" id="exampleInputEmail1"
-                placeholder="Classe (artigo 1º)" type="text" name="classe">
+                <input class="form-control" id="exampleInputEmail1"  placeholder="Classe (artigo 1º)" type="text" name="classe">
               </div>
             </div>
             <div class="col-md-3">

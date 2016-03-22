@@ -19,7 +19,8 @@
                <div class="form-group">
                
                 <input type="hidden" name="id" value="${registro.id}">
-                
+                <form:errors path="registro.nome" cssStyle="color:red" />
+                <form:errors path="registro.siape" cssStyle="color:red" />
                  <div class="col-sm-2">
                    <label for="inputNome3" class="control-label">Nome</label>
                  </div>

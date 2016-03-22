@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifpe.model.classes.Pessoa;
+import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
 
 public class PessoaDao {
@@ -38,6 +39,7 @@ public class PessoaDao {
 	    stmt.setString(4, pessoa.getArea());
 	    stmt.setString(5, pessoa.getClasse());
 	    stmt.setString(6, pessoa.getDiretoria());
+	    //stmt.setInt(7, pessoa.getUsuario().getId());   
 
 	    stmt.execute();
 	    stmt.close();
@@ -54,7 +56,7 @@ public class PessoaDao {
 	try {
 
 	    List<Pessoa> listaPessoa= new ArrayList<Pessoa>();
-	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM USUARIO WHERE ID_TIPO_USUARIO LIKE 2 ORDER BY ID");
+	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PESSOA ORDER BY ID");
 
 	    ResultSet rs = stmt.executeQuery();
 
@@ -150,6 +152,9 @@ public class PessoaDao {
     pessoa.setArea(rs.getString("area"));
     pessoa.setClasse(rs.getString("classe"));
     pessoa.setRegime(rs.getString("reg_trabalho"));
+    
+    UsuarioDao dao = new UsuarioDao();
+    pessoa.setUsuario(dao.buscarPorId(rs.getInt("usuarioId")));
     
 	return pessoa;
     }

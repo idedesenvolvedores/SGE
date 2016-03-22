@@ -7,7 +7,7 @@
      <div class="collapse navbar-collapse navbar-colapse">
       <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
         <li>
-         <a href="exibirIncluirPessoa" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
+         <a href="exibirIncluirPessoa?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Complementar Perfil </a>
         </li>
         <li>
 		<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
                     <li>
-						<a href="exibirIncluirPessoa" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Editar Perfil </a>
+						<a href="exibirIncluirPessoa?id=${usuarioLogado.id}"" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Complementar Perfil </a>
 			        </li>
 			        <li>
 						<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>

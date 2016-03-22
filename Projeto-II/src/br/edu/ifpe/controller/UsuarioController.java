@@ -1,13 +1,9 @@
 package br.edu.ifpe.controller;
 
-import java.util.List;
-
-import javax.servlet.http.HttpSession;
-
+import java.util.List; 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.model.dao.UsuarioDao;
 import br.edu.ifpe.util.Mensagens;
@@ -24,7 +20,8 @@ public class UsuarioController {
 
 	//cadastra usuario
 	@RequestMapping("incluirUsuario")
-	public String incluirUsuario(Usuario usuario, Model model) {
+	public String incluirUsuario( Usuario usuario, Model model) {
+
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.salvar(usuario);
@@ -97,7 +94,7 @@ public class UsuarioController {
 
 	//altera senha e ou dados
 	@RequestMapping("alterarDados")
-	public String alterarDados(Model model,Usuario usuario) {
+	public String alterarDados( Usuario usuario, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.alterar(usuario);
@@ -108,8 +105,9 @@ public class UsuarioController {
 
 	//exibe tela para alteração de dados do professor
 	@RequestMapping("alterarSenhaProfessor")
-	public String exibirAlteraDadosProf(Model model,  Usuario usuario) {
+	public String exibirAlteraDadosProf( Usuario usuario, Model model) {
 
+	
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
 		model.addAttribute("usuarioPreenchido", usuarioPreenchido);
@@ -118,8 +116,9 @@ public class UsuarioController {
 	
 	//exibe tela para alteração de dados do professor
 		@RequestMapping("alterarSenhaAdministrador")
-		public String alterarSenhaAdministrador(Model model,  Usuario usuario) {
+		public String alterarSenhaAdministrador(Usuario usuario,Model model) {
 
+			
 			UsuarioDao dao = new UsuarioDao();
 			Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
 			model.addAttribute("usuarioPreenchido", usuarioPreenchido);
@@ -128,7 +127,7 @@ public class UsuarioController {
 
 	//exibe pagina de alteração de dados do professor usado pelo administrador
 	@RequestMapping("exibirAlterarProfessor")
-	public String exibirAlterarProfessor(Model model,  Usuario usuario) {
+	public String exibirAlterarProfessor( Usuario usuario, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
@@ -138,7 +137,7 @@ public class UsuarioController {
 
 	//altera dados do professor
 	@RequestMapping("alterarProfessor")
-	public String alterarProfessor(Model model,Usuario usuario) {
+	public String alterarProfessor(Usuario usuario,  Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.alterar(usuario);
@@ -148,7 +147,7 @@ public class UsuarioController {
 
 	//exibe pagina de alteração de dados do usuario
 	@RequestMapping("exibirAlterarUsuario")
-	public String exibirAlterarUsuario(Model model,  Usuario usuario) {
+	public String exibirAlterarUsuario(Usuario usuario, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
 		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
@@ -158,8 +157,9 @@ public class UsuarioController {
 
 	//altera usuario e retorna para página principal do administrador 
 	@RequestMapping("alterarUsuario")
-	public String alterarUsuario (Model model,Usuario usuario) {
+	public String alterarUsuario ( Usuario usuario, Model model) {
 
+	
 		UsuarioDao dao = new UsuarioDao();
 		dao.alterar(usuario);
 		model.addAttribute("usuario", usuario);

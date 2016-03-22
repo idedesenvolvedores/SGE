@@ -9,7 +9,15 @@ public class Pessoa {
 	private String area;
 	private String classe;
 	private String regime;
+	private Usuario usuario;
 	
+	
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 	public int getId() {
 		return id;
 	}
