@@ -67,7 +67,7 @@
 		<div class="row">
             <legend>ATIVIDADES ADMINISTRATIVO-PEDAGÓGICAS</legend>
         </div>
-       <form action="salvarCabecalho" method="post">
+         <form action="incluirAtividadePedagogica" method="post">
           <br>
           <div class="row">
             <div class="col-md-8">

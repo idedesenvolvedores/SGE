@@ -3,65 +3,69 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<div class="section">
+
+ <div class="section">
 	<c:import url="../menu/topo.jsp" />
 </div>
-<!--  <c:import url="../menu/menuProfessor.jsp" /> -->
-
-
 <div class="col-md-12">
 	<!-- menu lateral -->
-	<div class="col-md-4">
-	<c:import url="../menu/menuProfessor.jsp" />
+	<div class="col-md-3">
+        	
+		<c:import url="../menu/menuProfessor.jsp" />
 	
 	</div>
-	<!-- tela -->
+        
+    <!-- tela -->
 	<div class="col-md-8">
 		<div class="section">
 			<div class="col-md-12">
-				<hr>
-				<div style="text-align: center; color: red;">${mensagem}</div>
-				<h3 contenteditable="true" align="center">Atividade de Ensino</h3>
+			<br>
+            <legend>ATIVIDADES DE ENSINO (AULAS)</legend>
+            <div class="panel panel-success">
+              <div class="panel-heading">
+                <a href="exibirIncluirAtividadeEnsino" class="btn btn-info btn-sm">
+          		<span class="glyphicon glyphicon-plus"></span> Adicionar
+        	</a>
+              </div>
+            </div>
+		
 
-				<table class="table">
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>DISCIPLINA</th>
-							<th>CURSO</th>
-							<th>CARGA HORÁRIA</th>
-							<th>&nbsp;&nbsp; AÇÕES</th>
-						</tr>
-					</thead>
-					<tbody>
+		<br>
+				<div style="text-align: center; color: red;"> ${mensagem} </div>
+		<br>
 
-						<c:forEach var="listaAtividadeEnsino" items="${listaAtividadeEnsino}">
-							<tr>
-
-								<td>${listaAtividadeEnsino.id}</td>
-								<td>${listaAtividadeEnsino.disciplina}</td>
-								<td>${listaAtividadeEnsino.curso}</td>
-								<td>${listaAtividadeEnsino.cargaHoraria}</td>
-								<td>
-									<div class="col-md-4">
-										<a href="exibirAlterarAtividadeEnsino?id=${listaAtividadeEnsino.id}">Editar</a>
-									</div>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<div class="col-md-4">
-							    		<a href="removerAtividadeEnsino?id=${listaAtividadeEnsino.id}">Remover</a>
-									</div>
-
-								</td>
-
-							</tr>
-						</c:forEach>
-
-					</tbody>
-				</table>
-				<div class="col-md">
-					<a class="btn btn-success" href="exibirIncluirAtividadeEnsino">Voltar</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+            <!-- Table -->
+            <table class="table table-hover" style="">
+              <thead>
+                <tr style="background-color:#D8D8D8">
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center;">ID</th>
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">DISCIPLINAS / COMPONENTES CURRICULARES</th>
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">CURSO</th>
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">CARGA HORÁRIA</th>
+                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">ALTERAR / REMOVER</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <c:forEach var="listaAtividadeEnsino" items="${listaAtividadeEnsino}">
+                <tr>
+                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;">${listaAtividadeEnsino.id}</td>
+                  <td align="justify" style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;">${listaAtividadeEnsino.disciplina}</td>
+                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="justify">${listaAtividadeEnsino.curso}</td>
+                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="justify">${listaAtividadeEnsino.cargaHoraria}</td>
+                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="center">
+                    <a href="exibirAlterarAtividadeEnsino?id=${listaAtividadeEnsino.id}" class="btn btn-info btn-xs">
+          <span class="glyphicon glyphicon-remove"></span> Editar
+        </a>&nbsp;&nbsp;
+                    <a href="removerAtividadeEnsino?id=${listaAtividadeEnsino.id}" class="btn btn-info btn-xs">
+          <span class="glyphicon glyphicon-remove"></span> Remover
+        </a>
+                  </td>
+                </tr>
+                </c:forEach>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>

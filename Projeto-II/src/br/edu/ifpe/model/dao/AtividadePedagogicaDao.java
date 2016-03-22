@@ -29,12 +29,14 @@ public class AtividadePedagogicaDao {
     public void salvarAtividadePedagogica(AtividadePedagogica atividadePedagogica) {
 
 	try {
-	    String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA, ID_PLANO_TRABALHO)" + "VALUES (?,?,?)";
 	    
+		//String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA, ID_PLANO_TRABALHO)" + "VALUES (?,?,?)";
+		String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA) VALUES (?,?)";
+		
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, atividadePedagogica.getAtividade());
 	    stmt.setString(2, atividadePedagogica.getPortaria());
-	    stmt.setInt(3, atividadePedagogica.getId_tipo_planoTrabalho().getId());
+	    //stmt.setInt(3, atividadePedagogica.getId_tipo_planoTrabalho().getId());
 	    
 	    stmt.execute();
 	    stmt.close();
@@ -85,7 +87,7 @@ public class AtividadePedagogicaDao {
 	}
     }
 
-     /*------- Alterar----------//
+     //------- Alterar----------//
      
      public void alterarAtividadePedagogica(AtividadePedagogica atividadePedagogica) {
 
@@ -103,7 +105,7 @@ public class AtividadePedagogicaDao {
  	} catch (SQLException e) {
  	    throw new RuntimeException(e);
  	}
-     }*/
+     }
 
      //--------- Buscar por id--------------//
      
