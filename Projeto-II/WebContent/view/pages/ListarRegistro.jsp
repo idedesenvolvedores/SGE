@@ -40,7 +40,7 @@
 								<td>${registro.nome }</td>
 								<td>${registro.siape}</td>
 								<td>${registro.semestre}</td>
-								<td>${registro.dataEntrega}</td>
+								<td><fmt:formatDate value='${registro.dataEntrega}' pattern='MM/dd/yyyy' /> </td>
 								<td>
 									<div class="col-md-4">
 										<a class="btn btn-warning"

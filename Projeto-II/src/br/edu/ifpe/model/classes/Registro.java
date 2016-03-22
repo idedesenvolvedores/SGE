@@ -2,6 +2,8 @@ package br.edu.ifpe.model.classes;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Registro {
 	
 	
@@ -9,6 +11,7 @@ public class Registro {
 	private String nome;
 	private String siape;
 	private String semestre;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataEntrega;
 	
 	

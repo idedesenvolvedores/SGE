@@ -20,7 +20,8 @@ public class AutorizadorInterceptor extends HandlerInterceptorAdapter {
 				|| uri.contains("login")
 				|| uri.endsWith("index")
 				|| uri.endsWith("efetuarLogin")
-			    || uri.endsWith("Projeto-II/")
+				|| uri.endsWith("Projeto-II/")
+				|| uri.endsWith("logout")
 				) {
 
 			return true;

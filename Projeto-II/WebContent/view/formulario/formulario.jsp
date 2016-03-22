@@ -33,7 +33,7 @@
         <![endif]-->
 </head>
 
-<body>
+<body style="color: black; background-color: white;">
 	<div class="section">
 		<div class="container">
 			<div class="row">

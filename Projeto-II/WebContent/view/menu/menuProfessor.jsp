@@ -22,7 +22,7 @@
 			<a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
         </li>
         <li>
-			<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
+			<a href="imprimirFormulario" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
         </li>
       </ul>
     </div>
@@ -47,7 +47,7 @@
 			          <a href="exibirIncluirAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
 			        </li>
 			        <li>
-						<a href="#" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
+						<a href="imprimirFormulario" style="color: #FFFFFF"><i class="glyphicon glyphicon-print"></i> Imprimir </a>
 			        </li>
                  </ul>
             </div>

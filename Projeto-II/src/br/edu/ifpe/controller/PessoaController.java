@@ -2,15 +2,16 @@ package br.edu.ifpe.controller;
 
 import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.edu.ifpe.model.classes.AtividadeEnsino;
 import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.model.dao.FormularioDao;
 import br.edu.ifpe.model.dao.UsuarioDao;
 
+@Controller
 public class PessoaController {
 
 	
@@ -53,6 +54,12 @@ public class PessoaController {
 	model.addAttribute("Pessoa", pessoa);
 
 	return "formulario/alterarPessoa";
+    }
+    
+    @RequestMapping("imprimirFormulario")
+    public String imprimirFormulario() {
+
+	return "formulario/formulario";
     }
     /*
     //--------- Remover Pessoa -----------//

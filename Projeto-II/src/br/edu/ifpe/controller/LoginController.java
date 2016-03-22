@@ -29,6 +29,8 @@ public class LoginController {
 			if (usuarioLogado.getTipoUsuario().getDescricao().equals(Mensagens.professor)) {
 
 				session.setAttribute("usuarioLogado", usuarioLogado);
+				
+				
 				return "forward:exibirIndexProfessor";
 
 			} else {
