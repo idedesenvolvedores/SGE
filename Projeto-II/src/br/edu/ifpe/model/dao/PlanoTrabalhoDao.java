@@ -29,14 +29,13 @@ public class PlanoTrabalhoDao {
     public void salvarPlanoTrabalho(PlanoTrabalho plano) {
 
 	try {
-	    String sql = "INSERT INTO PLANO_TRABALHO (ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, ID_USUARIO)" + "VALUES (?,?,?,?)";
+	    String sql = "INSERT INTO PLANO_TRABALHO (ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, ID_USUARIO) VALUES (?,?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, plano.getAtividadeApoio());
 	    stmt.setString(2, plano.getAtividadePesquisa());
 	    stmt.setString(3, plano.getAtividadeExtensao());
-	    stmt.setInt(4, plano.getIdUsuario().getId());
-	    
+	    stmt.setInt(4, plano.getIdUsuario().getId());	    
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();

@@ -24,6 +24,8 @@
 
         <form action="incluirPlanoTrabalho" method="post">
 
+			 <input type="hidden" name="idUsuario" value="${usuarioLogado.id }">
+			 
         <div class="row">
 			<legend>ATIVIDADES DE APOIO AO ENSINO</legend>
         </div>
