@@ -30,7 +30,7 @@ public class PessoaDao {
 	public void salvarDadosPessoa(Pessoa pessoa) {
 
 		try {
-			String sql = "INSERT INTO PESSOA (NOME,EMAIL,TELEFONE, CAMPUS, REG_TRABALHO, AREA, CLASSE, DIRETORIA) VALUES (?,?,?,?,?,?,?,?)";
+			String sql = "UPDATE PESSOA SET  NOME = ?  , EMAIL = ? , TELEFONE = ? , CAMPUS = ?  , REG_TRABALHO = ?  , AREA = ?  , CLASSE = ?  , DIRETORIA = ? WHERE SIAPE = ?";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, pessoa.getNome());
@@ -41,6 +41,7 @@ public class PessoaDao {
 			stmt.setString(6, pessoa.getArea());
 			stmt.setString(7, pessoa.getClasse());
 			stmt.setString(8, pessoa.getDiretoria());
+			stmt.setString(9, pessoa.getSiape());
 			//stmt.setInt(7, pessoa.getUsuario().getId());   
 
 			stmt.execute();

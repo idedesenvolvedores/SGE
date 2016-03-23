@@ -127,13 +127,14 @@ public class UsuarioController {
 
 	//altera senha e ou dados
 	@RequestMapping("alterarDados")
-	public String alterarDados( Usuario usuario, Model model) {
+	public String alterarDados( Usuario usuario,Pessoa pessoa, Model model) {
 
 		UsuarioDao dao = new UsuarioDao();
 		dao.alterar(usuario);
 		model.addAttribute("usuario", usuario);
-
-		return "index";
+		PessoaDao dao2 = new PessoaDao();
+		dao2.alterarPessoa(pessoa);
+		return "pages/login";
 	}
 
 	//exibe tela para alteração de dados do professor

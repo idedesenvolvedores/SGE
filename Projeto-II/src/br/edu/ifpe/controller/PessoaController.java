@@ -21,7 +21,7 @@ public class PessoaController {
 	public String exibirIncluirPessoa(Model model,  Usuario usuario) {
 
 		UsuarioDao dao = new UsuarioDao();
-		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());
+		Usuario usuarioPreenchido = dao.buscarPorId(usuario.getId());		
 		model.addAttribute("usuarioPreenchido", usuarioPreenchido);
 		return "formulario/incluirPessoa";
 	}

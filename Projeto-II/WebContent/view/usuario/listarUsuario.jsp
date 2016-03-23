@@ -46,7 +46,7 @@
 									<div class="col-md-4">
 										<a class="btn btn-danger"
 										
-											href="removerUsuario?id=${user.id}">Remover</a>
+											href="removerUsuario?siape=${user.pessoa.siape}">Remover</a>
 									</div>
 
 								</td>

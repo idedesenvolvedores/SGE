@@ -56,7 +56,7 @@
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">MATRÍCULA
 									SIAPE Nº</label> <input class="form-control" id="exampleInputEmail1"
-									placeholder="Matrícula Siape" type="text"	value="${usuarioLogado.pessoa.siape}">
+									placeholder="Matrícula Siape" type="text"	name="siape" value="${usuarioLogado.pessoa.siape}">
 							</div>
 						</div>
 					</div>
