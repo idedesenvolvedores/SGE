@@ -33,6 +33,14 @@ public class PessoaController {
 		dao.salvarPessoa(pessoa);
 		return "forward:listarPessoa";
 	}
+	
+	@RequestMapping("salvarDadosPessoa")
+	public String salvarDadosPessoa(Pessoa pessoa) {
+
+		PessoaDao dao = new PessoaDao();
+		dao.salvarDadosPessoa(pessoa);
+		return "pages/indexProfessor";
+	}
 
 	//--------- Listar Pessoa -----------//    
 
@@ -43,7 +51,7 @@ public class PessoaController {
 		
 		List<Pessoa> listaPessoa = dao.listarPessoa();
 		model.addAttribute("listaPessoa", listaPessoa);
-		return "pages/listarProfessor";
+		return "usuario/listarProfessor";
 	}
 
 	//--------- Alterar Pessoa -----------//

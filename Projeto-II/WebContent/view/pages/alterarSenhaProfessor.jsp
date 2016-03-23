@@ -21,7 +21,7 @@
 				<h2 class="text-center">Atualizar dados</h2>
 				<form class="form-horizontal" role="form" action="alterarDados"
 					method="post">
-					<input type="hidden" name="id" value="${usuarioPreenchido.id}">
+					<input type="hidden" name="siape" value="${usuarioPreenchido.pessoa.siape}">
 
 					<div class="form-group">
 						<div class="col-sm-2">
@@ -29,7 +29,7 @@
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="nome" name="nome"
-								value="${usuarioPreenchido.nome}" placeholder="Nome">
+								value="${usuarioPreenchido.pessoa.nome}" placeholder="Nome">
 						</div>
 					</div>
 					<div class="form-group">
@@ -38,7 +38,7 @@
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="inputEmail"
-								name="email" value="${usuarioPreenchido.email}"
+								name="email" value="${usuarioPreenchido.pessoa.email}"
 								placeholder="Email">
 						</div>
 					</div>

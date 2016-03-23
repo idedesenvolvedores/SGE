@@ -25,7 +25,7 @@
 	                <label for="inputNome3" class="control-label">Nome</label>
 	              </div>
 	              <div class="col-sm-10">
-	                <input type="text" class="form-control" id="nome" name="nome" value="${usuarioPreenchido.nome}" placeholder="Nome" required="required">
+	                <input type="text" class="form-control" id="nome" name="nome" value="${usuarioPreenchido.pessoa.nome}" placeholder="Nome" required="required">
 	              </div>
 	            </div>
 	             <div class="form-group">

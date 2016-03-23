@@ -23,14 +23,13 @@
 				<div class="row">
 					<legend>DADOS CADASTRAIS</legend>
 				</div>
-				<form action="salvarPessoa" method="post">
+				<form action="salvarDadosPessoa" method="post">
 					<div class="row">
 						<div class="col-md-6">
 							<div class="form-group">
-								<input class="form-control" id="inputText" type="hidden"
-									name="usuarioId" value="${usuarioLogado.siape}"> <label
-									class="control-label" for="exampleInputEmail1">CAMPUS</label> <input
-									class="form-control" id="exampleInputEmail1"
+							
+								<label class="control-label" for="exampleInputEmail1">CAMPUS</label>
+								<input class="form-control" id="exampleInputEmail1"
 									placeholder="Campus" type="text" name="campus">
 							</div>
 						</div>
@@ -50,16 +49,14 @@
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">PROFESSOR(A)</label>
 								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Professor(a)" type="text"
-									value="${usuarioLogado.nome}">
+									placeholder="Professor(a)" type="text" name="nome"	value="${usuarioLogado.pessoa.nome}">
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">MATRÍCULA
 									SIAPE Nº</label> <input class="form-control" id="exampleInputEmail1"
-									placeholder="Matrícula Siape" type="text"
-									value="${usuarioLogado.siape}">
+									placeholder="Matrícula Siape" type="text"	value="${usuarioLogado.pessoa.siape}">
 							</div>
 						</div>
 					</div>
@@ -69,7 +66,7 @@
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">EMAIL</label>
 								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Email" type="email" value="${usuarioLogado.email}">
+									placeholder="Email" type="email" name="email" value="${usuarioLogado.pessoa.email}">
 							</div>
 						</div>
 						<div class="col-md-3">

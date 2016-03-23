@@ -27,10 +27,34 @@ public class PessoaDao {
 
 	//------------Salvar Pessoa---------------------------//
 
+	public void salvarDadosPessoa(Pessoa pessoa) {
+
+		try {
+			String sql = "INSERT INTO PESSOA (NOME,EMAIL,TELEFONE, CAMPUS, REG_TRABALHO, AREA, CLASSE, DIRETORIA) VALUES (?,?,?,?,?,?,?,?)";
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, pessoa.getNome());
+			stmt.setString(2, pessoa.getEmail());
+			stmt.setString(3, pessoa.getTelefone());
+			stmt.setString(4, pessoa.getCampus());
+			stmt.setString(5, pessoa.getRegime());
+			stmt.setString(6, pessoa.getArea());
+			stmt.setString(7, pessoa.getClasse());
+			stmt.setString(8, pessoa.getDiretoria());
+			//stmt.setInt(7, pessoa.getUsuario().getId());   
+
+			stmt.execute();
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
 	public void salvarPessoa(Pessoa pessoa) {
 
 		try {
-			String sql = "INSERT INTO PESSOA (SIAPE,NOME,EMAIL,TELEFONE, CAMPUS, REG_TRABALHO, AREA, CLASSE, DIRETORIA) VALUES (?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO PESSOA (SIAPE, NOME,EMAIL,TELEFONE, CAMPUS, REG_TRABALHO, AREA, CLASSE, DIRETORIA) VALUES (?,?,?,?,?,?,?,?,?)";
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, pessoa.getSiape());
