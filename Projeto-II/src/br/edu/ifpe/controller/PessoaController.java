@@ -52,7 +52,7 @@ public class PessoaController {
 	public String exibirAlterarPessoa(Model model, Pessoa pessoa) {
 
 		PessoaDao dao = new PessoaDao();
-		pessoa = dao.buscarPorIdPessoa(pessoa.getId());
+		pessoa = dao.buscarPorIdPessoa(pessoa.getSiape());
 		model.addAttribute("Pessoa", pessoa);
 
 		return "formulario/alterarPessoa";

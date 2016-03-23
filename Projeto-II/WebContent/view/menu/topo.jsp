@@ -53,7 +53,7 @@
 			<li class="dropdown"><a href="#" class="dropdown-toggle"
 				data-toggle="dropdown"
 				style="background-color: #359135; color: #FFFFFF"><i class="fa fa-lg fa-user"></i>
-				${usuarioLogado.nome}
+				${usuarioLogado.pessoa.nome}
 				<b class="caret"></b></a>
 				<ul class="dropdown-menu"
 					style="background-color: #359135; color: #FFFFFF">

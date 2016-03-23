@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifpe.model.classes.AtividadeEnsino;
+import br.edu.ifpe.model.classes.PlanoTrabalho;
 import br.edu.ifpe.util.ConnectionFactory;
 
 public class AtividadeEnsinoDao {
@@ -28,12 +29,13 @@ public class AtividadeEnsinoDao {
     public void salvarAtividadeEnsino(AtividadeEnsino atividadeEnsino) {
 
 	try {
-	    String sql = "INSERT INTO ATIVIDADE_ENSINO (DISCIPLINA, CURSO, CARGA_HORARIA)" + "VALUES (?,?,?)";
+	    String sql = "INSERT INTO ATIVIDADE_ENSINO (DISCIPLINA, CURSO, CARGA_HORARIA, ID_PLANO_TRABALHO)" + "VALUES (?,?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, atividadeEnsino.getDisciplina());
 	    stmt.setString(2, atividadeEnsino.getCurso());
 	    stmt.setInt(3, atividadeEnsino.getCargaHoraria());
+	    stmt.setInt(4, atividadeEnsino.getId_tipo_planoTrabalho().getId());
 
 	    stmt.execute();
 	    stmt.close();
@@ -88,7 +90,7 @@ public class AtividadeEnsinoDao {
      
      public void alterarAtividadeEnsino(AtividadeEnsino atividadeEnsino) {
 
- 	String sql = "UPDATE ATIVIDADE_ENSINO SET DISCIPLINA = ? , CURSO = ? , CARGA_HORARIO = ? WHERE id = ?";
+ 	String sql = "UPDATE ATIVIDADE_ENSINO SET DISCIPLINA = ? , CURSO = ? , CARGA_HORARIA = ? WHERE id = ?";
 
  	try {
 
@@ -96,6 +98,7 @@ public class AtividadeEnsinoDao {
  	    stmt.setString(1, atividadeEnsino.getDisciplina());
  	    stmt.setString(2, atividadeEnsino.getCurso());
  	    stmt.setInt(3, atividadeEnsino.getCargaHoraria());
+ 	    stmt.setInt(4, atividadeEnsino.getId());
  	    
  	    stmt.execute();
  	    stmt.close();
@@ -136,6 +139,9 @@ public class AtividadeEnsinoDao {
     atividadeEnsino.setDisciplina(rs.getString("DISCIPLINA"));
     atividadeEnsino.setCurso(rs.getString("CURSO"));
     atividadeEnsino.setCargaHoraria(rs.getInt("CARGA_HORARIA"));
+    PlanoTrabalhoDao planoDao = new PlanoTrabalhoDao();
+    PlanoTrabalho plano = planoDao.buscarPorIdPlanoTrabalho(rs.getInt("ID_PLANO_TRABALHO"));
+    atividadeEnsino.setId_tipo_planoTrabalho(plano);
     
 	return atividadeEnsino;
     }

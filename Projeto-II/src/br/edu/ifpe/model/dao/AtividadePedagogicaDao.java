@@ -30,13 +30,13 @@ public class AtividadePedagogicaDao {
 
 	try {
 	    
-		//String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA, ID_PLANO_TRABALHO)" + "VALUES (?,?,?)";
-		String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA) VALUES (?,?)";
+		String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA, ID_PLANO_TRABALHO)" + "VALUES (?,?,?)";
+		//String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA) VALUES (?,?)";
 		
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, atividadePedagogica.getAtividade());
 	    stmt.setString(2, atividadePedagogica.getPortaria());
-	    //stmt.setInt(3, atividadePedagogica.getId_tipo_planoTrabalho().getId());
+	    stmt.setInt(3, atividadePedagogica.getId_tipo_planoTrabalho().getId());
 	    
 	    stmt.execute();
 	    stmt.close();
@@ -98,6 +98,7 @@ public class AtividadePedagogicaDao {
  	    PreparedStatement stmt = connection.prepareStatement(sql);
  	    stmt.setString(1, atividadePedagogica.getAtividade());
  	    stmt.setString(2, atividadePedagogica.getPortaria());
+ 	    stmt.setInt(3, atividadePedagogica.getId());
  	    
  	    stmt.execute();
  	    stmt.close();
@@ -137,7 +138,10 @@ public class AtividadePedagogicaDao {
     atividadePedagogica.setId(rs.getInt("id"));
     atividadePedagogica.setAtividade(rs.getString("ATIVIDADE"));
     atividadePedagogica.setPortaria(rs.getString("PORTARIA"));
-	PlanoTrabalhoDao tipoPlanoDao = new PlanoTrabalhoDao();
+    PlanoTrabalhoDao planoDao = new PlanoTrabalhoDao();
+    PlanoTrabalho plano = planoDao.buscarPorIdPlanoTrabalho(rs.getInt("ID_PLANO_TRABALHO"));
+    atividadePedagogica.setId_tipo_planoTrabalho(plano);
+
 
     
 	return atividadePedagogica;

@@ -33,14 +33,14 @@
 						<c:forEach var="user" items="${listaUsuario}">
 							<tr>
 
-								<td>${user.nome }</td>
-								<td>${user.siape}</td>
-								<td>${user.email}</td>
+								<td>${user.pessoa.nome }</td>
+								<td>${user.pessoa.siape}</td>
+								<td>${user.pessoa.email}</td>
 								<td>${user.tipoUsuario.descricao}</td>
 								<td>
 									<div class="col-md-4">
 										<a class="btn btn-warning"
-											href="exibirAlterarUsuario?id=${user.id}">editar</a>
+											href="exibirAlterarUsuario?siape=${user.pessoa.siape}">editar</a>
 									</div>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 									<div class="col-md-4">

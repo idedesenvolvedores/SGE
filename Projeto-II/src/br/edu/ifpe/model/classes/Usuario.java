@@ -3,13 +3,7 @@ package br.edu.ifpe.model.classes;
 public class Usuario {
 
 	private int id;
-	
-	private String siape;
-	
-	private String nome;
-	
-	private String email;
-	
+	private Pessoa pessoa;	
 	private String senha;
 	private TipoUsuario tipoUsuario;
 	
@@ -21,23 +15,14 @@ public class Usuario {
 		this.id = id;
 	}
 	
-	public String getEmail() {
-		return email;
+	
+	
+	
+	public Pessoa getPessoa() {
+		return pessoa;
 	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getSiape() {
-		return siape;
-	}
-	public void setSiape(String siape) {
-		this.siape = siape;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setPessoa(Pessoa pessoa) {
+		this.pessoa = pessoa;
 	}
 	public String getSenha() {
 		return senha;

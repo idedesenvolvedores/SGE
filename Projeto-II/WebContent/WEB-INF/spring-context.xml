@@ -28,6 +28,12 @@
 		<property name="converters">
 			<list>
 				<bean class="br.edu.ifpe.controller.TipoUsuarioConverter" />
+				
+				<!--  
+				<bean class="br.edu.ifpe.controller.UsuarioConverter" />
+				<bean class="br.edu.ifpe.controller.PlanoTrabalhoConverter" />
+				<bean class="br.edu.ifpe.controller.PessoaConverter" />
+				-->
 			</list>
 		</property>
 	</bean>
