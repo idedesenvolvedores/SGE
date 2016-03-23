@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.ifpe.model.classes.PlanoTrabalho;
+import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
 
 public class PlanoTrabalhoDao {
@@ -28,13 +29,14 @@ public class PlanoTrabalhoDao {
     public void salvarPlanoTrabalho(PlanoTrabalho plano) {
 
 	try {
-	    String sql = "INSERT INTO PLANO_TRABALHO (ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO)" + "VALUES (?,?,?)";
+	    String sql = "INSERT INTO PLANO_TRABALHO (ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, ID_USUARIO)" + "VALUES (?,?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, plano.getAtividadeApoio());
 	    stmt.setString(2, plano.getAtividadePesquisa());
 	    stmt.setString(3, plano.getAtividadeExtensao());
-
+	    stmt.setInt(4, plano.getIdUsuario().getId());
+	    
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -96,7 +98,9 @@ public class PlanoTrabalhoDao {
  	    stmt.setString(1, planoTrabalho.getAtividadeApoio());
  	    stmt.setString(2, planoTrabalho.getAtividadePesquisa());
  	    stmt.setString(3, planoTrabalho.getAtividadeExtensao());
- 	    
+	    stmt.setInt(4, planoTrabalho.getIdUsuario().getId());
+	    stmt.setInt(5, planoTrabalho.getId());
+	    
  	    stmt.execute();
  	    stmt.close();
  	    connection.close();
@@ -132,10 +136,14 @@ public class PlanoTrabalhoDao {
     private PlanoTrabalho montarObjetoPlanoTrabalho(ResultSet rs) throws SQLException {
 
     PlanoTrabalho planoTrabalho = new PlanoTrabalho();
-    planoTrabalho.setId(rs.getInt("id"));
+    planoTrabalho.setId(rs.getInt("ID"));
     planoTrabalho.setAtividadeApoio(rs.getString("ATIVIDADE_APOIO"));
     planoTrabalho.setAtividadePesquisa(rs.getString("ATIVIDADE_PESQUISA"));
     planoTrabalho.setAtividadeExtensao(rs.getString("ATIVIDADE_EXTENSAO"));
+
+    UsuarioDao usuarioDao = new UsuarioDao();
+    Usuario usuario = usuarioDao.buscarPorId(rs.getInt("ID_USUARIO"));
+    planoTrabalho.setIdUsuario(usuario);
     
 	return planoTrabalho;
     }

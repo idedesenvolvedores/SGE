@@ -13,7 +13,7 @@
 		<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
         </li>
         <li>
-		<a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
+		<a href="exibirIncluirPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
         </li>
         <li>
 		<a href="listarAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
@@ -32,13 +32,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav" style="background-color: #359135; color: #FFFFFF">
                     <li>
-						<a href="exibirIncluirPessoa?id=${usuarioLogado.id}"" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Complementar Perfil </a>
+						<a href="exibirIncluirPessoa?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="fa fa-edit fa-fw fa-lg" ></i> Complementar Perfil </a>
 			        </li>
 			        <li>
 						<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
 			        </li>
 			        <li>
-			          <a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
+			          <a href="exibirIncluirPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
 			        </li>
 			        <li>
 						<a href="listarAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>

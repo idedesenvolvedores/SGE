@@ -1,6 +1,21 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<!-- topo -->
+<div class="section">
+	<c:import url="../menu/topo.jsp" />
+</div>
+<div class="col-md-12">
+	<!-- menu lateral -->
+	<div class="col-md-3">
+
+		<c:import url="../menu/menuProfessor.jsp" />
+
+	</div>
+
+	<!-- tela -->
+	<div class="col-md-8">
 	
  	<br>
      <div class="container">
@@ -19,26 +34,23 @@
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">DISCIPLINA / COMPONENTE CURRICULAR</label>
                 <input class="form-control"
-                id="exampleInputEmail1" placeholder="Disciplina / Componente Curricular"
-                type="text" name="disciplina" value="${AtividadeEnsino.disciplina}">
+                id="exampleInputEmail1" type="text" name="disciplina" value="${AtividadeEnsino.disciplina}">
               </div>
             </div>
             <div class="col-md-4">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">CURSO</label>
-                <input class="form-control" id="exampleInputEmail1" placeholder="Curso"
-                type="text" name="curso" value="${AtividadeEnsino.curso}">
+                <input class="form-control" id="exampleInputEmail1" type="text" name="curso" value="${AtividadeEnsino.curso}">
               </div>
             </div>
             
             <div class="col-md-2">
               <div class="form-group">
                 <label class="control-label" for="exampleInputEmail1">CARGA HORÁRIA</label>
-                <input class="form-control" id="exampleInputEmail1" placeholder="ex: 20" 
-                type="text" name="cargaHoraria" value="${AtividadeEnsino.cargaHoraria}">
+                <input class="form-control" id="exampleInputEmail1" type="text" name="cargaHoraria" value="${AtividadeEnsino.cargaHoraria}">
               </div>
             </div>
-            
+            <input type="hidden" value="${AtividadeEnsino.id_plano_trabalho}">
  		</div>        
         
           <div class="form-group" align="center">
@@ -50,5 +62,5 @@
         </form>
       </div>
     </div>
-
-	<c:import url="../menu/menuProfessor.jsp" />
+</div>
+</div>

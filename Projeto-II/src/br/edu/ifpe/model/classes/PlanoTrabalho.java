@@ -6,8 +6,8 @@ public class PlanoTrabalho {
 	private String atividadeApoio;
 	private String atividadePesquisa;
 	private String atividadeExtensao;
-
-
+	private Usuario idUsuario;
+	
 	public int getId() {
 		return id;
 	}
@@ -32,6 +32,11 @@ public class PlanoTrabalho {
 	public void setAtividadeExtensao(String atividadeExtensao) {
 		this.atividadeExtensao = atividadeExtensao;
 	}
-	
+	public Usuario getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Usuario idUsuario) {
+		this.idUsuario = idUsuario;
+	}	
 	
 }

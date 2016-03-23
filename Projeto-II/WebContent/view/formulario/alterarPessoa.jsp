@@ -2,8 +2,22 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<!-- topo -->
+<div class="section">
+	<c:import url="../menu/topo.jsp" />
+</div>
+<div class="col-md-12">
+	<!-- menu lateral -->
+	<div class="col-md-3">
 
-<br>
+		<c:import url="../menu/menuProfessor.jsp" />
+
+	</div>
+
+	<!-- tela -->
+	<div class="col-md-8">
+
+	<br>
     <div class="container">
       <div class="col-md-12" style="padding-left: 20%">
         <div class="row">
@@ -108,6 +122,6 @@
         </form>
       </div>
     </div>
-
-<c:import url="../menu/menuProfessor.jsp" />
+</div>
+</div>
     

@@ -31,7 +31,6 @@ public class AtividadePedagogicaDao {
 	try {
 	    
 		String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA, ID_PLANO_TRABALHO)" + "VALUES (?,?,?)";
-		//String sql = "INSERT INTO ATIVIDADE_PEDAGOGICA (ATIVIDADE, PORTARIA) VALUES (?,?)";
 		
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, atividadePedagogica.getAtividade());
