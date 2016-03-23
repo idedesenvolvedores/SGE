@@ -6,7 +6,7 @@ public class PlanoTrabalho {
 	private String atividadeApoio;
 	private String atividadePesquisa;
 	private String atividadeExtensao;
-	private Usuario idUsuario;
+	private Pessoa idPessoa;
 	
 	public int getId() {
 		return id;
@@ -32,11 +32,11 @@ public class PlanoTrabalho {
 	public void setAtividadeExtensao(String atividadeExtensao) {
 		this.atividadeExtensao = atividadeExtensao;
 	}
-	public Usuario getIdUsuario() {
-		return idUsuario;
+	public Pessoa getIdPessoa() {
+		return idPessoa;
 	}
-	public void setIdUsuario(Usuario idUsuario) {
-		this.idUsuario = idUsuario;
+	public void setIdPessoa(Pessoa idPessoa) {
+		this.idPessoa = idPessoa;
 	}	
 	
 }

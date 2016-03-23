@@ -30,7 +30,7 @@
 							
 								<label class="control-label" for="exampleInputEmail1">CAMPUS</label>
 								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Campus" type="text" name="campus">
+									placeholder="Campus" type="text" name="campus" value="${usuarioLogado.pessoa.campus}">
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -39,7 +39,7 @@
 									/ DEPARTAMENTO / COORDENAÇÃO</label> <input class="form-control"
 									id="exampleInputEmail1"
 									placeholder="Diretoria / Departamento / Coordenação"
-									type="text" name="diretoria">
+									type="text" name="diretoria" value="${usuarioLogado.pessoa.diretoria}">
 							</div>
 						</div>
 					</div>
@@ -73,7 +73,7 @@
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">TELEFONE</label>
 								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Telefone" type="text" name="telefone">
+									placeholder="Telefone" type="text" name="telefone" value="${usuarioLogado.pessoa.telefone}">
 							</div>
 						</div>
 					</div>
@@ -84,14 +84,14 @@
 								<label class="control-label" for="exampleInputEmail1">ÁREA
 									DE CONHECIMENTO</label> <input class="form-control"
 									id="exampleInputEmail1" placeholder="Área de Conhecimento"
-									type="text" name="area">
+									type="text" name="area" value="${usuarioLogado.pessoa.area}">
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">CLASSE
 									(ART. 1°)</label> <input class="form-control" id="exampleInputEmail1"
-									placeholder="Classe (artigo 1º)" type="text" name="classe">
+									placeholder="Classe (artigo 1º)" type="text" name="classe" value="${usuarioLogado.pessoa.classe}">
 							</div>
 						</div>
 						<div class="col-md-3">

@@ -25,7 +25,7 @@ public class PlanoTrabalhoController {
 
 	    PlanoTrabalhoDao dao = new PlanoTrabalhoDao();
 		dao.salvarPlanoTrabalho(plano);
-		return "pages/indexProfessor";
+		return "forward:listarPlanoTrabalho";
 	    }
 	    
 	  //--------- Listar Plano de Ensino -----------//

@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.PlanoTrabalho;
-import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
 
 public class PlanoTrabalhoDao {
@@ -29,13 +29,13 @@ public class PlanoTrabalhoDao {
     public void salvarPlanoTrabalho(PlanoTrabalho plano) {
 
 	try {
-	    String sql = "INSERT INTO PLANO_TRABALHO (ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, ID_USUARIO) VALUES (?,?,?,?)";
+	    String sql = "INSERT INTO PLANO_TRABALHO (ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, ID_PESSOA) VALUES (?,?,?,?)";
 	    
 	    PreparedStatement stmt = connection.prepareStatement(sql);
 	    stmt.setString(1, plano.getAtividadeApoio());
 	    stmt.setString(2, plano.getAtividadePesquisa());
 	    stmt.setString(3, plano.getAtividadeExtensao());
-	    stmt.setInt(4, plano.getIdUsuario().getId());	    
+	    stmt.setString(4, plano.getIdPessoa().getSiape());	    
 	    stmt.execute();
 	    stmt.close();
 	    connection.close();
@@ -97,7 +97,7 @@ public class PlanoTrabalhoDao {
  	    stmt.setString(1, planoTrabalho.getAtividadeApoio());
  	    stmt.setString(2, planoTrabalho.getAtividadePesquisa());
  	    stmt.setString(3, planoTrabalho.getAtividadeExtensao());
-	    stmt.setInt(4, planoTrabalho.getIdUsuario().getId());
+	    stmt.setString(4, planoTrabalho.getIdPessoa().getSiape());
 	    stmt.setInt(5, planoTrabalho.getId());
 	    
  	    stmt.execute();
@@ -140,9 +140,9 @@ public class PlanoTrabalhoDao {
     planoTrabalho.setAtividadePesquisa(rs.getString("ATIVIDADE_PESQUISA"));
     planoTrabalho.setAtividadeExtensao(rs.getString("ATIVIDADE_EXTENSAO"));
 
-    UsuarioDao usuarioDao = new UsuarioDao();
-    Usuario usuario = usuarioDao.buscarPorId(rs.getInt("ID_USUARIO"));
-    planoTrabalho.setIdUsuario(usuario);
+    PessoaDao pessoaDao = new PessoaDao();
+    Pessoa pessoa = pessoaDao.buscarPorIdPessoa(rs.getString("ID_PESSOA"));
+    planoTrabalho.setIdPessoa(pessoa);//setIdUsuario(pessoa);
     
 	return planoTrabalho;
     }

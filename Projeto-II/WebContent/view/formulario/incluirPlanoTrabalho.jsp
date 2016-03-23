@@ -70,7 +70,7 @@
               </div>
             </div>
           </div>
-
+			<input type="hidden" value="${usuarioLogado.pessoa.siape}">
           <br>
           <div class="form-group" align="center">
             <div class="col-md-12">

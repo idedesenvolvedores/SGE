@@ -50,9 +50,9 @@
 					<table class="table table-bordered table-condensed table-hover">
 						<tbody>
 							<tr>
-								<td>CAMPUS :</td>
+								<td>CAMPUS : ${usuarioLogado.pessoa.campus}</td>
 								<td class="col-md-6 text-left">DIRETORIA / DEPARTAMENTO
-									/COORDENAÇÃO:</td>
+									/COORDENAÇÃO: ${usuarioLogado.pessoa.diretoria}</td>
 							</tr>
 							<tr>
 								<td></td>
@@ -67,12 +67,12 @@
 					<table class="table table-bordered table-condensed table-hover">
 						<tbody>
 							<tr>
-								<td>PROFESSOR( A ):</td>
-								<td class="col-md-4">M ATRÍCULA S IAPE N o :</td>
+								<td>PROFESSOR(A): ${usuarioLogado.pessoa.nome}</td>
+								<td class="col-md-4">MATRÍCULA SIAPE Nº: ${usuarioLogado.pessoa.siape}</td>
 							</tr>
 							<tr>
-								<td>E-MAIL:</td>
-								<td>TELEFONE:</td>
+								<td>E-MAIL: ${usuarioLogado.pessoa.email}</td>
+								<td>TELEFONE: ${usuarioLogado.pessoa.telefone}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -82,10 +82,13 @@
 				<table class="table table-bordered table-condensed table-hover">
 					<tbody>
 						<tr>
-							<td>ÁREA DE CONHECIMENTO:</td>
-							<td>CLASSE (A RT.1°)</td>
-							<td>REGIME DE TRABALHO: <br>( &nbsp;&nbsp;) 20 H
+							<td>ÁREA DE CONHECIMENTO: ${usuarioLogado.pessoa.campus}</td>
+							<td>CLASSE (ART.1°): ${usuarioLogado.pessoa.classe}</td>
+							<td>REGIME DE TRABALHO: ${usuarioLogado.pessoa.regime}<br>
+							<!-- 
+							( &nbsp;&nbsp;) 20 H
 								(&nbsp;&nbsp; ) 40 H (&nbsp;&nbsp; ) DE
+							 -->
 							</td>
 						</tr>
 						<tr></tr>
