@@ -172,13 +172,14 @@ public class UsuarioDao {
 
 		try {
 
-		    Usuario usuarioConsultado = null;
+		    
 		    PreparedStatement stmt = this.connection.prepareStatement("select * from USUARIO where SIAPEFK = ? and SENHA = ? ");
 		    stmt.setString(1, usuario.getPessoa().getSiape());
 		    stmt.setString(2,DigestUtils.md5Hex(usuario.getSenha()));
 		    //stmt.setString(2, usuario.getSenha());
 		    ResultSet rs = stmt.executeQuery();
 
+		    Usuario usuarioConsultado = null;
 		    if (rs.next()) {
 			usuarioConsultado = montarObjeto(rs);
 		    }
@@ -197,7 +198,7 @@ public class UsuarioDao {
 	    Pessoa pessoa = new Pessoa();	
 		Usuario usuario = new Usuario();
 		usuario.setId(rs.getInt("id"));
-		usuario.setPessoa(pessoadao.buscarPorIdPessoa(rs.getString("siapefk")));
+		usuario.setPessoa(pessoadao.buscarPorSiapePessoa(rs.getString("siapefk")));
 		usuario.setSenha(rs.getString("senha"));
 		TipoUsuarioDao tipoDao = new TipoUsuarioDao();
 		TipoUsuario tipousuario = tipoDao.buscarPorId(rs.getInt("id_tipo_usuario"));

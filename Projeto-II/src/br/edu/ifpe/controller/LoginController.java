@@ -17,25 +17,36 @@ import br.edu.ifpe.util.Mensagens;
 @Controller
 public class LoginController {
 
+
 	@RequestMapping("efetuarLogin")
 	public String efetuarLogin(String siape, String senha, HttpSession session, Model model) {
-		
+
 		Usuario usuarioLogado = new Usuario();
 		PessoaDao pessoaDao = new PessoaDao();
 		UsuarioDao dao = new UsuarioDao();
 		Pessoa pessoa = new Pessoa();
-	    pessoa = pessoaDao.buscarPorIdPessoa(siape);
-		usuarioLogado.setSenha(senha);
+		pessoa = pessoaDao.buscarPorSiapePessoa(siape);
 		usuarioLogado.setPessoa(pessoa);
-		usuarioLogado = dao.buscarUsuario(usuarioLogado);
+		//validação da existencia de pessoa \m/ 
+		if(pessoa != null)
+		{
+			usuarioLogado.setSenha(senha);
+			usuarioLogado = dao.buscarUsuario(usuarioLogado);
+		}
+		else
+		{
+			usuarioLogado = null;
+		}
+		//por favor não remova
+		
 
 		if (usuarioLogado != null) {
 
 			if (usuarioLogado.getTipoUsuario().getDescricao().equals(Mensagens.professor)) {
 
 				session.setAttribute("usuarioLogado", usuarioLogado);
-				
-				
+
+
 				return "forward:exibirIndexProfessor";
 
 			} else {
@@ -54,7 +65,7 @@ public class LoginController {
 
 	@RequestMapping("logout")
 	public String logout(HttpSession session) {
-		
+
 		session.invalidate();
 		return "forward:iniciarLogin";
 	}
@@ -65,5 +76,8 @@ public class LoginController {
 		model.addAttribute("msgvisualizar", "none");
 		return "pages/login";
 	}
-
 }
+/*
+ * 
+
+ * */

@@ -174,7 +174,7 @@ public class PessoaDao {
 
 	//--------- Buscar por id Pessoa --------------//
 
-	public Pessoa buscarPorIdPessoa(String siape) {
+	public Pessoa buscarPorSiapePessoa(String siape) {
 
 		try {
 			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PESSOA WHERE SIAPE = ?");
