@@ -141,7 +141,7 @@ public class PlanoTrabalhoDao {
     planoTrabalho.setAtividadeExtensao(rs.getString("ATIVIDADE_EXTENSAO"));
 
     PessoaDao pessoaDao = new PessoaDao();
-    Pessoa pessoa = pessoaDao.buscarPorIdPessoa(rs.getString("ID_PESSOA"));
+    Pessoa pessoa = pessoaDao.buscarPorSiapePessoa(rs.getString("ID_PESSOA"));
     planoTrabalho.setIdPessoa(pessoa);//setIdUsuario(pessoa);
     
 	return planoTrabalho;

@@ -75,7 +75,7 @@ public class UsuarioController {
 
 
 		PessoaDao pessoaDao = new PessoaDao();
-		Pessoa pessoa = pessoaDao.buscarPorIdPessoa(siape);
+		Pessoa pessoa = pessoaDao.buscarPorSiapePessoa(siape);
 		pessoaDao = new PessoaDao();
 		pessoaDao.removerPessoa(pessoa);
 		model.addAttribute("msg", "Usuário Removido com Sucesso !");
@@ -95,7 +95,7 @@ public class UsuarioController {
 
 
 		PessoaDao pessoaDao = new PessoaDao();
-		Pessoa pessoa = pessoaDao.buscarPorIdPessoa(siape);
+		Pessoa pessoa = pessoaDao.buscarPorSiapePessoa(siape);
 		pessoaDao = new PessoaDao();
 		pessoaDao.removerPessoa(pessoa);
 
@@ -165,7 +165,7 @@ public class UsuarioController {
 
 		PessoaDao dao = new PessoaDao();
 		Pessoa pessoa = new Pessoa();
-		pessoa = dao.buscarPorIdPessoa(siape);
+		pessoa = dao.buscarPorSiapePessoa(siape);
 		model.addAttribute("usuarioPreenchido", pessoa);
 		return "pages/alterarDadosProf";
 	}
@@ -186,7 +186,7 @@ public class UsuarioController {
 
 		PessoaDao dao = new PessoaDao();
 		Pessoa pessoa = new Pessoa();
-		pessoa = dao.buscarPorIdPessoa(siape);
+		pessoa = dao.buscarPorSiapePessoa(siape);
 		model.addAttribute("usuarioPreenchido", pessoa);
 		return "pages/alterarDadosUsuario";
 	}
