@@ -16,7 +16,7 @@
 	      <div class="section">
 	      	<div class="col-md-7">
 	      	<div style="text-align: center; color: red;"> ${mensagem} </div>
-				<h2 class="text-center">Registro de Entrega1</h2>
+				<h2 class="text-center">Registro de Entrega</h2>
 			    	<form action="salvarRegistro" class="form-horizontal" role="form" method="post">
 			        <form:errors path="registro.nome" cssStyle="color:red" /><br>
 			        	<form:errors path="registro.siape" cssStyle="color:red" /><br>
