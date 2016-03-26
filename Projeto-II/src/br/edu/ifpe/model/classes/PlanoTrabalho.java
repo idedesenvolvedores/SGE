@@ -1,13 +1,25 @@
 package br.edu.ifpe.model.classes;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class PlanoTrabalho {
 
-	private int id;
+	@NotEmpty(message="O campo ATIVIDADES DE APOIO AO ENSINO deve ser preenchido")
+	@Size(max = 200, message="O campo ATIVIDADES DE APOIO AO ENSINO deve deve ter um tamanho máximo de 200 caracteres")
 	private String atividadeApoio;
-	private String atividadePesquisa;
-	private String atividadeExtensao;
-	private Pessoa idPessoa;
 	
+	@NotEmpty(message="O campo ATIVIDADES DE PESQUISA deve ser preenchido")
+	@Size(max = 200, message="O campo ATIVIDADES DE PESQUISA deve deve ter um tamanho máximo de 200 caracteres")
+	private String atividadePesquisa;
+	
+	@NotEmpty(message="O campo ATIVIDADES DE EXTENSÃO deve ser preenchido")
+	@Size(max = 200, message="O campo ATIVIDADES DE EXTENSÃO deve deve ter um tamanho máximo de 200 caracteres")
+	private String atividadeExtensao;
+	
+	private Pessoa idPessoa;
+	private int id;
 	public int getId() {
 		return id;
 	}

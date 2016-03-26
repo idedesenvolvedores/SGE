@@ -2,8 +2,11 @@ package br.edu.ifpe.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.ifpe.model.classes.PlanoTrabalho;
@@ -21,8 +24,12 @@ public class PlanoTrabalhoController {
 	    }
 
 	    @RequestMapping("incluirPlanoTrabalho")
-	    public String IncluirPlanoTrabalho(PlanoTrabalho plano) {
+	    public String IncluirPlanoTrabalho(@Valid PlanoTrabalho plano, BindingResult result) {
 
+	    	if (result.hasErrors()) {
+	    		return "forward:exibirIncluirPlanoTrabalho";
+	    		}
+	    	
 	    PlanoTrabalhoDao dao = new PlanoTrabalhoDao();
 		dao.salvarPlanoTrabalho(plano);
 		return "forward:listarPlanoTrabalho";
