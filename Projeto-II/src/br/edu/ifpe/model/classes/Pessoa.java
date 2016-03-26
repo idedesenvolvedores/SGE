@@ -8,7 +8,7 @@ public class Pessoa {
 
 
 	@NotEmpty(message="O siape deve ser preenchido")
-	@Size(min = 5, max = 10, message="O código deve deve ter um tamanho de 5 caracteres")
+	@Size(min = 5, max = 10, message="O código deve deve ter um tamanho máximo de 10 caracteres")
 	private String siape;
 	
 	@NotEmpty(message="O nome deve ser preenchido")

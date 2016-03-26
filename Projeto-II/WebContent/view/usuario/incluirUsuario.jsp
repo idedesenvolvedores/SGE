@@ -21,9 +21,9 @@
 	      	 <br><br><br>
 	          <h2 class="text-center">Cadastro de Usuário</h2>
 	           <form class="form-horizontal" role="form" action="incluirUsuario" method="post">
-	           <form:errors path="pessoa.nome" cssStyle="color:red" />
-	            <form:errors path="pessoa.siape" cssStyle="color:red" />
-	            <form:errors path="pessoa.email" cssStyle="color:red" />
+	           <form:errors path="pessoa.nome" cssStyle="color:red" /><br>
+	            <form:errors path="pessoa.siape" cssStyle="color:red" /><br>
+	            <form:errors path="pessoa.email" cssStyle="color:red" /><br>
 	            <div class="form-group">
 	              <div class="col-sm-2">
 	                <label for="inputNome3" class="control-label">Nome</label>

@@ -3,8 +3,11 @@ package br.edu.ifpe.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.edu.ifpe.model.classes.Registro;
@@ -23,8 +26,12 @@ public class EntregaController {
 		}		
 
 		@RequestMapping("/salvarRegistro")
-		public String valtarcabeca(Registro registro, Model model) {
+		public String valtarcabeca(@Valid Registro registro, BindingResult result, Model model) {
 
+			if (result.hasErrors()) {
+				return "pages/RegistroDeEntrega";
+				}
+			
 			RegistroDao dao = new RegistroDao();
 			dao.salvar(registro);
 			model.addAttribute("mensagem", "Registro de  "+registro.getNome()+" foi  adicionado!");

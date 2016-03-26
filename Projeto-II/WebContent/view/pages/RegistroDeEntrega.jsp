@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!-- topo -->
 <div class="section">
 	<c:import url="../menu/topo.jsp" />
@@ -15,9 +16,10 @@
 	      <div class="section">
 	      	<div class="col-md-7">
 	      	<div style="text-align: center; color: red;"> ${mensagem} </div>
-				<h2 class="text-center">Registro de Entrega</h2>
+				<h2 class="text-center">Registro de Entrega1</h2>
 			    	<form action="salvarRegistro" class="form-horizontal" role="form" method="post">
-			        
+			        <form:errors path="registro.nome" cssStyle="color:red" /><br>
+			        	<form:errors path="registro.siape" cssStyle="color:red" /><br>
 			        	<div class="form-group">
 			        		<div>
 			                	<input type="hidden" class="form-control">

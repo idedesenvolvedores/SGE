@@ -10,14 +10,17 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Registro {
 	
 	
-	private  int id;
 	
+	@NotEmpty(message="O nome deve ser preenchido")
+	@Size(max = 100, message="O nome deve deve ter um tamanho de no máximo 100 caracteres")
 	private String nome;
 	
+	@NotEmpty(message="O siape deve ser preenchido")
+	@Size(min = 5, max = 10, message="O siape deve deve ter um tamanho de no máximo de 10 caracteres e no minimo de 5 caracteres ")
 	private String siape;
 	
 	private String semestre;
-	
+	private  int id;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataEntrega;
 	
