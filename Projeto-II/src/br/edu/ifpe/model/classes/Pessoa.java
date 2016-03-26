@@ -1,9 +1,21 @@
 package br.edu.ifpe.model.classes;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Pessoa {
 
+
+	@NotEmpty(message="O siape deve ser preenchido")
+	@Size(min = 5, max = 10, message="O código deve deve ter um tamanho de 5 caracteres")
 	private String siape;
+	
+	@NotEmpty(message="O nome deve ser preenchido")
+	@Size(min = 1, max = 100, message="O nome deve deve ter um tamanho máximo de 100 caracteres")
 	private String nome;	
+	@NotEmpty(message="O email deve ser preenchido")
+	@Size(min = 1, max = 100, message="O email deve deve ter um tamanho máximo de 50 caracteres")
 	private String email;	
 	private String campus;
 	private String diretoria;

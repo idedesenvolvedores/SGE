@@ -19,8 +19,7 @@
 				<br> <br> <br>
 				<!-- tela -->
 				<h2 class="text-center">Atualizar dados</h2>
-				<form class="form-horizontal" role="form" action="alterarDados"
-					method="post">
+				<form class="form-horizontal" role="form" action="alterarDados"method="post">
 					<input type="hidden" name="siape" value="${usuarioPreenchido.pessoa.siape}">
 
 					<div class="form-group">
@@ -29,7 +28,7 @@
 						</div>
 						<div class="col-sm-10">
 							<input type="text" class="form-control" id="nome" name="nome"
-								value="${usuarioPreenchido.pessoa.nome}" placeholder="Nome">
+								value="${usuarioPreenchido.pessoa.nome}" placeholder="Nome"required="required">
 						</div>
 					</div>
 					<div class="form-group">
@@ -37,9 +36,9 @@
 							<label for="inputEmail" class="control-label">Email</label>
 						</div>
 						<div class="col-sm-10">
-							<input type="text" class="form-control" id="inputEmail"
+							<input type="email" class="form-control" id="inputEmail"
 								name="email" value="${usuarioPreenchido.pessoa.email}"
-								placeholder="Email">
+								placeholder="Email" required="required">
 						</div>
 					</div>
 					<div class="form-group">
@@ -49,7 +48,7 @@
 						<div class="col-sm-10">
 							<input type="password" class="form-control" id="inputText"
 								name="senha" value="${usuarioPreenchido.senha}"
-								placeholder="Senha">
+								placeholder="Senha"required="required">
 						</div>
 					</div>
 					<div class="form-group">

@@ -1,8 +1,12 @@
 package br.edu.ifpe.controller;
 
-import java.util.List; 
+import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -25,8 +29,13 @@ public class UsuarioController {
 
 	//cadastra usuario
 	@RequestMapping("incluirUsuario")
-	public String incluirUsuario( Pessoa pessoa,int TipoUsuario, Model model) {
+	public String incluirUsuario(@Valid Pessoa pessoa, BindingResult result,int TipoUsuario, Model model) {
 
+		if (result.hasErrors()) {
+			return "forward:exibirIncluirUsuario";
+			}
+		
+		
 		PessoaDao pessoaDao = new PessoaDao();
 		UsuarioDao dao = new UsuarioDao();
 		TipoUsuario tipoUsuario = new TipoUsuario();
