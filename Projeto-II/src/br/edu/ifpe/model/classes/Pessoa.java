@@ -14,9 +14,11 @@ public class Pessoa {
 	@NotEmpty(message="O nome deve ser preenchido")
 	@Size(min = 1, max = 100, message="O nome deve deve ter um tamanho máximo de 100 caracteres")
 	private String nome;	
+	
 	@NotEmpty(message="O email deve ser preenchido")
 	@Size(min = 1, max = 100, message="O email deve deve ter um tamanho máximo de 50 caracteres")
-	private String email;	
+	private String email;
+	
 	private String campus;
 	private String diretoria;
 	private String telefone;

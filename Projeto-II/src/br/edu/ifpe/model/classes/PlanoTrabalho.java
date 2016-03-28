@@ -18,8 +18,10 @@ public class PlanoTrabalho {
 	@Size(max = 200, message="O campo ATIVIDADES DE EXTENSÃO deve deve ter um tamanho máximo de 200 caracteres")
 	private String atividadeExtensao;
 	
-	private Pessoa idPessoa;
+	private Pessoa siapePessoa;
 	private int id;
+	
+	
 	public int getId() {
 		return id;
 	}
@@ -44,11 +46,11 @@ public class PlanoTrabalho {
 	public void setAtividadeExtensao(String atividadeExtensao) {
 		this.atividadeExtensao = atividadeExtensao;
 	}
-	public Pessoa getIdPessoa() {
-		return idPessoa;
+	public Pessoa getSiapePessoa() {
+		return siapePessoa;
 	}
-	public void setIdPessoa(Pessoa idPessoa) {
-		this.idPessoa = idPessoa;
+	public void setSiapePessoa(Pessoa siapePessoa) {
+		this.siapePessoa = siapePessoa;
 	}	
 	
 }

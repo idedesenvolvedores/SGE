@@ -9,143 +9,148 @@ import java.util.List;
 
 import br.edu.ifpe.model.classes.Pessoa;
 import br.edu.ifpe.model.classes.PlanoTrabalho;
+import br.edu.ifpe.model.classes.Usuario;
 import br.edu.ifpe.util.ConnectionFactory;
 
 public class PlanoTrabalhoDao {
 
-    private Connection connection;
+	private Connection connection;
 
-    public PlanoTrabalhoDao() {
+	public PlanoTrabalhoDao() {
 
-	try {
-	    this.connection = new ConnectionFactory().getConnection();
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+		try {
+			this.connection = new ConnectionFactory().getConnection();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
-    
-  //-----------------Salvar Plano de Trabalho-----------------
-    
-    public void salvarPlanoTrabalho(PlanoTrabalho plano) {
 
-	try {
-	    String sql = "INSERT INTO PLANO_TRABALHO (ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, ID_PESSOA) VALUES (?,?,?,?)";
-	    
-	    PreparedStatement stmt = connection.prepareStatement(sql);
-	    stmt.setString(1, plano.getAtividadeApoio());
-	    stmt.setString(2, plano.getAtividadePesquisa());
-	    stmt.setString(3, plano.getAtividadeExtensao());
-	    stmt.setString(4, plano.getIdPessoa().getSiape());	    
-	    stmt.execute();
-	    stmt.close();
-	    connection.close();
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+	//-----------------Salvar Plano de Trabalho-----------------
+
+	public void salvarPlanoTrabalho(PlanoTrabalho plano) {
+
+		try {
+			String sql = "INSERT INTO PLANO_TRABALHO ( ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, SIAPE_PESSOA) VALUES (?,?,?,?)";
+
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, plano.getAtividadeApoio());
+			stmt.setString(2, plano.getAtividadePesquisa());
+			stmt.setString(3, plano.getAtividadeExtensao());
+			stmt.setString(4, "321");//plano.getSiapePessoa().getSiape());	    
+
+			stmt.execute();
+			stmt.close();
+			connection.close();
+
+		} 
+		catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
 
-   
-    // ----------- Listar Plano de Trabalho------------//
-    
-    public List<PlanoTrabalho> listarPlanoTrabalho() {
 
-	try {
+	// ----------- Listar Plano de Trabalho------------//
 
-	    List<PlanoTrabalho> listaPlanoTrabalho = new ArrayList<PlanoTrabalho>();
-	    PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PLANO_TRABALHO ORDER BY ID");
+	public List<PlanoTrabalho> listarPlanoTrabalho() {
 
-	    ResultSet rs = stmt.executeQuery();
+		try {
 
-	    while (rs.next()) {
-		listaPlanoTrabalho.add(montarObjetoPlanoTrabalho(rs));
-	    }
+			List<PlanoTrabalho> listaPlanoTrabalho = new ArrayList<PlanoTrabalho>();
+			PreparedStatement stmt = this.connection.prepareStatement("SELECT * FROM PLANO_TRABALHO ORDER BY ID");
 
-	    rs.close();
-	    stmt.close();
-	    connection.close();
+			ResultSet rs = stmt.executeQuery();
 
-	    return listaPlanoTrabalho;
+			while (rs.next()) {
+				listaPlanoTrabalho.add(montarObjetoPlanoTrabalho(rs));
+			}
 
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+			rs.close();
+			stmt.close();
+			connection.close();
+
+			return listaPlanoTrabalho;
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}    
+	//------ Remover Plano de Trabalho --------//
+
+	public void removerPlanoTrabalho(PlanoTrabalho planoTrabalho) {
+
+		try {
+			PreparedStatement stmt = connection.prepareStatement("DELETE FROM PLANO_TRABALHO WHERE id = ?");
+			stmt.setLong(1, planoTrabalho.getId());
+			stmt.execute();
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }    
-    //------ Remover Plano de Trabalho --------//
-    
-    public void removerPlanoTrabalho(PlanoTrabalho planoTrabalho) {
 
-	try {
-	    PreparedStatement stmt = connection.prepareStatement("DELETE FROM PLANO_TRABALHO WHERE id = ?");
-	    stmt.setLong(1, planoTrabalho.getId());
-	    stmt.execute();
-	    stmt.close();
-	    connection.close();
-	} catch (SQLException e) {
-	    throw new RuntimeException(e);
+	//------- Alterar Plano de Trabalho ----------//
+
+	public void alterarPlanoTrabalho(PlanoTrabalho planoTrabalho) {
+
+		String sql = "UPDATE PLANO_TRABALHO SET ATIVIDADE_APOIO = ? , ATIVIDADE_PESQUISA = ? , ATIVIDADE_EXTENSAO = ? WHERE id = ?";
+
+		try {
+
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, planoTrabalho.getAtividadeApoio());
+			stmt.setString(2, planoTrabalho.getAtividadePesquisa());
+			stmt.setString(3, planoTrabalho.getAtividadeExtensao());
+			stmt.setString(4, planoTrabalho.getSiapePessoa().getSiape());
+			stmt.setInt(5, planoTrabalho.getId());
+
+			stmt.execute();
+			stmt.close();
+			connection.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
-    }
 
-     //------- Alterar Plano de Trabalho ----------//
-     
-     public void alterarPlanoTrabalho(PlanoTrabalho planoTrabalho) {
+	//--------- Buscar por id Plano de Trabalho --------------//
 
- 	String sql = "UPDATE PLANO_TRABALHO SET ATIVIDADE_APOIO = ? , ATIVIDADE_PESQUISA = ? , ATIVIDADE_EXTENSAO = ? WHERE id = ?";
+	public PlanoTrabalho buscarPorIdPlanoTrabalho(int id) {
 
- 	try {
+		try {
+			PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PLANO_TRABALHO WHERE id = ?");
+			stmt.setInt(1, id);
+			ResultSet rs = stmt.executeQuery();
 
- 	    PreparedStatement stmt = connection.prepareStatement(sql);
- 	    stmt.setString(1, planoTrabalho.getAtividadeApoio());
- 	    stmt.setString(2, planoTrabalho.getAtividadePesquisa());
- 	    stmt.setString(3, planoTrabalho.getAtividadeExtensao());
-	    stmt.setString(4, planoTrabalho.getIdPessoa().getSiape());
-	    stmt.setInt(5, planoTrabalho.getId());
-	    
- 	    stmt.execute();
- 	    stmt.close();
- 	    connection.close();
- 	} catch (SQLException e) {
- 	    throw new RuntimeException(e);
- 	}
-     }
+			PlanoTrabalho planoTrabalho = null;
+			if (rs.next()) {
+				planoTrabalho = montarObjetoPlanoTrabalho(rs);
+			}
 
-     //--------- Buscar por id Plano de Trabalho --------------//
-     
-     public PlanoTrabalho buscarPorIdPlanoTrabalho(int id) {
+			rs.close();
+			stmt.close();
+			connection.close();
+			return planoTrabalho;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
-    		try {
-    		    PreparedStatement stmt = connection.prepareStatement("SELECT * FROM PLANO_TRABALHO WHERE id = ?");
-    		    stmt.setInt(1, id);
-    		    ResultSet rs = stmt.executeQuery();
 
-    		    PlanoTrabalho planoTrabalho = null;
-    		    if (rs.next()) {
-    		    	planoTrabalho = montarObjetoPlanoTrabalho(rs);
-    		    }
+	private PlanoTrabalho montarObjetoPlanoTrabalho(ResultSet rs) throws SQLException {
 
-    		    rs.close();
-    		    stmt.close();
-    		    connection.close();
-    		    return planoTrabalho;
-    		} catch (SQLException e) {
-    		    throw new RuntimeException(e);
-    		}
-    }
-          
+		PlanoTrabalho planoTrabalho = new PlanoTrabalho();
+		planoTrabalho.setId(rs.getInt("ID"));
+		planoTrabalho.setAtividadeApoio(rs.getString("ATIVIDADE_APOIO"));
+		planoTrabalho.setAtividadePesquisa(rs.getString("ATIVIDADE_PESQUISA"));
+		planoTrabalho.setAtividadeExtensao(rs.getString("ATIVIDADE_EXTENSAO"));
 
-    private PlanoTrabalho montarObjetoPlanoTrabalho(ResultSet rs) throws SQLException {
+		PessoaDao pessoaDao = new PessoaDao();
+		Pessoa pessoa = pessoaDao.buscarPorSiapePessoa(rs.getString("SIAPE_PESSOA"));
+		planoTrabalho.setSiapePessoa(pessoa);//setIdUsuario(pessoa);
 
-    PlanoTrabalho planoTrabalho = new PlanoTrabalho();
-    planoTrabalho.setId(rs.getInt("ID"));
-    planoTrabalho.setAtividadeApoio(rs.getString("ATIVIDADE_APOIO"));
-    planoTrabalho.setAtividadePesquisa(rs.getString("ATIVIDADE_PESQUISA"));
-    planoTrabalho.setAtividadeExtensao(rs.getString("ATIVIDADE_EXTENSAO"));
+		return planoTrabalho;
+	}
 
-    PessoaDao pessoaDao = new PessoaDao();
-    Pessoa pessoa = pessoaDao.buscarPorSiapePessoa(rs.getString("ID_PESSOA"));
-    planoTrabalho.setIdPessoa(pessoa);//setIdUsuario(pessoa);
-    
-	return planoTrabalho;
-    }
-    
-	
+
 }
