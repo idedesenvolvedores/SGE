@@ -68,7 +68,7 @@
 	<div class="col-md-8">
 		<div class="section">
 			<div class="col-md-12">
-				<div style="text-align: center; color: red;"> ${mensagem} </div>
+				
 		<br>
         <div class="row">
             <legend>ATIVIDADES DE ENSINO (AULAS)</legend>
@@ -76,6 +76,7 @@
         <br>
 		<form action="incluirAtividadeEnsino" method="post">
           <br>
+          <div style="text-align: center; color: red;"> ${mensagem} </div>
           <div class="row">
             <div class="col-md-5">
               <div class="form-group">

@@ -61,7 +61,7 @@ public class PlanoTrabalhoController {
 
 
 	@RequestMapping("/exibirAlterarPlanoTrabalho")
-	public String exibirAlterarPlanoTrabalho(Model model, PlanoTrabalho plano) {
+	public String exibirAlterarPlanoTrabalho(PlanoTrabalho plano, Model model) {
 
 		PlanoTrabalhoDao dao = new PlanoTrabalhoDao();
 		plano = dao.buscarPorIdPlanoTrabalho(plano.getId());

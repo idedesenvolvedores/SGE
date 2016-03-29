@@ -16,7 +16,7 @@
 		<a href="exibirIncluirPlanoTrabalho?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
         </li>
         <li>
-		<a href="listarAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
+		<a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
         </li>
         <li>
 			<a href="listarAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>
@@ -41,7 +41,7 @@
 			          <a href="exibirIncluirPlanoTrabalho?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
 			        </li>
 			        <li>
-						<a href="listarAtividadeEnsino" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
+						<a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
 			        </li>
 			        <li>
 			          <a href="listarAtividadePedagogica" style="color: #FFFFFF"><i class="fa fa-fw fa-lg fa-table"></i> Atividades Administrativo-Pedagógicas </a>

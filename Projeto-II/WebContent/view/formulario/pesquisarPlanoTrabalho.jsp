@@ -2,69 +2,63 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
- 
- <div class="section">
+
+<div class="section">
 	<c:import url="../menu/topo.jsp" />
 </div>
 <div class="col-md-12">
 	<!-- menu lateral -->
 	<div class="col-md-3">
-        	
+
 		<c:import url="../menu/menuProfessor.jsp" />
-	
+
 	</div>
-        
-    <!-- tela -->
+
+	<!-- tela -->
 	<div class="col-md-8">
 		<div class="section">
 			<div class="col-md-12">
-			<br>
-            <legend>PLANO DE TRABALHO</legend>
-            <div class="panel panel-success">
-              <div class="panel-heading">
-                <a href="exibirIncluirPlanoTrabalho" class="btn btn-info btn-sm">
-          		<span class="glyphicon glyphicon-plus"></span> Adicionar
-        	</a>
-              </div>
-            </div>
-		
+				<br>
+				<legend>PLANO DE TRABALHO</legend>
+				<br>
+				<div style="text-align: center; color: red;">${mensagem}</div>
+				<br>
 
-		<br>
-				<div style="text-align: center; color: red;"> ${mensagem} </div>
-		<br>
+				<table class="table">
+					<thead>
+						<tr>
+							<th class="active">SELECIONAR</th>
+							<th class="active">ATIVIDADES DE APOIO AO ENSINO</th>
+							<th class="active">ATIVIDADES DE PESQUISA, PÓS-GRADUAÇÃO E
+								INOVAÇÃO</th>
+							<th class="active">ATIVIDADES DE EXTENSÃO</th>
+							<th class="active">EDITAR</th>
+							<th class="active">REMOVER</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="listaPlanoTrabalho" items="${listaPlanoTrabalho}">
+							<tr>
+								<td class="active"><a class="btn btn-info" href="exibirIncluirAtividadeEnsino?id=${listaPlanoTrabalho.id}">SELECIONAR</a></td>
+								<td class="active">${listaPlanoTrabalho.atividadeApoio}</td>
+								<td class="active">${listaPlanoTrabalho.atividadePesquisa}</td>
+								<td class="active">${listaPlanoTrabalho.atividadeExtensao}</td>
+								<td class="active"><a class="btn btn-warning"
+									href="exibirAlterarPlanoTrabalho?id=${listaPlanoTrabalho.id}">editar</a>
+								</td>
+								<td class="active"><a class="btn btn-danger"
+									href="removerPlanoTrabalho?id=${listaPlanoTrabalho.id}">remover</a>
+								</td>
+							</tr>
+							<tr>
 
-            <!-- Table -->
-            <table class="table table-hover" style="">
-              <thead>
-                <tr style="background-color:#D8D8D8">
-                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center;">ID</th>
-                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">ATIVIDADES DE APOIO AO ENSINO</th>
-                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">ATIVIDADES DE PESQUISA, PÓS-GRADUAÇÃO E INOVAÇÃO</th>
-                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">ATIVIDADES DE EXTENSÃO</th>
-                  <th style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" class="text-center">ALTERAR / REMOVER</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                <c:forEach var="listaPlanoTrabalho" items="${listaPlanoTrabalho}">
-                <tr>
-                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;">${listaPlanoTrabalho.id}</td>
-                  <td align="justify" style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;">${listaPlanoTrabalho.atividadeApoio}</td>
-                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="justify">${listaPlanoTrabalho.atividadePesquisa}</td>
-                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="justify">${listaPlanoTrabalho.atividadeExtensao}</td>
-                  <td style="border: 2px solid; border-color:#E6E6E6;vertical-align: middle;" align="center">
-                    <a href="exibirAlterarPlanoTrabalho?id=${listaPlanoTrabalho.id}" class="btn btn-info btn-xs">
-          <span class="glyphicon glyphicon-remove"></span> Editar
-        </a>&nbsp;&nbsp;
-                    <a href="removerPlanoTrabalho?id=${listaPlanoTrabalho.id}" class="btn btn-info btn-xs">
-          <span class="glyphicon glyphicon-remove"></span> Remover
-        </a>
-                  </td>
-                </tr>
-                </c:forEach>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
+							</tr>
+							<tr></tr>
+						</c:forEach>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

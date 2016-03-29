@@ -84,13 +84,7 @@
 							</div>
 						</div>
 					</div>
-					<!--
-					não descomente isso!
-					<div>
-						  <input type="hidden" name="siapePessoa" id="siapePessoa"
-							value="${usuarioLogado.pessoa.siape}"> <br>
-					</div>-->
-
+				
 					<div class="form-group" align="center">
 						<div class="col-md-12">
 							<button type="reset" class="btn btn-danger">Limpar</button>
