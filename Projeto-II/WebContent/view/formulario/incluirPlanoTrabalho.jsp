@@ -21,7 +21,7 @@
 			<div class="col-md-12">
 				<div style="text-align: center; color: red;">${mensagem}</div>
 				<br>
-
+				<input type="hidden" name="siapePessoa" id="siapePessoa" value="${usuarioLogado.pessoa.siape}"> <a style="display:none;">${usuarioLogado.pessoa.siape}</a></input> 
 				<form action="incluirPlanoTrabalho" class="form-horizontal"
 					role="form" method="post">
 
@@ -46,7 +46,7 @@
 							<div class="form-group">
 								<div class="col-md-12">
 									<textarea class="form-control" id="atividadeApoio"
-										name="atividadeApoio" placeholder="Digite o texto..."></textarea>
+										name="atividadeApoio" placeholder="Digite o texto..." maxlength="200"></textarea>
 								</div>
 							</div>
 						</div>
@@ -62,7 +62,7 @@
 							<div class="form-group">
 								<div class="col-md-12">
 									<textarea class="form-control" id="atividadePesquisa"
-										name="atividadePesquisa" placeholder="Digite o texto..."></textarea>
+										name="atividadePesquisa" placeholder="Digite o texto..." maxlength="200"></textarea>
 								</div>
 							</div>
 						</div>
@@ -79,12 +79,12 @@
 							<div class="form-group">
 								<div class="col-md-12">
 									<textarea class="form-control" id="atividadeExtensao"
-										name="atividadeExtensao" placeholder="Digite o texto..."></textarea>
+										name="atividadeExtensao" placeholder="Digite o texto..." maxlength="200"></textarea>
 								</div>
 							</div>
 						</div>
 					</div>
-				
+					
 					<div class="form-group" align="center">
 						<div class="col-md-12">
 							<button type="reset" class="btn btn-danger">Limpar</button>

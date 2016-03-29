@@ -13,7 +13,7 @@
 		<c:import url="../menu/menuProfessor.jsp" />
 
 	</div>
-
+	
 	<!-- tela -->
 	<div class="col-md-8">
 		<div class="section">
@@ -30,7 +30,7 @@
 							
 								<label class="control-label" for="exampleInputEmail1">CAMPUS</label>
 								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Campus" type="text" name="campus" value="${usuarioLogado.pessoa.campus}">
+									placeholder="Campus" type="text" name="campus" value="${usuarioLogado.pessoa.campus}" maxlength="50">
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -39,7 +39,7 @@
 									/ DEPARTAMENTO / COORDENAÇÃO</label> <input class="form-control"
 									id="exampleInputEmail1"
 									placeholder="Diretoria / Departamento / Coordenação"
-									type="text" name="diretoria" value="${usuarioLogado.pessoa.diretoria}">
+									type="text" name="diretoria" value="${usuarioLogado.pessoa.diretoria}" maxlength="30">
 							</div>
 						</div>
 					</div>
@@ -49,14 +49,14 @@
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">PROFESSOR(A)</label>
 								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Professor(a)" type="text" name="nome"	value="${usuarioLogado.pessoa.nome}">
+									placeholder="Professor(a)" type="text" name="nome"	value="${usuarioLogado.pessoa.nome}" maxlength="60">
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">MATRÍCULA
 									SIAPE Nº</label> <input class="form-control" id="exampleInputEmail1"
-									placeholder="Matrícula Siape" type="text"	name="siape" value="${usuarioLogado.pessoa.siape}">
+									placeholder="Matrícula Siape" type="text"	name="siape" value="${usuarioLogado.pessoa.siape}" maxlength="10">
 							</div>
 						</div>
 					</div>
@@ -66,14 +66,14 @@
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">EMAIL</label>
 								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Email" type="email" name="email" value="${usuarioLogado.pessoa.email}">
+									placeholder="Email" type="email" name="email" value="${usuarioLogado.pessoa.email}" maxlength="50">
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
-								<label class="control-label" for="exampleInputEmail1">TELEFONE</label>
-								<input class="form-control" id="exampleInputEmail1"
-									placeholder="Telefone" type="text" name="telefone" value="${usuarioLogado.pessoa.telefone}">
+								<label class="control-label" for="telefone">TELEFONE</label>
+								<input class="form-control" id="telefone"
+									placeholder="Telefone" type="text" name="telefone" value="${usuarioLogado.pessoa.telefone}" maxlength="15">
 							</div>
 						</div>
 					</div>
@@ -84,14 +84,14 @@
 								<label class="control-label" for="exampleInputEmail1">ÁREA
 									DE CONHECIMENTO</label> <input class="form-control"
 									id="exampleInputEmail1" placeholder="Área de Conhecimento"
-									type="text" name="area" value="${usuarioLogado.pessoa.area}">
+									type="text" name="area" value="${usuarioLogado.pessoa.area}" maxlength="15">
 							</div>
 						</div>
 						<div class="col-md-3">
 							<div class="form-group">
 								<label class="control-label" for="exampleInputEmail1">CLASSE
 									(ART. 1°)</label> <input class="form-control" id="exampleInputEmail1"
-									placeholder="Classe (artigo 1º)" type="text" name="classe" value="${usuarioLogado.pessoa.classe}">
+									placeholder="Classe (artigo 1º)" type="text" name="classe" value="${usuarioLogado.pessoa.classe}" maxlength="15">
 							</div>
 						</div>
 						<div class="col-md-3">

@@ -13,7 +13,7 @@
 		<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
         </li>
         <li>
-		<a href="exibirIncluirPlanoTrabalho?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
+		<a href="exibirIncluirPlanoTrabalho?siapePessoa=${usuarioLogado.pessoa.siape}" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
         </li>
         <li>
 		<a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>
@@ -38,7 +38,7 @@
 						<a href="exibirAlteraSenha?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="glyphicon glyphicon-lock" ></i> Alterar Senha </a>
 			        </li>
 			        <li>
-			          <a href="exibirIncluirPlanoTrabalho?id=${usuarioLogado.id}" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
+			          <a href="exibirIncluirPlanoTrabalho?siapePessoa=${usuarioLogado.pessoa.siape}" style="color: #FFFFFF"><i class="fa fa-graduation-cap fa-lg"></i> Plano de Trabalho </a>
 			        </li>
 			        <li>
 						<a href="listarPlanoTrabalho" style="color: #FFFFFF"><i class="fa fa-folder fa-lg"></i> Atividades de Ensino (Aulas)</a>

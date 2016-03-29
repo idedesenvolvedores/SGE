@@ -19,6 +19,7 @@ public class PlanoTrabalho {
 	private String atividadeExtensao;
 	
 	private Pessoa siapePessoa;
+	
 	private int id;
 	
 	

@@ -54,7 +54,7 @@
 								</div>
 								<div class="col-sm-10">
 									<input type="text" class="form-control input-lg" id="inputText"
-										name="siape" placeholder="siape" required="required">
+										name="siape" placeholder="siape" required="required" maxlength="10">
 								</div>
 							</div>
 							<div class="form-group has-success">
@@ -66,7 +66,7 @@
 								<div class="col-sm-10">
 									<input type="password" class="form-control input-lg"
 										id="inputPassword3" name="senha" placeholder="senha"
-										required="required">
+										required="required" maxlength="100">
 								</div>
 							</div>
 

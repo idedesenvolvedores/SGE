@@ -22,7 +22,7 @@
 						<label for="inputNome3" class="control-label">Nome</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="nome" name="nome" value="${usuarioPreenchido.nome}" placeholder="Nome">
+						<input type="text" class="form-control" id="nome" name="nome" value="${usuarioPreenchido.nome}" placeholder="Nome" maxlength="100">
 					</div>
 				</div>
 				<div class="form-group">
@@ -31,7 +31,7 @@
 					</div>
 					<div class="col-sm-10">
 						<input type="text" class="form-control" id="inputEmail"
-							name="email" value="${usuarioPreenchido.email}"
+							name="email" value="${usuarioPreenchido.email}" maxlength="100"
 							placeholder="Email">
 					</div>
 				</div>
@@ -40,7 +40,7 @@
 						<label for="inputSenha" class="control-label">Senha</label>
 					</div>
 					<div class="col-sm-10">
-						<input type="password" class="form-control" id="inputText"	name="senha" value="${usuarioPreenchido.senha}" placeholder="Senha">
+						<input type="password" class="form-control" id="inputText"	name="senha" value="${usuarioPreenchido.senha}" placeholder="Senha" maxlength="100">
 					</div>
 				</div>
 		</div>

@@ -170,10 +170,10 @@ public class UsuarioController {
 
 	//exibe pagina de alteração de dados do professor usado pelo administrador
 	@RequestMapping("exibirAlterarProfessor")
-	public String exibirAlterarProfessor( Usuario usuario, Model model, @RequestParam("siape") String siape) {
+	public String exibirAlterarProfessor(@RequestParam("siape") String siape, Model model, Pessoa pessoa) {
 
 		PessoaDao dao = new PessoaDao();
-		Pessoa pessoa = new Pessoa();
+		pessoa = new Pessoa();
 		pessoa = dao.buscarPorSiapePessoa(siape);
 		model.addAttribute("usuarioPreenchido", pessoa);
 		return "pages/alterarDadosProf";

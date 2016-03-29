@@ -27,17 +27,18 @@ public class PlanoTrabalhoDao {
 
 	//-----------------Salvar Plano de Trabalho-----------------
 
-	public void salvarPlanoTrabalho(PlanoTrabalho plano) {
+	public void salvarPlanoTrabalho(PlanoTrabalho plano, String siapePessoa) {
 
 		try {
-			String sql = "INSERT INTO PLANO_TRABALHO ( ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, SIAPE_PESSOA) VALUES (?,?,?,?)";
+			String sql = "INSERT INTO PLANO_TRABALHO ( ATIVIDADE_APOIO, ATIVIDADE_PESQUISA, ATIVIDADE_EXTENSAO, SIAPE_PESSOA) VALUES (?,?,?,?);";
 
 
 			PreparedStatement stmt = connection.prepareStatement(sql);
+	
 			stmt.setString(1, plano.getAtividadeApoio());
 			stmt.setString(2, plano.getAtividadePesquisa());
 			stmt.setString(3, plano.getAtividadeExtensao());
-			stmt.setString(4, "321");//plano.getSiapePessoa().getSiape());	    
+			stmt.setString(4, siapePessoa);	    
 
 			stmt.execute();
 			stmt.close();
